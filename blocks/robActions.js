@@ -40,7 +40,7 @@ function getConfigPorts(actorName) {
 Blockly.Blocks['robActions_setLanguage'] = {
     /**
      * Sets the language the robot uses.
-     * 
+     *
      * @constructs robActions_setLanguage
      * @this.Blockly.Block
      * @param {String}
@@ -86,7 +86,7 @@ Blockly.Blocks['robActions_setLanguage'] = {
 Blockly.Blocks['robActions_sayText'] = {
     /**
      * Say a text.
-     * 
+     *
      * @constructs robActions_sayText
      * @this.Blockly.Block
      * @param {String}
@@ -107,7 +107,7 @@ Blockly.Blocks['robActions_sayText'] = {
 Blockly.Blocks['robActions_sayText_parameters'] = {
     /**
      * Say a text with additional parameters.
-     * 
+     *
      * @constructs robActions_sayText_parameters
      * @this.Blockly.Block
      * @param {String}
@@ -130,7 +130,7 @@ Blockly.Blocks['robActions_sayText_parameters'] = {
 Blockly.Blocks['robActions_motor_on'] = {
     /**
      * Turn motor on with specific power.
-     * 
+     *
      * @constructs robActions_motor_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -180,7 +180,7 @@ Blockly.Blocks['robActions_motor_on'] = {
         case 'edison':
             ports = [ [Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_LEFT, 'LMOTOR'],
                 [ Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_RIGHT, 'RMOTOR' ] ];
-            break;    
+            break;
         default:
             ports = [ 'INVALID DEVICE TYPE', 'UNDEFINED' ];
         }
@@ -204,7 +204,7 @@ Blockly.Blocks['robActions_motor_on'] = {
 
 Blockly.Blocks['robActions_motor_on_for'] = {
     /**
-     * 
+     *
      * @constructs robActions_motor_on_for
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -291,7 +291,7 @@ Blockly.Blocks['robActions_motor_on_for'] = {
 Blockly.Blocks['robActions_motor_on_for_ardu'] = {
     /**
      * Turn motor on and stop motor after execution of rotations/degrees.
-     * 
+     *
      * @constructs robActions_motor_on_for
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -323,7 +323,7 @@ Blockly.Blocks['robActions_motor_on_for_ardu'] = {
         } else {
             var ports = [ [ Blockly.Msg.MOTOR_PAN, 'A' ], [ Blockly.Msg.MOTOR_TILT, 'D' ] ];
             var motorPort = new Blockly.FieldDropdown(ports);
-            this.appendValueInput('POWER').appendField(Blockly.Msg.SET + " " + Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.TO 
+            this.appendValueInput('POWER').appendField(Blockly.Msg.SET + " " + Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.TO
                 + ' °').setCheck('Number');
         }
         this.setPreviousStatement(true);
@@ -335,7 +335,7 @@ Blockly.Blocks['robActions_motor_on_for_ardu'] = {
 Blockly.Blocks['robActions_motor_getPower'] = {
     /**
      * Get current power of this motor.
-     * 
+     *
      * @constructs robActions_getPower
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -361,7 +361,7 @@ Blockly.Blocks['robActions_motor_getPower'] = {
 Blockly.Blocks['robActions_motor_setPower'] = {
     /**
      * Set current power of this motor (not used).
-     * 
+     *
      * @constructs robActions_setPower
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -388,7 +388,7 @@ Blockly.Blocks['robActions_motor_setPower'] = {
 Blockly.Blocks['robActions_motor_stop'] = {
     /**
      * Stop this motor.
-     * 
+     *
      * @constructs robActions_motor_stop
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -550,7 +550,7 @@ Blockly.Blocks['robActions_motorDiff_curve_for'] = {
 Blockly.Blocks['robActions_display_picture'] = {
     /**
      * Display a picture on the screen.
-     * 
+     *
      * @constructs robActions_display_picture
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -566,7 +566,7 @@ Blockly.Blocks['robActions_display_picture'] = {
     init : function() {
         // this.setHelpUrl(Blockly.Msg.DISPLAY_PICTURE_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
+        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_SMILEY, 'SMILEY' ],[ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED, 'EYESCLOSED' ], [ Blockly.Msg.DISPLAY_PICTURE_FLOWERS, 'FLOWERS' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_TACHO, 'TACHO' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE).appendField(picture, 'PICTURE');
@@ -582,7 +582,7 @@ Blockly.Blocks['robActions_display_picture'] = {
 Blockly.Blocks['robActions_display_picture_new'] = {
     /**
      * Display a picture on the screen.
-     * 
+     *
      * @constructs robActions_display_picture_new
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -593,7 +593,7 @@ Blockly.Blocks['robActions_display_picture_new'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
+        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_SMILEY, 'SMILEY' ],[ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED, 'EYESCLOSED' ], [ Blockly.Msg.DISPLAY_PICTURE_FLOWERS, 'FLOWERS' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_TACHO, 'TACHO' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE).appendField(picture, 'PICTURE');
@@ -606,7 +606,7 @@ Blockly.Blocks['robActions_display_picture_new'] = {
 Blockly.Blocks['robActions_display_text'] = {
     /**
      * Display a text on the screen.
-     * 
+     *
      * @constructs robActions_display_text
      * @this.Blockly.Block
      * @param {String}
@@ -649,7 +649,7 @@ Blockly.Blocks['robActions_display_text'] = {
 Blockly.Blocks['robActions_display_text_i2c'] = {
     /**
      * Display a text on the screen.
-     * 
+     *
      * @constructs robActions_display_text_i2c
      * @this.Blockly.Block
      * @param {String}
@@ -685,7 +685,7 @@ Blockly.Blocks['robActions_display_text_i2c'] = {
 Blockly.Blocks['robActions_display_clear'] = {
     /**
      * Clear the display.
-     * 
+     *
      * @constructs robActions_display_clear
      * @this.Blockly.Block
      * @returns immediately
@@ -714,7 +714,7 @@ Blockly.Blocks['robActions_display_clear'] = {
 Blockly.Blocks['robActions_display_clear_i2c'] = {
     /**
      * Clear the display.
-     * 
+     *
      * @constructs robActions_display_clear
      * @this.Blockly.Block
      * @returns immediately
@@ -747,7 +747,7 @@ Blockly.Blocks['robActions_display_clear_i2c'] = {
 Blockly.Blocks['robActions_play_tone'] = {
     /**
      * Play a tone.
-     * 
+     *
      * @constructs robActions_play_tone
      * @this.Blockly.Block
      * @param {Number}
@@ -809,7 +809,7 @@ Blockly.Blocks['robActions_play_tone'] = {
 Blockly.Blocks['robActions_play_file'] = {
     /**
      * Play a sound file.
-     * 
+     *
      * @constructs robActions_play_file
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -835,7 +835,7 @@ Blockly.Blocks['robActions_play_file'] = {
 Blockly.Blocks['robActions_play_setVolume'] = {
     /**
      * Set volume.
-     * 
+     *
      * @constructs robActions_play_setVolume
      * @this.Blockly.Block
      * @param {Number}
@@ -857,7 +857,7 @@ Blockly.Blocks['robActions_play_setVolume'] = {
 Blockly.Blocks['robActions_play_getVolume'] = {
     /**
      * Get current volume
-     * 
+     *
      * @constructs robActions_play_getVolume
      * @this.Blockly.Block
      * @returns immediately
@@ -878,7 +878,7 @@ Blockly.Blocks['robActions_play_getVolume'] = {
 Blockly.Blocks['robActions_brickLight_on'] = {
     /**
      * Turn bricklight on.
-     * 
+     *
      * @constructs robActions_brickLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -929,7 +929,7 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 Blockly.Blocks['robActions_led_on'] = {
     /**
      * Turns single led on.
-     * 
+     *
      * @constructs robActions_led_on
      * @this.Blockly.Block
      * @returns immediately
@@ -988,7 +988,7 @@ Blockly.Blocks['robActions_led_on'] = {
 Blockly.Blocks['robActions_led_off'] = {
     /**
      * Turns single led off.
-     * 
+     *
      * @constructs robActions_led_off
      * @this.Blockly.Block
      * @returns immediately
@@ -1044,7 +1044,7 @@ Blockly.Blocks['robActions_led_off'] = {
 Blockly.Blocks['robActions_sensorLight_on'] = {
     /**
      * Turn sensor light on.
-     * 
+     *
      * @constructs robActions_brickLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -1074,7 +1074,7 @@ Blockly.Blocks['robActions_sensorLight_on'] = {
 Blockly.Blocks['robActions_brickLight_off'] = {
     /**
      * Turn bricklight off.
-     * 
+     *
      * @constructs robActions_brickLight_off
      * @this.Blockly.Block
      * @returns immediately
@@ -1094,7 +1094,7 @@ Blockly.Blocks['robActions_brickLight_off'] = {
 Blockly.Blocks['robActions_brickLight_reset'] = {
     /**
      * Reset bricklight. Set the default bricklight: green and blinking.
-     * 
+     *
      * @constructs robActions_brickLight_reset
      * @this.Blockly.Block
      * @returns immediately
@@ -1142,7 +1142,7 @@ Blockly.Blocks['robActions_serial_print'] = {
     /**
      * Prints data to the serial port as human-readable ASCII text. We do not
      * support an additional format parameter so far.
-     * 
+     *
      * @constructs robActions_serial_print
      * @this.Blockly.Block
      * @param {String}
@@ -1197,7 +1197,7 @@ Blockly.Blocks['robActions_write_pin'] = {
 Blockly.Blocks['robActions_pin_set_pull'] = {
     /**
      * Sets the chosen pin to the specified pull.
-     * 
+     *
      * @constructs robActions_pin_set_pull
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -1224,7 +1224,7 @@ Blockly.Blocks['robActions_pin_set_pull'] = {
 Blockly.Blocks['robActions_sendData'] = {
     /**
      * Sets the chosen pin to the specified pull.
-     * 
+     *
      * @constructs robActions_pin_set_pull
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -1404,7 +1404,7 @@ Blockly.Blocks['robActions_plot_clear'] = {
 Blockly.Blocks['robActions_debug'] = {
     /**
      * Debugs data to a system dependent output
-     * 
+     *
      * @constructs robActions_debug
      * @this.Blockly.Block
      * @param {String}
@@ -1424,7 +1424,7 @@ Blockly.Blocks['robActions_debug'] = {
 Blockly.Blocks['robActions_assert'] = {
     /**
      * Asserts data
-     * 
+     *
      * @constructs robActions_assert
      * @this.Blockly.Block
      * @param {String}
@@ -1456,7 +1456,7 @@ Blockly.Blocks['robActions_eval_expr'] = {
     /**
      * Provides a block to create expressions in the robot's programming
      * language
-     * 
+     *
      * @constructs robActions_eval_expr
      * @this.Blockly.Block
      * @param {any}
