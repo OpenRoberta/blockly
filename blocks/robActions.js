@@ -566,7 +566,7 @@ Blockly.Blocks['robActions_display_picture'] = {
     init : function() {
         // this.setHelpUrl(Blockly.Msg.DISPLAY_PICTURE_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
+        var picture = new Blockly.FieldDropdown([[ Blockly.Msg.DISPLAY_PICTURE_SMILEY, 'SMILEY' ], [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED, 'EYESCLOSED' ], [ Blockly.Msg.DISPLAY_PICTURE_FLOWERS, 'FLOWERS' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_TACHO, 'TACHO' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE).appendField(picture, 'PICTURE');
@@ -593,7 +593,7 @@ Blockly.Blocks['robActions_display_picture_new'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
+        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_SMILEY, 'SMILEY' ], [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED, 'EYESCLOSED' ], [ Blockly.Msg.DISPLAY_PICTURE_FLOWERS, 'FLOWERS' ],
                 [ Blockly.Msg.DISPLAY_PICTURE_TACHO, 'TACHO' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE).appendField(picture, 'PICTURE');

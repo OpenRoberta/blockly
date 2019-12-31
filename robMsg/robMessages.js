@@ -199,6 +199,7 @@ Blockly.Msg.DISPLAY_COL = 'in column';
 Blockly.Msg.DISPLAY_ROW = 'in row';
 Blockly.Msg.DISPLAY_CLEAR = 'clear display';
 Blockly.Msg.DISPLAY_PICTURE = 'picture';
+Blockly.Msg.DISPLAY_PICTURE_SMILEY = 'smiley';
 Blockly.Msg.DISPLAY_PICTURE_GLASSES = 'glasses';
 Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN = 'eyes open';
 Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED = 'eyes closed';
