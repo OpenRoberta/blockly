@@ -1451,7 +1451,7 @@ sensorsAll.botnroll = [ sensors.infrared.botnroll, sensors.light.botnroll, senso
         sensors.key.botnroll ];
 sensorsAll.mbot = [ sensors.key.mbot, sensors.ultrasonic.mbot, sensors.infrared.mbot, sensors.light.mbot, sensors.timer.mbot ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
-        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3, sensors.htcolour.ev3 ];
+        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3, sensors.htcolour.ev3, sensors.sound.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
         sensors.timer.nxt ];
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
