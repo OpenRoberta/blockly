@@ -1063,7 +1063,7 @@ Blockly.Msg.BOB3_READNUMBER_TOOLTIP = 'Returns the previously stored number.';
 Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Returns a word from the given list when recognized by NAO';
 
 Blockly.Msg.POPUP_CONFIRM_CONTINUE = '<br><br><i>Press »OK« to discard your work. Press »Cancel« to stay here and save your work first.</i>';
-Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to it"s initial position.';
+Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to its initial position.';
 Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
 Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
 Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first with a click on the + sign at the »start«\u00a0block.';
