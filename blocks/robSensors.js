@@ -95,6 +95,7 @@ Blockly.Blocks['robSensors_compass_calibrate'] = {
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_CALIBRATE).appendField(Blockly.Msg.SENSOR_COMPASS_EV3).appendField(sensorPort, 'SENSORPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.COMPASS_CALIBRATE_TOOLTIP);
     }
 };
