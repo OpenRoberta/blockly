@@ -435,10 +435,10 @@ sensors.gesture.calliope = {
         name : 'DOWN',
         type : 'Boolean'
     }, {
-        name : 'FACE_DOWN',
+        name : 'FACE_UP',
         type : 'Boolean'
     }, {
-        name : 'FACE_UP',
+        name : 'FACE_DOWN',
         type : 'Boolean'
     }, {
         name : 'SHAKE',
