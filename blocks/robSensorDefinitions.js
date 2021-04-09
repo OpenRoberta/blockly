@@ -480,7 +480,18 @@ sensors.gyro.calliope = {
     ports : 'CONFIGURATION',
     portsHidden : true
 };
-sensors.gyro.nao = sensors.gyro.calliope;
+
+sensors.gyro.nao = {
+    title : 'GYRO',
+    modes : [ {
+        name : 'ANGLE',
+        type : 'Number',
+        unit : 'DEGREE',
+        op : 'NUM_REV',
+        value : 90
+    } ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ] ],
+};
 
 sensors.gyro.mbot = {
     title : 'GYRO',
