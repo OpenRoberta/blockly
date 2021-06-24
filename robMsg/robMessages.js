@@ -372,6 +372,7 @@ Blockly.Msg.MENU_USER = 'login';
 Blockly.Msg.MENU_START_BRICK = 'run on »$«';
 Blockly.Msg.MENU_STOP_BRICK = 'stop program on »$«';
 Blockly.Msg.MENU_EXPORT_PROG = 'export program';
+Blockly.Msg.MENU_EXPORT_ALL_PROGS = 'export all programs'
 Blockly.Msg.MENU_IMPORT_PROG = 'import program ...';
 Blockly.Msg.MENU_CHECK = 'check';
 Blockly.Msg.MENU_NEW = 'new';

@@ -190,6 +190,7 @@
     "MENU_STOP_BRICK": "stoppe Program auf »$«",
     "MENU_START_SIM": "öffne/schließe die Simulation",
     "MENU_EXPORT_PROG": "exportiere Programm",
+    "MENU_EXPORT_ALL_PROGS" : "exportiere alle Programme",
     "MENU_IMPORT_PROG": "importiere Programm ...",
     "MENU_MESSAGE_DOWNLOAD": "Dein Programm wurde gerade heruntergeladen",
     "MENU_ZOOM": "zoomen",
