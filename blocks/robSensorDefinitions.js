@@ -73,6 +73,19 @@ sensors.accelerometer.mbot = {
     ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]
 };
 
+sensors.accelerometer.mbot2 = {
+    title : 'ACCELEROMETER',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'g',
+        op : 'NUM_REV',
+        value : 0
+    } ],
+    slots : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ]],
+    ports : 'CONFIGURATION',
+    portsHidden : true
+};
 sensors.accelerometer.nao = {
     title: 'ACCELEROMETER',
     modes: [{
@@ -350,6 +363,24 @@ sensors.encoder.ev3 = {
     standardPort: 'B'
 };
 
+sensors.encoder.mbot2 = {
+    title : 'ENCODER',
+    modes : [ {
+        name : 'DEGREE',
+        type : 'Number',
+        unit : 'DEGREE',
+        op : 'NUM_REV',
+        value : 180
+    }, {
+        name : 'ROTATION',
+        type : 'Number',
+        unit : '',
+        op : 'NUM_REV',
+        value : 2
+    } ],
+    ports : 'CONFIGURATION'
+}
+
 sensors.encoder.nxt = {
     title: 'ENCODER',
     modes: [{
@@ -496,7 +527,19 @@ sensors.gyro.mbot = {
     }],
     ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]
 };
-
+sensors.gyro.mbot2 = {
+    title : 'GYRO',
+    modes : [ {
+        name : 'ANGLE',
+        type : 'Number',
+        unit : 'DEGREE',
+        op : 'NUM_REV',
+        value : 90
+    } ],
+    slots : [ [ 'x', 'X' ], [ 'y', 'Y' ], ['z', 'Z'] ],
+    ports : 'CONFIGURATION',
+    portsHidden : true
+};
 sensors.gyro.ev3 = {
     title: 'GYRO',
     modes: [{
@@ -746,6 +789,34 @@ sensors.irseeker.edison = {
     }]
 };
 
+sensors.joystick = {};
+sensors.joystick.mbot = {
+    title: 'JOYSTICK',
+    ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']],
+    modes: [{
+        name: 'X',
+        type: 'Number'
+    }, {
+        name: 'Y',
+        type: 'Number'
+    }],
+    standardPort: '3'
+};
+
+sensors.joystickKeys= {};
+sensors.joystickKeys.mbot2 = {
+    title: 'JOYSTICK',
+    slots: [['SENSOR_KEY_UP', 'UP'], ['SENSOR_KEY_DOWN', 'DOWN'], ['SENSOR_KEY_LEFT', 'LEFT'], ['SENSOR_KEY_RIGHT', 'RIGHT'], ['SENSOR_KEY_ENTER', 'CENTER'], ['SENSOR_KEY_ANY', 'ANY']],
+
+    modes: [{
+        name: 'PRESSED',
+        type: 'Boolean',
+        question: true
+    }],
+    ports: 'CONFIGURATION',
+    portsHidden: true
+};
+
 sensors.key = {};
 sensors.key.botnroll = {
     title: 'KEY',
@@ -785,6 +856,8 @@ sensors.key.calliope = {
     }],
     ports: 'CONFIGURATION'
 };
+
+sensors.key.mbot2 = sensors.key.calliope;
 sensors.key.microbit = sensors.key.calliope;
 sensors.key.ev3 = {
     title: 'KEY',
@@ -893,6 +966,7 @@ sensors.light.mbot = {
     }],
     ports: [['PORT_INTERNAL', '6'], ['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]
 };
+sensors.light.mbot2 = sensors.light.calliope;
 sensors.light.edison = {
     title: 'LIGHT',
     modes: [{
@@ -1078,6 +1152,35 @@ sensors.pulse.arduino = {
     }],
     ports: 'CONFIGURATION'
 };
+sensors.quadrgb = {};
+sensors.quadrgb.mbot2 = {
+    title: 'QUADRGB',
+    modes: [{
+        name: 'COLOUR',
+        type: 'Colour',
+        value: '#b30006'
+    }, {
+        name: 'AMBIENTLIGHT',
+        type: 'Number',
+        unit: 'PERCENT',
+        value: 50
+    }, {
+        name: 'RGB',
+        type: 'Array_Number',
+    }],
+    slots: [['L1', 'L1'], ['L2', 'L2'], ['R1', 'R1'], ['R2', 'R2']],
+    ports: 'CONFIGURATION'
+};
+
+sensors.line = {};
+sensors.line.mbot2 = {
+    title: 'QUADRGB',
+    modes: [{
+        name: 'LINE',
+        type: 'Number'
+    }],
+    ports: 'CONFIGURATION'
+};
 
 sensors.rssi = {};
 sensors.rssi.calliope = {
@@ -1138,9 +1241,9 @@ sensors.sound.sensebox = {
     }],
     ports: 'CONFIGURATION'
 };
-
 sensors.sound.nxt = sensors.sound.ev3;
 sensors.sound.mbot = sensors.sound.ev3;
+sensors.sound.mbot2 = sensors.sound.calliope;
 sensors.sound.edison = {
     title: 'SOUND',
     modes: [{
@@ -1244,6 +1347,7 @@ sensors.timer.arduino = sensors.timer.ev3;
 sensors.timer.festobionic = sensors.timer.ev3;
 sensors.timer.festobionicflower = sensors.timer.ev3;
 sensors.timer.mbot = sensors.timer.ev3;
+sensors.timer.mbot2 = sensors.timer.ev3;
 sensors.timer.sensebox = sensors.timer.ev3;
 
 sensors.touch = {};
@@ -1327,6 +1431,7 @@ sensors.ultrasonic.calliope = {
     }],
     ports: 'CONFIGURATION'
 };
+sensors.ultrasonic.mbot2 = sensors.ultrasonic.calliope;
 sensors.ultrasonic.ev3 = {
     title: 'ULTRASONIC',
     ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']],
@@ -1398,20 +1503,6 @@ sensors.flame.mbot = {
         type: 'Number'
     }],
     standardPort: '4'
-};
-
-sensors.joystick = {};
-sensors.joystick.mbot = {
-    title: 'JOYSTICK',
-    ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']],
-    modes: [{
-        name: 'X',
-        type: 'Number'
-    }, {
-        name: 'Y',
-        type: 'Number'
-    }],
-    standardPort: '3'
 };
 
 sensors.particle = {};
@@ -1511,6 +1602,8 @@ var sensorsAll = [];
 sensorsAll.botnroll = [sensors.infrared.botnroll, sensors.light.botnroll, sensors.compass.botnroll, sensors.ultrasonic.botnroll, sensors.colour.botnroll,
     sensors.key.botnroll];
 sensorsAll.mbot = [sensors.key.mbot, sensors.ultrasonic.mbot, sensors.infrared.mbot, sensors.light.mbot, sensors.timer.mbot];
+sensorsAll.mbot2 = [sensors.key.mbot2, sensors.ultrasonic.mbot2, sensors.sound.mbot2, sensors.joystickKeys.mbot2, sensors.light.mbot2, sensors.gyro.mbot2, sensors.accelerometer.mbot2,
+        sensors.timer.mbot2, sensors.quadrgb.mbot2, sensors.line.mbot2, sensors.encoder.mbot2];
 sensorsAll.ev3 = [sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
     sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3, sensors.htcolour.ev3, sensors.sound.ev3];
 sensorsAll.nxt = [sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,

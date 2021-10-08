@@ -42,6 +42,7 @@ require('../blocks/variables.js');
 require('../blocks/vorwerkActions.js');
 
 require('../blocks/robActions.js');
+require('../blocks/robActionsNewConfig.js');
 require('../blocks/robConfig.js');
 
 require('../blocks/festobionicActions.js');

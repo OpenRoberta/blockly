@@ -80,7 +80,7 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
 
             var index = -1;
             for (var i = 0; i < dropDown[d].menuGenerator_.length; i++) {
-                if (dropDown[d].menuGenerator_[i][1] === thatBlock.getFieldValue('NAME') || subComponentNames.has(dropDown[d].menuGenerator_[i][1])) {
+                if (dropDown[d].menuGenerator_[i][1] === oldName || subComponentNames.has(dropDown[d].menuGenerator_[i][1])) {
                     index = i;
                     break;
                 }

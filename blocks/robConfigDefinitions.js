@@ -324,6 +324,7 @@ confBlocks.light.calliope = {
     inbuilt: true
 };
 confBlocks.light.microbit = confBlocks.light.calliope;
+confBlocks.light.mbot2 = confBlocks.light.calliope;
 confBlocks.light.festobionicflower = {
     title: 'LIGHT',
     ports: [
@@ -383,6 +384,7 @@ confBlocks.accelerometer.calliope = {
     inbuilt: true
 };
 confBlocks.accelerometer.microbit = confBlocks.accelerometer.calliope;
+confBlocks.accelerometer.mbot2 = confBlocks.accelerometer.calliope;
 confBlocks.accelerometer.sensebox = {
     title: 'ACCELEROMETER',
     sensor: true
@@ -510,7 +512,6 @@ confBlocks.infrared.arduino = {
         ['VCC', '5V']
     ]
 };
-
 confBlocks.temperature = {};
 confBlocks.temperature.arduino = {
     title: 'TEMPERATURE',
@@ -620,6 +621,12 @@ confBlocks.motion.raspberrypi = {
     ]
 };
 
+confBlocks.joystick = {};
+confBlocks.joystick.mbot2 = {
+    title: 'JOYSTICK',
+    sensor: true,
+    inbuilt: true
+};
 
 confBlocks.key = {};
 confBlocks.key.arduino = {
@@ -652,6 +659,7 @@ confBlocks.key.calliope = {
 };
 confBlocks.key.microbit = confBlocks.key.calliope;
 confBlocks.key.sensebox = confBlocks.key.arduino;
+confBlocks.key.mbot2 = confBlocks.key.calliope;
 
 confBlocks.key.wedo = {
     title: 'KEY',
@@ -765,6 +773,11 @@ confBlocks.lcd.arduino = {
         ['RW', 'GND']
     ]
 };
+confBlocks.lcd.mbot2= {
+    title:'LCD',
+    inbuilt: true,
+    sensor: false
+}
 
 confBlocks.oledssd1306i2c = {};
 confBlocks.oledssd1306i2c.arduino = {
@@ -817,6 +830,28 @@ confBlocks.lcdi2c.sensebox = {
         ['YTICK', '10']
     ],
     sensor: false
+};
+
+confBlocks.differentialdrive = {};
+confBlocks.differentialdrive.mbot2 = {
+    title: 'DIFFERENTIALDRIVE',
+    inputs: [
+        ['BRICK_WHEEL_DIAMETER','6.5'],
+        ['BRICK_TRACK_WIDTH','11.5']
+    ],
+    ports: [
+        ['MOTOR_LEFT', 'MOTOR_L'],
+        ['MOTOR_RIGHT', 'MOTOR_R']
+
+    ],
+    pins: function(a) {
+        return [
+            ['EM1', 'EM1'],
+            ['EM2', 'EM2']
+        ];
+    },
+    sensor: false,
+    inbuilt: true
 };
 
 confBlocks.led = {};
@@ -915,6 +950,11 @@ confBlocks.buzzer.calliope = {
     sensor: false,
     inbuilt: true
 };
+confBlocks.buzzer.mbot2 = {
+    title: 'BUZZER',
+    sensor: false,
+    inbuilt: true
+};
 confBlocks.buzzer.microbit = {
     title: 'BUZZER',
     fixedPorts: [
@@ -964,6 +1004,7 @@ confBlocks.sound.calliope = {
     sensor: true,
     inbuilt: true
 };
+confBlocks.sound.mbot2 = confBlocks.sound.calliope;
 confBlocks.sound.sensebox = {
     title: 'SOUND',
     ports: [
@@ -1049,6 +1090,14 @@ confBlocks.rgbled.sensebox = {
         ['+', '5V'],
         ['GND', 'GND']
     ]
+};
+confBlocks.rgbled.mbot2 = {
+    title: 'RGBLED',
+    ports: [
+        ['pin', 'PIN1']
+    ],
+    sensor: false,
+    inbuilt: true
 };
 confBlocks.rgbled.raspberrypi = {
     title: 'RGBLED',
@@ -1184,6 +1233,7 @@ confBlocks.gyro.sensebox = {
     title: 'GYRO',
     sensor: true
 };
+confBlocks.gyro.mbot2 = confBlocks.gyro.calliope;
 
 confBlocks.lsm9ds1 = {}
 confBlocks.lsm9ds1.nano33ble = {
@@ -1249,6 +1299,20 @@ confBlocks.motor.raspberrypi = {
         ['GND', 'GND'],
         ['VCC', '5V']
     ]
+};
+
+confBlocks.encoder = {};
+confBlocks.encoder.mbot2 = {
+    title: 'ENCODER',
+    action: true,
+    ports: [
+        ['port', 'PORT1']
+    ],
+    pins: function(a) {
+        return [
+            ['EM1', 'EM1'],
+            ['EM2', 'EM2']
+        ];    },
 };
 
 confBlocks.digitalout = {};
