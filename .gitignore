@@ -8,3 +8,4 @@ npm-debug.log
 /nbproject/private/
 .vscode/
 **/package-lock.json
+.idea/*

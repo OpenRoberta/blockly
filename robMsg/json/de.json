@@ -182,6 +182,7 @@
     "MENU_TOOLBOX_BEGINNER": "NEPO-Blöcke Anfänger",
     "MENU_TOOLBOX_EXPERT": "NEPO-Blöcke Experte",
     "MENU_RIGHT_TUTORIAL_TOOLTIP": "Öffne/schließe die Ansicht des Tutorials.",
+    "MENU_RIGHT_INFO_TOOLTIP": "Öffne/schließe die Ansicht der Programmdokumentation.",
     "MENU_TUTORIAL": "Tutorials",
     "MENU_TUTORIAL_TOOLTIP": "Tutorials",
     "MENU_UPDATE_FIRMWARE": "Firmware aktualisieren",
