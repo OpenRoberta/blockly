@@ -41,6 +41,7 @@
     "CONFIGURATION_ERROR_SENSOR_WRONG": "In der Roboterkonfiguration ist ein anderer Sensor mit diesem Sensorport verbunden!",
     "CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED": "Anderer Stromverbraucher unterstützt diese Art von Block nicht!",
     "CONFIGURATION_ERROR_OVERLAPPING_PORTS": "Eine andere Komponente benutzt bereits den gleichen Port!",
+    "CONFIGURATION_ERROR_MISSING_PIN": "Der Pin dieser Komponente existiert nicht!",
     "CONFIGURATION_ERROR_NO_BUILTIN_RGBLED": "Dieses Board hat keine interne RGB LED!",
     "CONNECTION_TO_ROBOT": "zu Roboter",
     "CONNECTION_FROM_ROBOT": "von Roboter",
