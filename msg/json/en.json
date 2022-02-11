@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2022-01-13 06:31:45.137029",
+		"lastupdated": "2022-02-11 16:12:28.242709",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1777,5 +1777,20 @@
 	"POPUP_REPLACE": "Replace",
 	"POPUP_BACKGROUND_REPLACE": "A program with the same name already exists. <br> Would you like to replace it?",
 	"POPUP_BACKGROUND_REPLACE_CONFIGURATION": "A configuration with the same name already exists. <br> Would you like to replace it?",
-	"ORA_CONFIGURATION_SAVE_AS_ERROR_CONFIGURATION_EXISTS": "This configuration already exists."
+	"ORA_CONFIGURATION_SAVE_AS_ERROR_CONFIGURATION_EXISTS": "This configuration already exists.",
+	"DCMOTOR": "DC Motor",
+	"DCMOTOR_BACKWARD": "backward",
+	"DCMOTOR_BOARD": "DC Motor board",
+	"DCMOTOR_FORWARD": "forward",
+	"DCMOTOR_NUMERIC": "numeric",
+	"DCMOTOR_M1": "motor port 1",
+	"DCMOTOR_M2": "motor port 2",
+	"DCMOTOR_M3": "motor port 3",
+	"DCMOTOR_M4": "motor port 4",
+	"DCMOTOR_MOTOR": "motor port",
+	"DCMOTOR_SPEED": "speed",
+	"DCMOTOR_STOP": "stop",
+	"DCMOTOR_TOOLTIP": "DC Motor extention",
+	"I2CADDRESS": "I2C address",
+	"PERCENT": "%"
 }

@@ -1396,6 +1396,19 @@
     "MODE_VOCEQUIVALENT": "Atemluft VOC Äquivalent",
 	"NN_IO_NEURON_NAMES_INVALID": "Namen der Input/Output-Neuronem müssen unterschiedlich und gültig sein (mit Buchstaben beginnen, keine Leerzeichen, ...)",
 	"NN_STEP_TOOLTIP": "hole die Werte für die Input-Neuronen, führe einen Schritt im neuronalen Netzwerk aus und schreibe die Werte der Output-Neuronen in die Variablen",
-	"NN_STEP": "ein NN Schritt"
-
+	"NN_STEP": "ein NN Schritt",
+	"DCMOTOR": "DC Motor",
+	"DCMOTOR_BACKWARD": "rückwärts",
+	"DCMOTOR_BOARD": "DC Motor Platine",
+	"DCMOTOR_FORWARD": "vorwärts",
+	"DCMOTOR_NUMERIC": "numerisch",
+	"DCMOTOR_M1": "Motoranschluss 1",
+	"DCMOTOR_M2": "Motoranschluss 2",
+	"DCMOTOR_M3": "Motoranschluss 3",
+	"DCMOTOR_M4": "Motoranschluss 4",	
+	"DCMOTOR_MOTOR": "Motoranschluss",
+	"DCMOTOR_SPEED": "Tempo",	
+	"DCMOTOR_STOP": "stop",
+	"DCMOTOR_TOOLTIP": "DC Motor Erweiterung",
+	"I2CADDRESS": "I2C Adresse"
 }

@@ -1487,6 +1487,23 @@ confBlocks.environmental.sensebox = {
     sensor: true
 };
 
+confBlocks.dcmotor = {}
+confBlocks.dcmotor.calliope = {
+    title: 'DCMOTOR',
+    ports: [
+        ['pin', 'I2CPLUG']
+    ],
+    pins: function(a) {
+        return [
+            ['A0', '4']
+        ];
+    },
+    inputs: [
+        ['I2CADDRESS', '0x60']
+    ],
+    sensor: false
+};
+
 // all arduino conf blocks are inherited by nano33ble
 for (var confBlock in confBlocks) {
     var confObj = confBlocks[confBlock];
