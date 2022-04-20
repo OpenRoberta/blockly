@@ -28,6 +28,9 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
     init: function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         var motorport = new Blockly.FieldDropdown([['A', 'A'], ['B', 'B'], ['C', 'C'], ['D', 'D']]);
+        if (this.workspace.device === "orb") {
+            motorport = getConfigPorts("motor");
+        }
         if (this.workspace.device === 'botnroll') {
             motorport = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_LEFT, 'B'], [Blockly.Msg.MOTOR_RIGHT, 'C']]);
         }
@@ -64,7 +67,7 @@ Blockly.Blocks['robSensors_timer_reset'] = {
     init: function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         var sensorNum;
-        if (this.workspace.device === 'nxt' || this.workspace.device === 'botnroll' || this.workspace.device === 'bob3' || this.workspace.device === 'wedo' || this.workspace.device === 'rob3rta') {
+        if (this.workspace.device === 'nxt' || this.workspace.device === 'botnroll' || this.workspace.device === 'bob3' || this.workspace.device === 'wedo' || this.workspace.device === 'rob3rta' || this.workspace.device === 'orb') {
             sensorNum = new Blockly.FieldDropdown([[Blockly.Msg.SENSOR_TIMER + ' 1', '1']]);
         } else {
             sensorNum = new Blockly.FieldDropdown([[Blockly.Msg.SENSOR_TIMER + ' 1', '1'], [Blockly.Msg.SENSOR_TIMER + ' 2', '2'],
