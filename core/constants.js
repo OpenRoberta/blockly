@@ -358,6 +358,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
         });
     case 'ev3':
     case 'nxt':
+    case 'orb':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
                 [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_NUMBER, 'Array_Number' ],
@@ -439,13 +440,14 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
         });
     case 'ev3':
     case 'nxt':
+    case 'orb':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
                 [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
     case 'wedo':
-        throw "no lists supported for wedo!";
+        throw "no lists supported for " + device + "!";
     case 'edison':
     default:
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {

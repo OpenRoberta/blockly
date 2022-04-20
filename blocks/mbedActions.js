@@ -468,7 +468,7 @@ Blockly.Blocks['mbedActions_play_note'] = {
         var duration = new Blockly.FieldDropdown([ [ Blockly.Msg.PLAY_WHOLE, '2000' ], [ Blockly.Msg.PLAY_HALF, '1000' ], [ Blockly.Msg.PLAY_QUARTER, '500' ],
                 [ Blockly.Msg.PLAY_EIGHTH, '250' ], [ Blockly.Msg.PLAY_SIXTEENTH, '125' ] ]);
         
-        if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit' || this.workspace.device === 'wedo') {
+        if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit' || this.workspace.device === 'wedo' || this.workspace.device === 'orb') {
             this.dropDownPorts = getConfigPorts('buzzer');
             this.dependConfig = {
                 'type' : 'buzzer',
