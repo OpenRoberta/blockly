@@ -1785,40 +1785,77 @@ Blockly.Blocks['robActions_aifes_setupneuralnet'] = {
 Blockly.Blocks['robActions_aifes_initrawdata'] = {
     init: function() {
         this.setColour(Blockly.CAT_NN_RGB);
-        appendHeader(this, 'NN_INIT_RAW_DATA');
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_INIT_RAW_DATA);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_INIT_CLASSIFY_DATA_TOOLTIP);
     }
 };
+
+Blockly.Blocks['robActions_aifes_initclassifydata'] = {
+    init: function() {
+        this.setColour(Blockly.CAT_NN_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_INIT_CLASSIFY_DATA);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_INIT_RAW_DATA_TOOLTIP);
+    }
+};
+
 
 Blockly.Blocks['robActions_aifes_addrawdata'] = {
     init: function() {
         this.setColour(Blockly.CAT_NN_RGB);
-        appendHeader(this, 'NN_ADD_RAW_DATA');
-        appendFields(this, ['NN_RAW_DATA']);
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_ADD_RAW_DATA);
+        this.appendValueInput("NN_RAW_DATA");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_ADD_RAW_DATA_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robActions_aifes_addclassifydata'] = {
+    init: function() {
+        this.setColour(Blockly.CAT_NN_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_ADD_CLASSIFY_DATA);
+        this.appendValueInput("NN_CLASSIFY_DATA");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_ADD_CLASSIFY_DATA_TOOLTIP);
     }
 };
 
 Blockly.Blocks['robActions_aifes_addtrainingsdata'] = {
     init: function() {
         this.setColour(Blockly.CAT_NN_RGB);
-        appendHeader(this, 'NN_ADD_TRAININGS_DATA');
-        appendFields(this, ['NN_CLASS_NUMBER']);
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_ADD_TARGET_DATA);
+        this.appendValueInput("NN_CLASS_NUMBER");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_ADD_TARGET_DATA_TOOLTIP);
     }
 };
 
 Blockly.Blocks['robActions_aifes_train'] = {
     init: function() {
         this.setColour(Blockly.CAT_NN_RGB);
-        appendHeader(this, 'NN_TRAIN');
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_TRAIN);
+        this.setOutput(true, 'Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_TRAIN_TOOLTIP);
     }
 };
 
 Blockly.Blocks['robActions_aifes_classify'] = {
     init: function() {
         this.setColour(Blockly.CAT_NN_RGB);
-        appendHeader(this, 'NN_CLASSIFY');
-        appendFields(this, ['NN_CLASS_PROBABILITIES']);
-    }, onchange: function(evt) {
-        mustBeVariable(this, ['NN_CLASS_PROBABILITIES']);
+        this.appendDummyInput().appendField(Blockly.Msg.AIFES_CLASSIFY);
+        this.appendValueInput("NN_CLASS_PROBABILITIES");
+        this.setOutput(true, 'Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.AIFES_CLASSIFY_TOOLTIP);
     }
 };
 

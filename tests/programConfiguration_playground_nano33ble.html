@@ -149,37 +149,37 @@
 </script>
 
 <style>
-html, body {
-	height: 100%;
-}
+    html, body {
+        height: 100%;
+    }
 
-body {
-	background-color: #fff;
-	font-family: sans-serif;
-}
+    body {
+        background-color: #fff;
+        font-family: sans-serif;
+    }
 
-h1 {
-	font-weight: normal;
-	font-size: 140%;
-}
+    h1 {
+        font-weight: normal;
+        font-size: 140%;
+    }
 
-#octaweb {
-	width: 100%;
-}
+    #octaweb {
+        width: 100%;
+    }
 
-#octaweb th {
-	padding-top: 1em;
-	width: 50%;
-}
+    #octaweb th {
+        padding-top: 1em;
+        width: 50%;
+    }
 
-#octaweb td {
-	width: 50%;
-}
+    #octaweb td {
+        width: 50%;
+    }
 
-#octaweb td>div {
-	height: 480px;
-	width: 100%;
-}
+    #octaweb td>div {
+        height: 480px;
+        width: 100%;
+    }
 </style>
 </head>
 <body onload="start()">
@@ -357,11 +357,12 @@ h1 {
             <block type="robSensors_hts221_temperature_getDataAvailableSample"></block>
             <block type="robSensors_hts221_humidity_getDataAvailableSample"></block>
         </category>
-        <category name="TOOLBOX_NEURAL_NETWORK" svg="true">
-            <block type="robActions_aifes_setupneuralnet"></block>
+        <category name="AIFES" svg="true">
             <block type="robActions_aifes_initrawdata"></block>
             <block type="robActions_aifes_addrawdata"></block>
             <block type="robActions_aifes_addtrainingsdata"></block>
+            <block type="robActions_aifes_addclassifydata"></block>
+            <block type="robActions_aifes_initclassifydata"></block>
             <block type="robActions_aifes_train"></block>
             <block type="robActions_aifes_classify"></block>
         </category>
@@ -566,7 +567,7 @@ h1 {
         </category>
         <category name="TOOLBOX_ACTION" svg="true">
             <block type="robConf_lcdi2c"></block>
-            <block type="robConf_oledssd1306i2c"></block>
+            <block type="robConf_aifes"></block>
         </category>
     </toolbox_set>
 

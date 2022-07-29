@@ -1805,6 +1805,49 @@ confBlocks.environmental.sensebox = {
     sensor: true
 };
 
+confBlocks.aifes = {}
+confBlocks.aifes.nano33ble = {
+    title: 'AIFES',
+    sensor: false,
+    inbuilt: true,
+    inputs: [
+        ['AIFES_NUMBER_INPUT_NEURONS', 'INPUTS'],
+        ['AIFES_NUMBER_HIDDENLAYERS_NEURONS', '2'],
+        ['AIFES_NUMBER_OUTPUT_NEURONS', '1'],
+        ['AIFES_FNN_LAYERS','3'],
+        ['AIFES_LEARNINGRATE', '0.5'],
+        ['AIFES_MOMENTUM', '0.0'],
+        ['AIFES_DATASET', '1'],
+        ['AIFES_EPOCHS', '1000'],
+        ['AIFES_MAX_WEIGHT', '2'],
+        ['AIFES_MIN_WEIGHT', '-2']
+    ],
+    dropdowns: [
+        ['AIFES_LEARNINGFUNCTION', [
+            ['sigmoid', 'sigmoid'],
+            ['relu', 'relu'],
+            ['softmax', 'softmax'],
+            ['leaky relu', 'leaky relu'],
+            ['elu', 'elu'],
+            ['tanh', 'tanh'],
+            ['softsign', 'softsign'],
+            ['linear', 'linear']
+        ]],
+        ['AIFES_OPTIMIER', [
+            ['adam', 'adam'],
+            ['sgd', 'sgd']
+        ]],
+        ['AIFES_LOSS', [
+            ['E_mse', 'E_mse'],
+            ['E_crossentropy', 'E_crossentropy']
+        ]],
+        ['AIFES_WEIGHT', [
+            ['init_uniform', 'init_uniform'],
+            ['glorot_uniform', 'glorot_uniform']
+        ]]
+    ],
+};
+
 // all arduino conf blocks are inherited by nano33ble
 for (var confBlock in confBlocks) {
     var confObj = confBlocks[confBlock];
