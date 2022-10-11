@@ -483,7 +483,7 @@ Blockly.Blocks['logic_null'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.LOGIC_NULL,
-      "output": null,
+      "output": ["Connection", "String", "Array_Boolean", "Array_Colour", "Array_Connection", "Array_Number", "Array_String"],
       "colour": Blockly.CAT_LOGIC_RGB,
       "tooltip": Blockly.Msg.LOGIC_NULL_TOOLTIP,
       "helpUrl": Blockly.Msg.LOGIC_NULL_HELPURL

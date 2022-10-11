@@ -966,8 +966,8 @@ Blockly.BlockSvg.prototype.renderDrawLeft_ =
 //                          ',1 V 0.5 H 1');
 //    }
    } else {
-            var type = this.outputConnection.check_[0];
-            var color = Blockly.DATA_TYPE[type];
+            var type = this.outputConnection.check_.length > 1 ? null : this.outputConnection.check_[0];
+            var color = type ? Blockly.DATA_TYPE[type] : this.colour_;
             this.svgPathOutput_ = Blockly.createSvgElement('path', {
                 'd' : ('M 0,' + Blockly.BlockSvg.TAB_HEIGHT + Blockly.BlockSvg.TAB_PATH_DOWN_OUTER + 'z'),
                 'fill' : color,
