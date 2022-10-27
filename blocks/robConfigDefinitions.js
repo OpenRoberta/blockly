@@ -895,10 +895,12 @@ confBlocks.differentialdrive.mbot2 = {
 };
 confBlocks.omnidrive = {};
 confBlocks.omnidrive.robotino = {
-    inputs: [
-        ['WEIGHT_KG', '20']
-    ],
     title: 'OMNIDRIVE',
+    fixedPorts: [
+        ['M1', 'M1'],
+        ['M2', 'M2'],
+        ['M3', 'M3']
+    ],
     sensor: false,
     inbuilt: true
 };
@@ -1366,7 +1368,16 @@ confBlocks.encoder.mbot2 = {
 };
 confBlocks.encoder.robotino = {
     title: 'ENCODER',
-    action: true
+    action: true,
+    ports: [
+        ['port', 'PORT1']
+    ],
+    pins: function(a) {
+        return [
+            ['M1', 'M1']
+        ];
+    }
+
 };
 
 confBlocks.digitalout = {};
