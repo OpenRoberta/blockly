@@ -295,6 +295,28 @@ Blockly.Blocks['robSensors_get_markerinf'] = {
     }
 };
 
+Blockly.Blocks['robSensors_set_marker_threshold'] = {
+    /**
+     * Set Colour threshold of the marker sensor.
+     */
+    init: function() {
+        this.jsonInit({
+            'message0': Blockly.Msg.SET + ' ' + Blockly.Msg.SENSOR_DETECTMARK + ' ' + Blockly.Msg.COLOUR_THRESHOLD + '%1',
+            'args0': [
+                {
+                    'type': 'input_value',
+                    'name': 'VALUE',
+                    'check': 'Number'
+                }
+            ],
+            'nextStatement': true,
+            'previousStatement': true,
+            'colour': Blockly.CAT_SENSOR_RGB,
+            'tooltip': Blockly.Msg.SENSOR_MARKER_THRESHOLD_TOOLIP
+        });
+    }
+};
+
 Blockly.Blocks['robSensors_get_ColourBlob'] = {
     /**
      * Get the information about a ColourBlob in the given colour-range.
