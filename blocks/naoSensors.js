@@ -39,8 +39,8 @@ Blockly.Blocks['naoSensors_getMarkInformation'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.GET).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.MODE_INFO, '' ] ]), 'MODE').appendField(' ', 'UNIT').appendField(Blockly.Msg.SENSOR_DETECTMARK
-                + ' ' + Blockly.Msg.ABOUT);
+        this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.GET).appendField(new Blockly.FieldDropdown([[Blockly.Msg.MODE_INFO, '']]), 'MODE').appendField(' ', 'UNIT').appendField(Blockly.Msg.SENSOR_DETECTMARK_NAO
+            + ' ' + Blockly.Msg.ABOUT);
         this.setOutput(true, 'Array_Number');
         this.setTooltip(Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP);
     }

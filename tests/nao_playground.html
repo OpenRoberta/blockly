@@ -68,32 +68,37 @@ var toolbox;
 function start() {
   toolbox = document.getElementById('toolboxBeginner');
   workspace = Blockly.inject('blocklyDiv',
-          {comments: true,
-           disable: true,
-           collapse: true,
-           grid:
-             {spacing: 25,
-              length: 3,
-              colour: '#ccc',
-              snap: true},
-           maxBlocks: Infinity,
-           media: '../media/',
-           readOnly: false,
-           rtl: rtl,
-           scrollbars: true,
-           toolbox: toolbox,
-           zoom:
-             {controls: true,
-              wheel: true,
-              startScale: 1.0,
-              maxScale: 4,
-              minScale: .25,
-              scaleSpeed: 1.1},
-           checkInTask:['start', '_def', 'event', '-Brick' ],
-           variableDeclaration: true,
-           robControls: true
+          {
+              comments: true,
+              disable: true,
+              collapse: true,
+              grid:
+                  {
+                      spacing: 25,
+                      length: 3,
+                      colour: '#ccc',
+                      snap: true
+                  },
+              maxBlocks: Infinity,
+              media: '../media/',
+              readOnly: false,
+              rtl: rtl,
+              scrollbars: true,
+              toolbox: toolbox,
+              zoom:
+                  {
+                      controls: true,
+                      wheel: true,
+                      startScale: 1.0,
+                      maxScale: 4,
+                      minScale: .25,
+                      scaleSpeed: 1.1
+                  },
+              checkInTask: ['start', '_def', 'event', '-Brick'],
+              variableDeclaration: true,
+              robControls: true
           });
-  workspace.setDevice('nao');
+    workspace.setDevice({ group: device, robot: device });
   // Restore previously displayed text.
   if (sessionStorage) {
     var text = sessionStorage.getItem('textarea');
@@ -616,30 +621,30 @@ h1 {
             </block>
         </category>
     </category>
-    <category name="TOOLBOX_SENSOR" svg="true">
-        <block type="robSensors_touch_getSample"></block>
-        <block type="robSensors_ultrasonic_getSample"></block>
-        <block type="robSensors_detectmark_getSample"></block>
-        <block type="naoSensors_getMarkInformation">
-            <value name="VALUE">
-                <block type="math_number">
-                    <field name="NUM">84</field>
-                </block>
-            </value>
-            </block>
-        <block type="robSensors_detectface_getSample"></block>
-         <block type="naoSensors_getFaceInformation">
-            <value name="VALUE">
-                <block type="text">
-                    <field name="TEXT">Roberta</field>
+    <category name='TOOLBOX_SENSOR' svg='true'>
+        <block type='robSensors_touch_getSample' />
+        <block type='robSensors_ultrasonic_getSample' />
+        <block type='robSensors_detectmark_getSample' />
+        <block type='naoSensors_getMarkInformation'>
+            <value name='VALUE'>
+                <block type='math_number'>
+                    <field name='NUM'>84</field>
                 </block>
             </value>
         </block>
-        <block type="naoSensors_recognizeWord"></block>
-        <block type="robSensors_gyro_getSample"></block>
-        <block type="robSensors_accelerometer_getSample"></block>
-        <block type="robSensors_fsr_getSample"></block>
-        <block type="robSensors_electriccurrent_getSample"></block>
+        <block type='robSensors_detectface_getSample' />
+        <block type='naoSensors_getFaceInformation'>
+            <value name='VALUE'>
+                <block type='text'>
+                    <field name='TEXT'>Roberta</field>
+                </block>
+            </value>
+        </block>
+        <block type='naoSensors_recognizeWord' />
+        <block type='robSensors_gyro_getSample' />
+        <block type='robSensors_accelerometer_getSample' />
+        <block type='robSensors_fsr_getSample' />
+        <block type='robSensors_electriccurrent_getSample' />
     </category>
     <category name="TOOLBOX_CONTROL" svg="true">
         <category name="TOOLBOX_DECISION" svg="true">
