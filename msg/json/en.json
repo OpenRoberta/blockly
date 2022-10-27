@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2022-10-27 17:13:44.413987",
+		"lastupdated": "2022-10-27 18:14:50.298105",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -531,6 +531,8 @@
 	"BRICKLIGHT_RED": "red",
 	"BRICKLIGHT_BLUE": "blue",
 	"COLOUR_RGB_WHITE": "white",
+	"COLOUR_SEGMENT": "colour segment",
+	"COLOUR_HSV_RANGE": "HSV range",
 	"WAIT": "wait ms",
 	"WAIT_OR": "or wait for",
 	"SENSOR_ULTRASONIC": "ultrasonic sensor",
@@ -1550,7 +1552,7 @@
 	"SENSOR_DETECTFACE_GETSAMPLE_TOOLTIP": "Detect a face previously learned and saved.",
 	"SENSOR_DETECTMARK": "mark sensor",
 	"SENSOR_DETECTMARK_NAO": "NAO Mark sensor",
-	"SENSOR_DETECTMARK_NAO_GETSAMPLE_TOOLTIP": "Returns one or an array of IDs (number) of the last detected NAO Mark(s). If no marks are detected, -1 or an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.",
+	"SENSOR_DETECTMARK_GETSAMPLE_TOOLTIP_NAO": "Returns one or an array of IDs (number) of the last detected NAO Mark(s). If no marks are detected, -1 or an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.",
 	"SENSOR_ELECTRICCURRENT": "current sensor",
 	"SENSOR_ELECTRICCURRENT_GETSAMPLE_TOOLTIP": "Get the electric current from the motorboard in the selected joint.",
 	"SLOT_YAW": "yaw",

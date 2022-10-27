@@ -877,6 +877,8 @@
   "PITCH": "Neigung",
   "ROLL": "Drehung",
   "COLOUR_RGB_WHITE": "weiß",
+  "COLOUR_SEGMENT": "Farbfläche",
+  "COLOUR_HSV_RANGE": "HSV-Bereich",
   "LIST_BACK_TOOLTIP": "Zurück zur vorherigen Auswahl.",
   "PROGLIST_DELETE_ALL_TOOLTIP": "Klicke hier um alle ausgewählten Programme zu löschen.",
   "PROGLIST_DELETE_TOOLTIP": "Klicke hier um dein Programm zu löschen.",
