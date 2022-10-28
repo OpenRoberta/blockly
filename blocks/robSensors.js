@@ -280,8 +280,15 @@ Blockly.Blocks['robSensors_get_markerinf'] = {
      */
     init: function() {
         this.jsonInit({
-            'message0': Blockly.Msg.GET + ' ' + Blockly.Msg.MODE_INFO + ' ' + Blockly.Msg.SENSOR_DETECTMARK + ' ' + Blockly.Msg.ABOUT + '%1',
+            'message0': Blockly.Msg.GET + '%1' + Blockly.Msg.SENSOR_DETECTMARK + ' ' + Blockly.Msg.ABOUT + '%2',
             'args0': [
+                {
+                    'type': 'field_dropdown',
+                    'name': 'MODE',
+                    'options': [
+                        [Blockly.Msg.MODE_INFO, 'INFO']
+                    ]
+                },
                 {
                     'type': 'input_value',
                     'name': 'VALUE',
@@ -317,15 +324,24 @@ Blockly.Blocks['robSensors_set_marker_threshold'] = {
     }
 };
 
-Blockly.Blocks['robSensors_get_ColourBlob'] = {
+Blockly.Blocks['robSensors_get_colourBlob'] = {
     /**
      * Get the information about a ColourBlob in the given colour-range.
      */
     init: function() {
         this.jsonInit({
-            'message0': Blockly.Msg.GET + ' ' + Blockly.Msg.MODE_INFO + ' ' + Blockly.Msg.ABOUT + ' ' + Blockly.Msg.COLOUR_SEGMENT + ' '
+            'message0': Blockly.Msg.GET + '%1' + Blockly.Msg.ABOUT + ' ' + Blockly.Msg.COLOUR_SEGMENT + ' '
                 + ' ' + Blockly.Msg.COLOUR_HSV_RANGE,
             'message1': 'Hue min %1 Hue max %2 Sat min %3 Sat max %4 Val min %5 Val max %6',
+            'args0': [
+                {
+                    'type': 'field_dropdown',
+                    'name': 'MODE',
+                    'options': [
+                        [Blockly.Msg.MODE_INFO, 'INFO']
+                    ]
+                }
+            ],
             'args1': [
                 {
                     'type': 'input_value',
