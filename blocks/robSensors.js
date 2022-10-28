@@ -345,38 +345,38 @@ Blockly.Blocks['robSensors_get_colourBlob'] = {
             'args1': [
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MIN_HUE',
                     'check': 'Number',
                     'align': 'RIGHT'
                 },
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MAX_HUE',
                     'check': 'Number',
                     'align': 'RIGHT'
 
                 },
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MIN_SAT',
                     'check': 'Number',
                     'align': 'RIGHT'
                 },
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MAX_SAT',
                     'check': 'Number',
                     'align': 'RIGHT'
                 },
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MIN_VAL',
                     'check': 'Number',
                     'align': 'RIGHT'
                 },
                 {
                     'type': 'input_value',
-                    'name': 'VALUE',
+                    'name': 'MAX_VAL',
                     'check': 'Number',
                     'align': 'RIGHT'
                 }

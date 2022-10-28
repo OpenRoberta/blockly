@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "voice pitch";  // untranslated
 Blockly.Msg.VOICE_SPEED = "voice speed";  // untranslated
+Blockly.Msg.WAIT = "čekej (ms)";
 Blockly.Msg.WAIT_FOR_TOOLTIP = "Čeká na hodnoty ze senzorů";
 Blockly.Msg.WAIT_OR = "nebo čekej na";
 Blockly.Msg.WAIT_TIME_TOOLTIP = "Čeká po určitý čas (v ms).";

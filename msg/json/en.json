@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2022-10-28 13:48:21.846659",
+		"lastupdated": "2022-11-02 13:40:58.650528",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -534,6 +534,7 @@
 	"COLOUR_SEGMENT": "colour segment",
 	"COLOUR_HSV_RANGE": "HSV range",
 	"COLOUR_THRESHOLD": "colour threshold",
+	"WAIT": "wait ms",
 	"WAIT_OR": "or wait for",
 	"SENSOR_ULTRASONIC": "ultrasonic sensor",
 	"SENSOR_ULTRASONIC_ARDUINO": "ultrasonic sensor HC-SR04",

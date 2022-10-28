@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "voice pitch";  // untranslated
 Blockly.Msg.VOICE_SPEED = "voice speed";  // untranslated
+Blockly.Msg.WAIT = "wait ms";  // untranslated
 Blockly.Msg.WAIT_FOR_TOOLTIP = "Waits for sensor values.";  // untranslated
 Blockly.Msg.WAIT_OR = "or wait for";  // untranslated
 Blockly.Msg.WAIT_TIME_TOOLTIP = "Waits for a certain time in milliseconds.";  // untranslated

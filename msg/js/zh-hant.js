@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "語音音調";
 Blockly.Msg.VOICE_SPEED = "語音速度";
+Blockly.Msg.WAIT = "等待 毫秒";
 Blockly.Msg.WAIT_FOR_TOOLTIP = "等待感應器值。";
 Blockly.Msg.WAIT_OR = "或等待";
 Blockly.Msg.WAIT_TIME_TOOLTIP = "等待特定時間 (以毫秒為單位)。";

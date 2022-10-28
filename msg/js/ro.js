@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "tonalitatea vocii";
 Blockly.Msg.VOICE_SPEED = "viteza vocii";
+Blockly.Msg.WAIT = "Asteapta ms";
 Blockly.Msg.WAIT_FOR_TOOLTIP = "Asteapta pentru valoarea senzorilor";
 Blockly.Msg.WAIT_OR = "sau asteapta pentru";
 Blockly.Msg.WAIT_TIME_TOOLTIP = "Asteapta un anumit numar de milisecunde";

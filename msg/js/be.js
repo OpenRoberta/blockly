@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "вышыня голаса";
 Blockly.Msg.VOICE_SPEED = "хуткасць вымаўлення";
+Blockly.Msg.WAIT = "чакаць, мс";
 Blockly.Msg.WAIT_FOR_TOOLTIP = "Чакае пэўнага паказання датчыка.";
 Blockly.Msg.WAIT_OR = "альбо чакаць да";
 Blockly.Msg.WAIT_TIME_TOOLTIP = "Чакае пэўны час у мілісекундах.";

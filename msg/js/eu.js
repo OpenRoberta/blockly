@@ -1887,6 +1887,7 @@ Blockly.Msg.VARIABLE_Y = "store Y [";  // untranslated
 Blockly.Msg.VARIABLE_Z = "store Z [";  // untranslated
 Blockly.Msg.VOICE_PITCH = "ahotsaren tonua";
 Blockly.Msg.VOICE_SPEED = "ahotsaren abiadura";
+Blockly.Msg.WAIT = "itxaron ms";
 Blockly.Msg.WAIT_FOR_TOOLTIP = "Sentsoreen balioei itxaroten die.";
 Blockly.Msg.WAIT_OR = "edo itxaron honi";
 Blockly.Msg.WAIT_TIME_TOOLTIP = "Denbora konkretu bat itxaroten du milisegundutan.";
