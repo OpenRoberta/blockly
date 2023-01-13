@@ -785,6 +785,8 @@ sensors.quadrgb.mbot2 = {
     title: 'QUADRGB', modes: [{
         name: 'COLOUR', type: 'Colour', value: '#b30006'
     }, {
+        name: 'LIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
         name: 'AMBIENTLIGHT', type: 'Number', unit: 'PERCENT', value: 50
     }, {
         name: 'RGB', type: 'Array_Number'
