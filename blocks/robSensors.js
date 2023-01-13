@@ -430,6 +430,77 @@ Blockly.Blocks['robSensors_get_colourBlob'] = {
     }
 };
 
+Blockly.Blocks['communication_send_message'] = {
+    /**
+     * Receive a broadcast message for Mbot2
+     *
+     * @constructs robSensors_receive_message
+     * @this.Blockly.Block
+     * @param {String}
+     *            CHANNEL
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        this.jsonInit({
+            'message0': Blockly.Msg.CONNECTION_SEND_DATA,
+            'message1': Blockly.Msg.CONNECTION_CHANNEL + ' %1',
+            'message2': Blockly.Msg.CONNECTION_MESSAGE + ' %1',
+            'args1': [
+                {
+                    'type': 'input_value',
+                    'name': 'CHANNEL',
+                    'check': 'String',
+                    'align': 'RIGHT'
+
+                }
+            ],
+            'args2': [
+                {
+                    'type': 'input_value',
+                    'name': 'MESSAGE',
+                    'check': ['Number', 'String', 'Boolean'],
+                    'align': 'RIGHT'
+                }
+            ],
+            'previousStatement': true,
+            'nextStatement': true,
+            'colour': Blockly.CAT_COMMUNICATION_RGB,
+            'tooltip': Blockly.Msg.CONNECTION_CHANNEL_SEND_TOOLTIP
+        });
+    }
+};
+
+Blockly.Blocks['communication_receive_message'] = {
+    /**
+     * send a broadcast message for Mbot2
+     *
+     * @constructs communication_receive_message
+     * @this.Blockly.Block
+     * @param {String}
+     *            CHANNEL
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        this.jsonInit({
+            'message0': Blockly.Msg.CONNECTION_RECEIVED_DATA,
+            'message1': Blockly.Msg.CONNECTION_CHANNEL + ' %1',
+            'args1': [
+                {
+                    'type': 'input_value',
+                    'name': 'CHANNEL',
+                    'check': 'String',
+                    'align': 'RIGHT'
+                }
+            ],
+            'output': 'String',
+            'colour': Blockly.CAT_COMMUNICATION_RGB,
+            'tooltip': Blockly.Msg.CONNECTION_CHANNEL_RECEIVE_TOOLTIP
+        });
+    }
+};
+
 Blockly.Blocks['robSensors_record_begin'] = {
     /**
      * Start recording audio for Thymio.

@@ -708,6 +708,27 @@
         <category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true">
             </category>
         <category name="TOOLBOX_PROCEDURE" custom="PROCEDURE" svg="true"></category>
+        <category name="TOOLBOX_COMMUNICATION" svg="true">
+            <block type="communication_send_message">
+                <value name='CHANNEL'>
+                    <block type="text">
+                        <field name="TEXT">Channel1</field>
+                    </block>
+                </value>
+                <value name='MESSAGE'>
+                    <block type="text">
+                        <field name="TEXT">1</field>
+                    </block>
+                </value>
+            </block>
+            <block type="communication_receive_message">
+                <value name='CHANNEL'>
+                    <block type="text">
+                        <field name="TEXT">Channel1</field>
+                    </block>
+                </value>
+            </block>
+        </category>
     </toolbox_set>
 
 
