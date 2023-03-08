@@ -1811,7 +1811,7 @@ confBlocks.aifes.nano33ble = {
     sensor: false,
     inbuilt: true,
     inputs: [
-        ['AIFES_NUMBER_INPUT_NEURONS', 'INPUTS'],
+        ['AIFES_NUMBER_INPUT_NEURONS', '1'],
         ['AIFES_NUMBER_HIDDENLAYERS_NEURONS', '2'],
         ['AIFES_NUMBER_OUTPUT_NEURONS', '1'],
         ['AIFES_FNN_LAYERS','3'],

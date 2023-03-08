@@ -1841,8 +1841,6 @@ Blockly.Blocks['robActions_aifes_train'] = {
         this.setColour(Blockly.CAT_NN_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.AIFES_TRAIN);
         this.setOutput(true, 'Number');
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.AIFES_TRAIN_TOOLTIP);
     }
 };
@@ -1853,8 +1851,6 @@ Blockly.Blocks['robActions_aifes_classify'] = {
         this.appendDummyInput().appendField(Blockly.Msg.AIFES_CLASSIFY);
         this.appendValueInput("NN_CLASS_PROBABILITIES");
         this.setOutput(true, 'Number');
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.AIFES_CLASSIFY_TOOLTIP);
     }
 };

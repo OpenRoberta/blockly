@@ -1709,7 +1709,7 @@ Blockly.Msg.AIFES_LEARNINGFUNCTION = 'activations function';
 Blockly.Msg.AIFES_FNN_LAYERS = 'number layers'
 
 Blockly.Msg.AIFES_NUMBER_OUTPUT_NEURONS = 'number output neurons';
-Blockly.Msg.AIFES_NUMBER_HIDDENLAYERS_NEURONS = 'number hidden layers';
+Blockly.Msg.AIFES_NUMBER_HIDDENLAYERS_NEURONS = 'number neurons in hidden layers';
 Blockly.Msg.AIFES_LEARNINGRATE = 'learning rate';
 Blockly.Msg.AIFES_MOMENTUM = 'momentum';
 Blockly.Msg.AIFES_DATASET = 'dataset';
