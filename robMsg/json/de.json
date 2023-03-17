@@ -45,6 +45,7 @@
   "CONFIGURATION_ERROR_MISSING_PIN": "Der Pin dieser Komponente existiert nicht!",
   "CONFIGURATION_ERROR_NO_BUILTIN_RGBLED": "Dieses Board hat keine interne RGB LED!",
   "CONFIGURATION_ERROR_DIFFDRIVE_NOT_UNIQUE": "Dieser Konfigurationsblock darf nur einmal vorkommen.",
+  "CONFIGURATION_ERROR_TIMER_ALREADY_IN_USE_BY_INFRARED": "Du kannst leider den Summer, den Infrarotsensor und den Servomotor wegen interner Zeitgeber-Konflikte nicht in demselben Programm mit Arduino Uno und Nano benutzen.",
   "CONNECTION_TO_ROBOT": "zu Roboter",
   "CONNECTION_FROM_ROBOT": "von Roboter",
   "CONNECTION_TO_CONNECTION": "zu Verbindung",
