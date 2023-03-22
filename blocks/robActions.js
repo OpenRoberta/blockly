@@ -1881,12 +1881,12 @@ function getTheStartBlock() {
 function getInputOutputNeurons() {
     var data = getTheStartBlock().data;
     if (data === undefined || data === null) {
-        return ['-', '-'];
+        return [['-', '-'], ['-', '-']];
     } else {
         try {
             var json = JSON.parse(data);
-            var inputs = json.inputs.length > 0 ? json.inputs : ['-'];
-            var outputs = json.outputs.length > 0 ? json.outputs : ['-'];
+            var inputs = json.inputs.length > 0 ? json.inputs : [['-', '-']];
+            var outputs = json.outputs.length > 0 ? json.outputs : [['-', '-']];
             return [inputs, outputs];
         } catch (e) {
             throw 'start block has invalid nn data.';
@@ -1901,7 +1901,7 @@ function getInputOutputNeurons() {
 function getAllNeurons(withInputs) {
     var data = getTheStartBlock().data;
     if (data === undefined || data === null) {
-        return ['-'];
+        return [['-', '-']];
     } else {
         try {
             var json = JSON.parse(data);
@@ -1909,7 +1909,7 @@ function getAllNeurons(withInputs) {
             var hidden = [];
             for (let h = 0; h < shape.length; h++) {
                 for (let n = 0; n < shape[h]; n++) {
-                    hidden.push('h' + (h + 1) + 'n' + (n + 1));
+                    hidden.push(['h' + (h + 1) + 'n' + (n + 1), 'h' + (h + 1) + 'n' + (n + 1)]);
                 }
             }
             if (withInputs) {
@@ -1929,7 +1929,7 @@ function getAllNeurons(withInputs) {
 function createNeuronsForDropdown(names) {
     var neuronNames = [];
     for (let i = 0; i < names.length; i++) {
-        neuronNames.push([names[i], names[i]]);
+        neuronNames.push([names[i][0], names[i][0]]);
     }
     return neuronNames;
 }
@@ -1978,17 +1978,9 @@ Blockly.Blocks['robActions_set_inputneuron_val'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.NN_SET_INPUT_NEURON_VALUE_TOOLTIP);
+        this.dependNN = {'fields': ['NAME']};
     }, onchange: function(evt) {
-        if (!this.workspace || this.isInFlyout || evt.type == Blockly.Events.MOVE) {
-            return;
-        }
-        var myDropDown = this.getField('NAME');
-        var myVisibleText = myDropDown.text_;
-        var myOptions = JSON.stringify(myDropDown.getOptions_());
-        if (myOptions.indexOf(myVisibleText) < 0) {
-            myDropDown.setValue(myDropDown.getOptions_()[0][0]);
-            this.render();
-        }
+        updateDropdownNAME(evt, this, 0);
     }
 };
 
@@ -2001,7 +1993,10 @@ Blockly.Blocks['robSensors_get_outputneuron_val'] = {
             .appendField(new Blockly.FieldDropdown(createNeuronsForDropdown(this.allNeurons)), 'NAME');
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.NN_GET_OUTPUT_NEURON_VALUE_TOOLTIP);
-    }, onchange: Blockly.Blocks['robActions_set_inputneuron_val'].onchange
+        this.dependNN = {'fields': ['NAME']};
+    }, onchange: function(evt) {
+        updateDropdownNAME(evt, this, 1);
+    }
 };
 
 Blockly.Blocks['robActions_set_weight'] = {
@@ -2018,24 +2013,9 @@ Blockly.Blocks['robActions_set_weight'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.NN_SET_WEIGHT_TOOLTIP);
+        this.dependNN = {'fields': ['FROM', 'TO']};
     }, onchange: function(evt) {
-        if (!this.workspace || this.isInFlyout || evt.type == Blockly.Events.MOVE) {
-            return;
-        }
-        this.dropDownChecked = true;
-        var myDropDownFROM = this.getField('FROM');
-        var myVisibleTextFROM = myDropDownFROM.text_;
-        var myOptionsFROM = JSON.stringify(myDropDownFROM.getOptions_());
-        if (myOptionsFROM.indexOf(myVisibleTextFROM) < 0) {
-            myDropDownFROM.setValue(myDropDownFROM.getOptions_()[0][0]);
-        }
-        var myDropDownTO = this.getField('TO');
-        var myVisibleTextTO = myDropDownTO.text_;
-        var myOptionsTO = JSON.stringify(myDropDownTO.getOptions_());
-        if (myOptionsTO.indexOf(myVisibleTextTO) < 0) {
-            myDropDownTO.setValue(myDropDownTO.getOptions_()[0][0]);
-        }
-        this.render();
+        updateDropdownFROMAndTO(evt, this, true);
     }
 };
 
@@ -2051,7 +2031,10 @@ Blockly.Blocks['robActions_set_bias'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.NN_SET_BIAS_TOOLTIP);
-    }, onchange: Blockly.Blocks['robActions_set_inputneuron_val'].onchange
+        this.dependNN = {'fields': ['NAME']};
+    }, onchange: function(evt) {
+        updateDropdownNAME(evt, this, -1, true, false);
+    }
 };
 
 Blockly.Blocks['robSensors_get_weight'] = {
@@ -2065,7 +2048,10 @@ Blockly.Blocks['robSensors_get_weight'] = {
             .appendField(new Blockly.FieldDropdown(createNeuronsForDropdown(this.allNeurons)), 'TO');
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.NN_GET_WEIGHT_TOOLTIP);
-    }, onchange: Blockly.Blocks['robActions_set_weight'].onchange
+        this.dependNN = {'fields': ['FROM', 'TO']};
+    }, onchange: function(evt) {
+        updateDropdownFROMAndTO(evt, this, true);
+    }
 };
 
 Blockly.Blocks['robSensors_get_bias'] = {
@@ -2077,7 +2063,10 @@ Blockly.Blocks['robSensors_get_bias'] = {
             .appendField(new Blockly.FieldDropdown(createNeuronsForDropdown(this.allNeurons)), 'NAME');
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.NN_GET_BIAS_TOOLTIP);
-    }, onchange: Blockly.Blocks['robActions_set_inputneuron_val'].onchange
+        this.dependNN = {'fields': ['NAME']};
+    }, onchange: function(evt) {
+        updateDropdownNAME(evt, this, -1, true, false);
+    }
 };
 
 Blockly.Blocks['robActions_play_recording_file'] = {
@@ -2278,3 +2267,50 @@ Blockly.Blocks['robActions_led_sound'] = {
         });
     }
 };
+
+function updateDropdownNAME(evt, blocksObj, idx = 0, allNeurons = false, withInputs = false) {
+    if (!blocksObj.workspace || blocksObj.isInFlyout || evt.type == Blockly.Events.MOVE) {
+        return;
+    }
+    var myDropDown = blocksObj.getField('NAME');
+    var myVisibleText = myDropDown.text_;
+    blocksObj.allNeurons = !allNeurons ? getInputOutputNeurons()[idx] : getAllNeurons(withInputs);
+    var myOptions = JSON.stringify(myDropDown.getOptions_());
+    var el = blocksObj.allNeurons.filter(e => e[1] === myVisibleText);
+    if (el.length) {
+        myDropDown.setValue(el[0][0]);
+        blocksObj.render();
+    } else if (myOptions.indexOf(myVisibleText) < 0) {
+        myDropDown.setValue(myDropDown.getOptions_()[0][0]);
+        blocksObj.render();
+    }
+}
+
+function updateDropdownFROMAndTO(evt, blocksObj, withInputs = false) {
+    if (!blocksObj.workspace || blocksObj.isInFlyout || evt.type == Blockly.Events.MOVE) {
+        return;
+    }
+    blocksObj.dropDownChecked = true;
+    blocksObj.allNeurons = getAllNeurons(withInputs);
+
+    var myDropDownFROM = blocksObj.getField('FROM');
+    var myVisibleTextFROM = myDropDownFROM.text_;
+    var el = blocksObj.allNeurons.filter(e => e[1] === myVisibleTextFROM);
+    var myOptionsFROM = JSON.stringify(myDropDownFROM.getOptions_());
+    if (el.length) {
+        myDropDownFROM.setValue(el[0][0]);
+    } else if (myOptionsFROM.indexOf(myVisibleTextFROM) < 0) {
+        myDropDownFROM.setValue(myDropDownFROM.getOptions_()[0][0]);
+    }
+
+    var myDropDownTO = blocksObj.getField('TO');
+    var myVisibleTextTO = myDropDownTO.text_;
+    el = blocksObj.allNeurons.filter(e => e[1] === myVisibleTextTO);
+    var myOptionsTO = JSON.stringify(myDropDownTO.getOptions_());
+    if (el.length) {
+        myDropDownTO.setValue(el[0][0]);
+    } else if (myOptionsTO.indexOf(myVisibleTextTO) < 0) {
+        myDropDownTO.setValue(myDropDownTO.getOptions_()[0][0]);
+    }
+    blocksObj.render();
+}
