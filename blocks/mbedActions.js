@@ -562,7 +562,7 @@ Blockly.Blocks['mbedActions_leds_on'] = {
             'type': 'rgbled',
             'dropDown': this.dropDownPorts
         };
-        this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(this.dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
+        this.appendValueInput('COLOR').appendField(Blockly.Msg.RGBLED_ON).appendField(this.dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
         hidePortIfOnlyInbuilt(this);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -594,7 +594,7 @@ Blockly.Blocks['mbedActions_leds_off'] = {
             'type': 'rgbled',
             'dropDown': this.dropDownPorts
         };
-        this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(this.dropDownPorts, 'ACTORPORT');
+        this.appendDummyInput().appendField(Blockly.Msg.RGBLED_OFF).appendField(this.dropDownPorts, 'ACTORPORT');
         hidePortIfOnlyInbuilt(this);
         this.setPreviousStatement(true);
         this.setNextStatement(true);

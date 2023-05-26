@@ -1211,8 +1211,8 @@ Blockly.Blocks['robActions_play_setVolume'] = {
     init: function() {
         var ports = getConfigPorts('buzzer');
         this.dependConfig = {
-            'type': 'buzzer',
-            'dropDown': [ports]
+            type: 'buzzer',
+            dropDown: [ports]
         };
         this.hide = {};
         this.hide.name = 'ACTORPORT';
@@ -1222,9 +1222,9 @@ Blockly.Blocks['robActions_play_setVolume'] = {
             message0: Blockly.Msg.SET + ' ' + Blockly.Msg.PLAY_VOLUME + ' ' + Blockly.Msg.SENSOR_UNIT_PERCENT + ' %1',
             args0: [
                 {
-                    'type': 'input_value',
-                    'name': 'VOLUME',
-                    'check': 'Number'
+                    type: 'input_value',
+                    name: 'VOLUME',
+                    check: 'Number'
                 }
             ],
             colour: Blockly.CAT_ACTION_RGB,
@@ -1233,8 +1233,8 @@ Blockly.Blocks['robActions_play_setVolume'] = {
             tooltip: Blockly.Msg.PLAY_SETVOLUME_TOOLTIP
         });
         this.dependConfig = {
-            'type': 'buzzer',
-            'dropDown': 'hide'
+            type: 'buzzer',
+            dropDown: 'hide'
         };
     }
 };
@@ -1272,49 +1272,18 @@ Blockly.Blocks['robActions_play_getVolume'] = {
     }
 };
 
-Blockly.Blocks['robActions_brickLight_on'] = {
+Blockly.Blocks['robActions_inbuilt_led'] = {
     /**
-     * Turn bricklight on.
+     * Turn inbuilt led on or off.
      *
-     * @constructs robActions_brickLight_on
+     * @constructs robActions_inbuilt_led
      * @this.Blockly.Block
-     * @param {String/dropdown}
-     *            SWITCH_COLOR - Green, Orange or Red
      * @param {Boolean/dropdown}
-     *            SWITCH_BLINK - True or False
+     *            SWITCH_BLINK - ON or OFF
      * @returns immediately
      * @memberof Block
      */
     init: function() {
-        this.setColour(Blockly.CAT_ACTION_RGB);
-        // this.setInputsInline(true);
-        var dropdownColor = new Blockly.FieldDropdown([
-            [Blockly.Msg.BRICKLIGHT_GREEN, 'GREEN'],
-            [Blockly.Msg.BRICKLIGHT_ORANGE, 'ORANGE'],
-            [Blockly.Msg.BRICKLIGHT_RED, 'RED']
-        ]);
-        var dropdownLightState;
-        if (
-            this.workspace.device === 'botnroll' ||
-            this.workspace.device === 'arduino' ||
-            this.workspace.device === 'nano33ble' ||
-            this.workspace.device === 'calliope' ||
-            this.workspace.device === 'sensebox' ||
-            this.workspace.device === 'festobionic' ||
-            this.workspace.device === 'mbot2'
-        ) {
-            dropdownLightState = new Blockly.FieldDropdown([
-                [Blockly.Msg.BRICKLIGHT_ON, 'ON'],
-                [Blockly.Msg.OFF, 'OFF']
-            ]);
-        } else {
-            dropdownLightState = new Blockly.FieldDropdown([
-                [Blockly.Msg.BRICKLIGHT_ON, 'ON'],
-                [Blockly.Msg.BRICKLIGHT_FLASH, 'FLASH'],
-                [Blockly.Msg.BRICKLIGHT_DOUBLE_FLASH, 'DOUBLE_FLASH']
-            ]);
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.BRICKLIGHT_COLOR).appendField(dropdownColor, 'SWITCH_COLOR');
-        }
         if (
             this.workspace.device === 'arduino' ||
             this.workspace.device === 'nano33ble' ||
@@ -1322,35 +1291,175 @@ Blockly.Blocks['robActions_brickLight_on'] = {
             this.workspace.device === 'sensebox' ||
             this.workspace.device === 'festobionic'
         ) {
-            var dropDownPorts;
-            dropDownPorts = getConfigPorts('led');
+            let dropDownPorts = getConfigPorts('led');
+            this.jsonInit({
+                message0: Blockly.Msg.SET_LED + ' %1 %2',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'ACTORPORT',
+                        options: dropDownPorts.menuGenerator_
+                    },
+                    {
+                        type: 'field_dropdown',
+                        name: 'SWITCH_BLINK',
+                        options: [
+                            [Blockly.Msg.BRICKLIGHT_ON, 'ON'],
+                            [Blockly.Msg.OFF, 'OFF']
+                        ]
+                    }
+                ],
+                colour: Blockly.CAT_ACTION_RGB,
+                previousStatement: true,
+                nextStatement: true,
+                tooltip: Blockly.Msg.BRICKLIGHT_ON_TOOLTIP
+            });
             this.dependConfig = {
                 type: 'led',
-                dropDown: dropDownPorts
+                dropDown: this.getField('ACTORPORT')
             };
-            this.appendDummyInput()
-                .appendField(Blockly.Msg.LED_ON)
-                .setAlign(Blockly.ALIGN_RIGHT)
-                .appendField(dropDownPorts, 'ACTORPORT')
-                .appendField(dropdownLightState, 'SWITCH_BLINK');
         } else if (this.workspace.device === 'botnroll') {
-            this.appendDummyInput()
-                .appendField(Blockly.Msg.BRICKLIGHT)
-                .setAlign(Blockly.ALIGN_RIGHT)
-                .appendField(Blockly.Msg.MOD)
-                .appendField(dropdownLightState, 'SWITCH_BLINK');
-        } else {
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.MOD).appendField(dropdownLightState, 'SWITCH_BLINK');
+            this.jsonInit({
+                message0: Blockly.Msg.BRICKLIGHT + ' %1',
+                args0: [
+                    {
+                        type: 'field_dropdown',
+                        name: 'SWITCH_BLINK',
+                        options: [
+                            [Blockly.Msg.BRICKLIGHT_ON, 'ON'],
+                            [Blockly.Msg.OFF, 'OFF']
+                        ]
+                    }
+                ],
+                colour: Blockly.CAT_ACTION_RGB,
+                previousStatement: true,
+                nextStatement: true,
+                tooltip: Blockly.Msg.BRICKLIGHT_ON_TOOLTIP
+            });
         }
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.BRICKLIGHT_ON_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robActions_brickLight_on'] = {
+    /**
+     * Turn bricklight on.
+     * Used for ev3 and xNN plugins.
+     *
+     * @constructs robActions_brickLight_on
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            SWITCH_COLOR - GREEN, ORANGE or RED
+     * @param {Boolean/dropdown}
+     *            SWITCH_BLINK - ON, FLASH or DOUBLE_FLASH
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        this.jsonInit({
+            message0: Blockly.Msg.BRICKLIGHT_COLOR + ' %1 %2',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'SWITCH_COLOR',
+                    options: [
+                        [Blockly.Msg.BRICKLIGHT_GREEN, 'GREEN'],
+                        [Blockly.Msg.BRICKLIGHT_ORANGE, 'ORANGE'],
+                        [Blockly.Msg.BRICKLIGHT_RED, 'RED']
+                    ]
+                },
+                {
+                    type: 'field_dropdown',
+                    name: 'SWITCH_BLINK',
+                    options: [
+                        [Blockly.Msg.BRICKLIGHT_ON, 'ON'],
+                        [Blockly.Msg.BRICKLIGHT_FLASH, 'FLASH'],
+                        [Blockly.Msg.BRICKLIGHT_DOUBLE_FLASH, 'DOUBLE_FLASH']
+                    ]
+                }
+            ],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.BRICKLIGHT_ON_TOOLTIP
+        });
+    }
+};
+
+Blockly.Blocks['robActions_rgbled_on'] = {
+    /**
+     * Turns single led on with COLOR value.
+     *
+     * @constructs robActions_rgbled_on
+     * @this.Blockly.Block
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        this.action = 'LED';
+        let ports;
+        if (
+            this.workspace.device === 'arduino' ||
+            this.workspace.device === 'nano33ble' ||
+            this.workspace.device === 'sensebox' ||
+            this.workspace.device === 'festobionicflower'
+        ) {
+            ports = getConfigPorts('rgbled');
+        } else if (this.workspace.device === 'wedo') {
+            ports = getConfigPorts('led');
+        } else if (this.workspace.device === 'mbot') {
+            ports = new Blockly.FieldDropdown([
+                [Blockly.Msg.LEFT, '2'],
+                [Blockly.Msg.RIGHT, '1']
+            ]);
+        } else if (this.workspace.device === 'thymio') {
+            ports = new Blockly.FieldDropdown([
+                [Blockly.Msg.SENSOR_TOP, 'TOP'],
+                [Blockly.Msg.BOTTOM_LEFT, 'BOTTOM.LEFT'],
+                [Blockly.Msg.BOTTOM_RIGHT, 'BOTTOM.RIGHT']
+            ]);
+        }
+        this.jsonInit({
+            message0: Blockly.Msg.RGBLED_ON + ' %1 ' + Blockly.Msg.BRICKLIGHT_COLOR + ' %2',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'ACTORPORT',
+                    options: ports.menuGenerator_
+                },
+                {
+                    type: 'input_value',
+                    name: 'COLOR',
+                    check: 'Colour'
+                }
+            ],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.LED_ON_TOOLTIP
+        });
+        if (
+            this.workspace.device === 'arduino' ||
+            this.workspace.device === 'nano33ble' ||
+            this.workspace.device === 'sensebox' ||
+            this.workspace.device === 'festobionicflower'
+        ) {
+            this.dependConfig = {
+                type: 'rgbled',
+                dropDown: this.getField('ACTORPORT')
+            };
+        } else if (this.workspace.device === 'wedo') {
+            this.dependConfig = {
+                type: 'led',
+                dropDown: this.getField('ACTORPORT')
+            };
+        }
     }
 };
 
 Blockly.Blocks['robActions_led_on'] = {
     /**
-     * Turns single led on.
+     * Turns single led on without COLOR value.
+     * Used only for Edison.
      *
      * @constructs robActions_led_on
      * @this.Blockly.Block
@@ -1358,86 +1467,24 @@ Blockly.Blocks['robActions_led_on'] = {
      * @memberof Block
      */
     init: function() {
-        this.setColour(Blockly.CAT_ACTION_RGB);
         this.action = 'LED';
-        var portList = [];
-        var container = Blockly.Workspace.getByContainer('bricklyDiv');
-        if (container) {
-            var blocks = Blockly.Workspace.getByContainer('bricklyDiv').getAllBlocks();
-            for (var x = 0; x < blocks.length; x++) {
-                var func = blocks[x].getConfigDecl;
-                if (func) {
-                    var configs = func.call(blocks[x]);
-                    for (var i = 0; i < configs.length; i++) {
-                        var config = configs[i];
-                        if (config.type === 'led') {
-                            portList.push([config.name, config.name]);
-                        }
-                    }
+        this.jsonInit({
+            message0: Blockly.Msg.LED_ON + ' %1',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'ACTORPORT',
+                    options: [
+                        [Blockly.Msg.LEFT, 'LLED'],
+                        [Blockly.Msg.RIGHT, 'RLED']
+                    ]
                 }
-            }
-        }
-        if (portList.length === 0) {
-            portList.push([
-                Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
-                (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase()
-            ]);
-        }
-        if (
-            this.workspace.device === 'arduino' ||
-            this.workspace.device === 'nano33ble' ||
-            this.workspace.device === 'sensebox' ||
-            this.workspace.device === 'festobionicflower'
-        ) {
-            var ports = getConfigPorts('rgbled');
-            this.dependConfig = {
-                type: 'rgbled',
-                dropDown: ports
-            };
-        } else if (this.workspace.device === 'wedo') {
-            var ports = new Blockly.FieldDropdown(portList);
-            this.dependConfig = {
-                type: 'led',
-                dropDown: ports
-            };
-        }
-        if (this.workspace.device === 'mbot') {
-            ports = new Blockly.FieldDropdown([
-                [Blockly.Msg.LEFT, '2'],
-                [Blockly.Msg.RIGHT, '1']
-            ]);
-            this.appendValueInput('COLOR')
-                .appendField(Blockly.Msg.LED_ON)
-                .appendField(ports, 'ACTORPORT')
-                .appendField(Blockly.Msg.BRICKLIGHT_COLOR)
-                .setCheck('Colour');
-        } else if (this.workspace.device === 'edison') {
-            ports = new Blockly.FieldDropdown([
-                [Blockly.Msg.LEFT, 'LLED'],
-                [Blockly.Msg.RIGHT, 'RLED']
-            ]);
-            this.appendDummyInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT');
-        } else if (this.workspace.device === 'thymio') {
-            ports = new Blockly.FieldDropdown([
-                [Blockly.Msg.SENSOR_TOP, 'TOP'],
-                [Blockly.Msg.BOTTOM_LEFT, 'BOTTOM.LEFT'],
-                [Blockly.Msg.BOTTOM_RIGHT, 'BOTTOM.RIGHT']
-            ]);
-            this.appendValueInput('COLOR')
-                .appendField(Blockly.Msg.LED_ON)
-                .appendField(ports, 'ACTORPORT')
-                .appendField(Blockly.Msg.BRICKLIGHT_COLOR)
-                .setCheck('Colour');
-        } else {
-            this.appendValueInput('COLOR')
-                .appendField(Blockly.Msg.LED_ON)
-                .appendField(ports, 'ACTORPORT')
-                .appendField(Blockly.Msg.BRICKLIGHT_COLOR)
-                .setCheck('Colour');
-        }
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);
+            ],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.LED_ON_TOOLTIP
+        });
     }
 };
 
@@ -1453,42 +1500,20 @@ Blockly.Blocks['robActions_led_off'] = {
     init: function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.action = 'LED';
-        var portList = [];
-        var container = Blockly.Workspace.getByContainer('bricklyDiv');
-        if (container) {
-            var blocks = Blockly.Workspace.getByContainer('bricklyDiv').getAllBlocks();
-            for (var x = 0; x < blocks.length; x++) {
-                var func = blocks[x].getConfigDecl;
-                if (func) {
-                    var configs = func.call(blocks[x]);
-                    for (var i = 0; i < configs.length; i++) {
-                        var config = configs[i];
-                        if (config.type === 'led') {
-                            portList.push([config.name, config.name]);
-                        }
-                    }
-                }
-            }
-        }
-        if (portList.length === 0) {
-            portList.push([
-                Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
-                (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase()
-            ]);
-        }
+        let ports;
         if (
             this.workspace.device === 'arduino' ||
             this.workspace.device === 'nano33ble' ||
             this.workspace.device === 'sensebox' ||
             this.workspace.device === 'mbot2'
         ) {
-            var ports = getConfigPorts('rgbled');
+            ports = getConfigPorts('rgbled');
             this.dependConfig = {
                 type: 'rgbled',
                 dropDown: ports
             };
         } else if (this.workspace.device === 'wedo') {
-            var ports = new Blockly.FieldDropdown(portList);
+            ports = getConfigPorts('led');
             this.dependConfig = {
                 type: 'led',
                 dropDown: ports
@@ -1523,9 +1548,11 @@ Blockly.Blocks['robActions_led_off'] = {
                 [Blockly.Msg.BOTTOM_LEFT, 'BOTTOM.LEFT'],
                 [Blockly.Msg.BOTTOM_RIGHT, 'BOTTOM.RIGHT']
             ]);
+            this.appendDummyInput().appendField(Blockly.Msg.RGBLED_OFF).appendField(ports, 'ACTORPORT');
+        } else if (this.workspace.device === 'edison') {
             this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(ports, 'ACTORPORT');
         } else {
-            this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(ports, 'ACTORPORT');
+            this.appendDummyInput().appendField(Blockly.Msg.RGBLED_OFF).appendField(ports, 'ACTORPORT');
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -1538,7 +1565,7 @@ Blockly.Blocks['robActions_sensorLight_on'] = {
     /**
      * Turn sensor light on.
      *
-     * @constructs robActions_brickLight_on
+     * @constructs robActions_sensorLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
      *            SWITCH_COLOR - red, green or blue
