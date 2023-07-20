@@ -434,6 +434,7 @@ Blockly.Msg.MENU_PROGRAMMING = 'programming with NEPO';
 Blockly.Msg.MENU_FAQ = 'FAQ';
 Blockly.Msg.MENU_GENERAL = 'general help';
 Blockly.Msg.MBUILD_PORT_TOOLTIP = 'Block for the mBuild Port. The order of the compatible mbuild sensor blocks should be identical to the real system.';
+Blockly.Msg.I2CBUS_TOOLTIP = 'Represents one byte of the I2C address space.';
 Blockly.Msg.MENU_SHOW_AGAIN = 'show welcome note again';
 Blockly.Msg.MENU_ROBOT_STATE_INFO = 'info';
 Blockly.Msg.MENU_STATE_INFO = 'state information';
@@ -1374,7 +1375,7 @@ Blockly.Msg.PLAY_TOOLTIP = 'Represents a buzzer.';
 Blockly.Msg.RELAY_TOOLTIP = 'Represents a relay.';
 Blockly.Msg.RGBLED_TOOLTIP = 'Represents an RGB LED.';
 Blockly.Msg.LED_TOOLTIP = 'Represents an LED.';
-Blockly.Msg.MOTOR_TOOLTOP = 'Represents a motor.';
+Blockly.Msg.MOTOR_TOOLTIP = 'Represents a motor.';
 Blockly.Msg.STEPMOTOR_TOOLTIP = 'Represents a step motor.';
 Blockly.Msg.SERVO_TOOLTIP = 'Represents a servo motor.';
 Blockly.Msg.JOYSTICK_TOOLTIP = 'Represents a joystick.';
@@ -1383,7 +1384,8 @@ Blockly.Msg.CAMERA_TOOLTIP = 'Represent a camera.';
 Blockly.Msg.OPTICAL_TOOLTIP = 'Represent an optical sensor also called reflected light sensor.';
 Blockly.Msg.ODOMETRY_TOOLTIP = 'Represents the availability of odometry data.';
 Blockly.Msg.OMNIDRIVE_TOOLTIP = 'Represents an omnidirectional drive system.';
-
+Blockly.Msg.LOGOTOUCH_TOOLTIP = 'Represents a touch sensor shaped like the Micro:bit logo.';
+Blockly.Msg.LINE_TOOLTIP = 'Represents an infrared line sensor.';
 
 Blockly.Msg.SENSOR_MOISTURE_GETSAMPLE_TOOLTIP = 'Gets the current reading from the moisture sensor in percent.';
 Blockly.Msg.SENSOR_POTENTIOMETER_GETSAMPLE_TOOLTIP = 'Gets the current reading from the potentiometer in volts (0-5V).';

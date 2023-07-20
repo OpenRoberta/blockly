@@ -860,9 +860,8 @@ Blockly.Blocks['robConf_i2c_bus'] = {
             args2: [
                 { 'type': 'input_statement', 'name': 'BUS' }
             ],
-            appendStatementInput: 'test',
             colour: Blockly.CAT_SENSOR_RGB,
-            tooltip: ''
+            tooltip: Blockly.Msg.I2CBUS_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
     },
