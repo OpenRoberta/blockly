@@ -1893,22 +1893,40 @@ function getInputOutputNeurons() {
  */
 function getAllNeurons(withInputs) {
     var data = getTheStartBlock().data;
+    let hiddenNeurons = [];
+
+    function selectDefaultId(json, layerIdx) {
+        let i = 1;
+        while (true) {
+            let id = 'h' + layerIdx + 'n' + i++;
+            if (hiddenNeurons && !hiddenNeurons.find((layer) => layer.find((neuron) => neuron === id))) {
+                return id;
+            }
+        }
+    }
+
     if (data === undefined || data === null) {
         return ['-'];
     } else {
         try {
             var json = JSON.parse(data);
-            var shape = json.networkShape;
-            var hidden = [];
-            for (let h = 0; h < shape.length; h++) {
-                for (let n = 0; n < shape[h]; n++) {
-                    hidden.push('h' + (h + 1) + 'n' + (n + 1));
+            var networkShape = json.networkShape;
+            if (networkShape.length != 0 && json.hiddenNeurons === undefined) {
+                // wrapper for old NN programs without hiddenNeurons
+                for (let i = 0; i < json.numHiddenLayers; i++) {
+                    hiddenNeurons.push([]);
+                    for (let j = 0; j < networkShape[i]; j++) {
+                        const id = selectDefaultId(json, i + 1);
+                        hiddenNeurons[i].push(id);
+                    }
                 }
+            } else if (json.hiddenNeurons !== undefined) {
+                hiddenNeurons = json.hiddenNeurons;
             }
             if (withInputs) {
-                return [].concat(json.inputs, hidden, json.outputs);
+                return [].concat(json.inputs, ...hiddenNeurons, json.outputs);
             } else {
-                return [].concat(hidden, json.outputs);
+                return [].concat(...hiddenNeurons, json.outputs);
             }
         } catch (e) {
             throw 'start block has invalid nn data.';
