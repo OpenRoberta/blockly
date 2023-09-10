@@ -149,9 +149,10 @@ Blockly.Blocks['robConf_generic'] = {
             for (var i = 0; i < confBlock.fixedPorts.length; i++) {
                 var name = Blockly.Msg[confBlock.fixedPorts[i][0]] || confBlock.fixedPorts[i][0];
                 var dropDown = new Blockly.FieldDropdown([[confBlock.fixedPorts[i][1], confBlock.fixedPorts[i][1]]]);
-                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(name).appendField(dropDown, confBlock.fixedPorts[i][1]);
+                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(name).appendField(dropDown, confBlock.fixedPorts[i][0]);
             }
         }
+        
         if (confBlock.statement) {
             this.setPreviousStatement(true);
             this.setNextStatement(true);
