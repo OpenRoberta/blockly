@@ -21,7 +21,8 @@ RUN npm install -g google-closure-compiler@20200719.0.0 && \
     npm install -g npx
 
 VOLUME ["/opt/blockly/blockly/"]
-RUN mkdir -p /opt/blockly/blockly/ && \
+RUN ln -s /usr/bin/python2 /usr/bin/python && \
+    mkdir -p /opt/blockly/blockly/ && \
     chmod +x ./build.sh
 
 ENTRYPOINT ["sh","./build.sh"]

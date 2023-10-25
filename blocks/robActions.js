@@ -1697,12 +1697,13 @@ Blockly.Blocks['robActions_eval_expr'] = {
      */
     init: function() {
         this.setColour('#646464');
-        this.type_ = Blockly.TYPE_DROPDOWN(this.workspace.device);
+        var typeDropDown = Blockly.TYPE_DROPDOWN(this.workspace.device);
+        this.type_ = 'Number';
         this.appendDummyInput()
             .appendField(Blockly.Msg.ACTION_EVAL)
             .appendField(new Blockly.FieldTextInput('eg a + b', this.validate), 'EXPRESSION')
             .appendField(Blockly.Msg.ACTION_EVAL_AS)
-            .appendField(this.type_, 'TYPE');
+            .appendField(typeDropDown, 'TYPE');
         this.setOutput(true, 'Number');
         this.setTooltip('Evals any expression and return the result.');
     }, // this function can be removed if we are sure that no validation is needed
