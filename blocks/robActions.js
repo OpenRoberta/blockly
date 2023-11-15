@@ -205,7 +205,7 @@ Blockly.Blocks['robActions_motor_on'] = {
                             var configs = func.call(blocks[x]);
                             for (var i = 0; i < configs.length; i++) {
                                 var config = configs[i];
-                                if (config.type === 'motor' || (config.type === 'encoder' && !this.workspace.device === 'joycar')) {
+                                if (config.type === 'motor' || (config.type === 'encoder' && !(this.workspace.device === 'joycar'))) {
                                     ports.push([config.name, config.name]);
                                 }
                             }
