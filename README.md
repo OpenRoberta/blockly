@@ -13,6 +13,7 @@ On linux systems one possibility is
 
 -   you have the closure-library next to this project
     (you need version [20200719.0.0](https://github.com/google/closure-library/archive/refs/tags/v20200719.zip))
+    make sure to remove the version number from the folder name. buily.py requires the closure-library folder to be named `closure-library` 
 -   you have installed the closure compiler via npm:
     -   e.g. `npm install --save google-closure-compiler@20200719`
     -   check the version: `npx google-closure-compiler --version` => `v20200719`
