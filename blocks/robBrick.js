@@ -887,6 +887,122 @@ Blockly.Blocks['robConf_i2c_bus'] = {
     }
 };
 
+Blockly.Blocks['robConf_camera_txt4'] = {
+    init: function() {
+        this.title = 'CAMERA';
+        this.confBlock = 'camera';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_CAMERA + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName('CAMERA'.charAt(0).toUpperCase(), this)
+            }],
+            message1: Blockly.Msg.SENSOR_COLORDETECTOR + ' ' + Blockly.Msg.AREA + ' %1',
+            args1: [
+                {
+                    type: 'field_input',
+                    name: 'COLOURSIZE',
+                    text: '30'
+            }],
+            lastDummyAlign1: 'RIGHT',
+            message2: Blockly.Msg.SENSOR_BALLDETECTOR + ' ' + Blockly.Msg.MODE_COLOUR + ' %1',
+            args2: [{
+                type: 'input_value',
+                name: 'COLOUR',
+                check: ['Colour'],
+                align: 'RIGHT'
+            }],
+            message3: Blockly.Msg.SENSOR_MOTIONDETECTOR + ' ' + Blockly.Msg.MODE_SENSIVITY + ' %1',
+            args3: [{
+                type: 'field_input',
+                name: 'MOTION',
+                text: '2'
+            }],
+            lastDummyAlign3: 'RIGHT',
+            message4: Blockly.Msg.BRICK_PORT + '%1',
+            args4: [{
+                type: 'field_dropdown',
+                name: 'PORT',
+                options: [['USB1', 'USB1'], ['USB2', 'USB2']]
+            }],
+            lastDummyAlign4: 'RIGHT',
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.CAMERA_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        this.getField('COLOURSIZE').setValidator(
+            Blockly.FieldTextInput.nonnegativeIntegerValidator);
+        this.getField('MOTION').setValidator(
+            Blockly.FieldTextInput.nonnegativeIntegerValidator);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_i2c_port_txt4'] = {
+    init: function() {
+        this.title = 'I2CBUS';
+        this.confBlock = 'i2cbus';
+        this.jsonInit({
+            message0: 'I2C %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName('I2CBUS'.charAt(0).toUpperCase(), this)
+            }],
+            message1: Blockly.Msg.BRICK_PORT + ' %1',
+            args1: [{
+                type: 'field_dropdown',
+                name: 'PORT',
+                options: [['EXT', 'EXT']]
+            }],
+            message2: '%1',
+            args2: [
+                { 'type': 'input_statement', 'name': 'BUS' }
+            ],
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.I2CBUS_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_encodermotor_txt4'] = {
+    init: function() {
+        this.title = 'encodermotor';
+        this.confBlock = 'encodermotor';
+        this.jsonInit({
+            message0: Blockly.Msg.ACTION_ENCODER + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.ACTION_MOTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: Blockly.Msg.BRICK_PORT + ' %1',
+            args1: [{
+                type: 'field_dropdown',
+                name: 'PORT',
+                options: [['M1', 'M1'], ['M2', 'M2'], ['M3', 'M3'], ['M4', 'M4']]
+            }],
+            message2: '%1',
+            args2: [
+                { 'type': 'input_statement', 'name': 'ENCODER' }
+            ],
+            colour: Blockly.CAT_ACTION_RGB,
+            tooltip: Blockly.Msg.ENCODER_TOOLTIP_MBOT2
+        });
+        this.getField('NAME').setValidator(validateName);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
 function validateName(name) {
     /**
      * Validator for block names
@@ -907,7 +1023,7 @@ function validateName(name) {
     Blockly.RobConfig.renameConfig(this.sourceBlock_, nameOld, name, Blockly.Workspace.getByContainer("blocklyDiv"));
     block.nameOld = name;
     return name;
-};
+}
 
 function getConfigDecl(block) {
     return [{

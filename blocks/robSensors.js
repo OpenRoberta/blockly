@@ -114,6 +114,38 @@ Blockly.Blocks['robSensors_odometry_reset'] = {
     }
 };
 
+Blockly.Blocks['robSensors_encoder_reset_txt4'] = {
+    /**
+     * Reset the motor encoder.
+     *
+     * @constructs robSensors_encoder_reset
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MOTORPORT - A, B, C or D
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('encoder');
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_RESET + ' ' + Blockly.Msg.SENSOR_ENCODER + ' %1' + Blockly.Msg.SENSOR_RESET_II,
+            args0: [{
+                type: 'field_dropdown', name: 'SENSORPORT', options: ports.menuGenerator_
+            }, {
+                type: 'input_value', name: 'POWER', check: 'Number'
+            }],
+            colour: Blockly.CAT_SENSOR_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.ENCODER_RESET_TOOLTIP
+        });
+        this.dependConfig = {
+            type: 'encoder', dropDown: this.getField('ACTORPORT')
+        };
+
+    }
+};
+
 Blockly.Blocks['robSensors_sound_record'] = {
     init: function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
@@ -606,6 +638,80 @@ Blockly.Blocks['robSensors_set_logo_mode'] = {
             'dropDown': 'hide'
         };
     }
+};
+
+Blockly.Blocks['robSensors_get_line_camera_txt4'] = {
+    /**
+     * block for list of information of a line found by the camera
+     */
+    init: function() {
+        var ports = getConfigPorts('camera');
+        this.hide = {};
+        this.hide.name = 'SENSORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            'message0': Blockly.Msg.GET + ' %1 ' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
+            'args0': [{
+                'type': 'field_dropdown',
+                'name': 'MODE',
+                'options': [
+                    [Blockly.Msg.MODE_INFO, 'INFORMATION'],
+                ]
+            },
+                {
+                    'type': 'input_value',
+                    'name': 'INDEX',
+                    'check': 'Number'
+                }
+            ],
+            'output': 'Array_Number',
+            'colour': Blockly.CAT_SENSOR_RGB,
+            'tooltip': Blockly.Msg.SENSOR_LINE_INFORMATION_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'camera',
+            'dropDown': 'hide'
+        };
+    }
+
+};
+
+Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
+    /**
+     * block for list of information of a line found by the camera
+     */
+    init: function() {
+        var ports = getConfigPorts('camera');
+        this.hide = {};
+        this.hide.name = 'SENSORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            'message0': Blockly.Msg.GET + ' %1 ' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
+            'args0': [{
+                'type': 'field_dropdown',
+                'name': 'MODE',
+                'options': [
+                    [Blockly.Msg.MODE_COLOUR, 'COLOUR']
+                ]
+            },
+                {
+                    'type': 'input_value',
+                    'name': 'INDEX',
+                    'check': 'Number'
+                }
+            ],
+            'output': 'Colour',
+            'colour': Blockly.CAT_SENSOR_RGB,
+            'tooltip': Blockly.Msg.SENSOR_LINE_COLOUR_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'camera',
+            'dropDown': 'hide'
+        };
+    }
+
 };
 
 Blockly.Blocks['robSensors_generic'] = {

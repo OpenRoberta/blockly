@@ -731,6 +731,31 @@ Blockly.Blocks['actions_led'] = {
     }
 };
 
+Blockly.Blocks['actions_led_set_brightness'] = {
+    init: function() {
+        var ports = getConfigPorts('led');
+        this.jsonInit({
+            message0: Blockly.Msg.SET + ' ' + Blockly.Msg.LED + ' %1' + Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS + ' %' + ' %2',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'ACTORPORT',
+                    options: ports.menuGenerator_
+                }, {
+                    type: 'input_value', name: 'BRIGHTNESS', check: 'Number'
+                }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.LED_SET_BRIGHTNESS_TOOLTIP_PERCENT
+        });
+        this.dependConfig = {
+            'type': 'led',
+            'dropDown': this.getField('ACTORPORT')
+        };
+    }
+};
+
 Blockly.Blocks['actions_led_botnroll'] = {
     init: function() {
         this.jsonInit({
@@ -1002,7 +1027,7 @@ Blockly.Blocks['actions_rgbLed_on_nibo'] = {
         });
         if (this.workspace.device === 'rob3rta') {
             this.inputList[0].fieldRow[1].text_ = Blockly.Msg.NAO_LED_HEAD;
-            this.inputList[0].fieldRow[2].prefixField= Blockly.Msg.NAO_LED_HEAD;
+            this.inputList[0].fieldRow[2].prefixField = Blockly.Msg.NAO_LED_HEAD;
         }
     }
 };
@@ -1026,7 +1051,7 @@ Blockly.Blocks['actions_rgbLed_off_nibo'] = {
         });
         if (this.workspace.device === 'rob3rta') {
             this.inputList[0].fieldRow[1].text_ = Blockly.Msg.NAO_LED_HEAD;
-            this.inputList[0].fieldRow[2].prefixField= Blockly.Msg.NAO_LED_HEAD;
+            this.inputList[0].fieldRow[2].prefixField = Blockly.Msg.NAO_LED_HEAD;
         }
     }
 };
@@ -1590,6 +1615,615 @@ Blockly.Blocks['actions_rgbLed_off_joycar'] = {
         this.dependConfig = {
             'type': 'rgbled',
             'dropDown': this.getField('ACTORPORT')
+        };
+    }
+};
+
+Blockly.Blocks['actions_motor_on_txt4'] = {
+    /**
+     * Turn motor on with specific power.
+     *
+     * @constructs actions_motor_on_txt4
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            ACTORPORT     Dropdown computed from the robot's 'encoder' and 'motor' configuration
+     * @param {Number}
+     *            POWER         Speed (in %) to switch motor on with
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        var encoderPorts = getConfigPorts('encodermotor').getOptions_();
+        var motorPorts = getConfigPorts('motor').getOptions_();
+        var portsAsDropdown;
+        if (encoderPorts[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            portsAsDropdown = new Blockly.FieldDropdown(motorPorts);
+        } else if (motorPorts[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            portsAsDropdown = new Blockly.FieldDropdown(encoderPorts);
+        } else {
+            portsAsDropdown = new Blockly.FieldDropdown(encoderPorts.concat(motorPorts));
+        }
+        this.jsonInit({
+            message0: Blockly.Msg.ACTION_MOTOR + ' %1 ' + Blockly.Msg.ON + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            lastDummyAlign1: 'RIGHT',
+            args0: [{
+                type: 'field_dropdown', name: 'ACTORPORT', options: portsAsDropdown.menuGenerator_
+            }, {
+                type: 'input_value', name: 'POWER', check: 'Number'
+            }],
+            inputsInline: false,
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTOR_ON_TOOLTIP
+        });
+        this.dependConfig = {
+            type: 'encoder', dropDown: this.getField('ACTORPORT')
+        };
+    }
+};
+
+Blockly.Blocks['actions_motor_on_for_txt4'] = {
+    /**
+     * Turn motor on with specific power and unit.
+     *
+     * @constructs actions_motor_on_for_txt4
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            ACTORPORT     Dropdown computed from the robot's 'encoder' configuration
+     * @param {Number}
+     *            POWER         Speed (in %) to switch motor on with
+     * @param {String|Dropdown}
+     *            UNIT          Dropdown with either ROTATIONS or DEGREES
+     * @param {Number}
+     *            VALUE         Value of UNIT to be used
+     * @returns after execution of the block
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('encodermotor');
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.ACTION_MOTOR + ' %1 ' + Blockly.Msg.ON + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            message1: Blockly.Msg.FOR + ' %1 %2',
+            args0: [{
+                type: 'field_dropdown', name: 'ACTORPORT', options: ports.menuGenerator_
+            }, {
+                type: 'input_value', name: 'POWER', check: 'Number'
+            }],
+            args1: [{
+                type: 'field_dropdown',
+                name: 'UNIT',
+                options: [[Blockly.Msg.MOTOR_ROTATION, 'ROTATIONS'], [Blockly.Msg.MOTOR_DEGREE, 'DEGREES']]
+            }, {
+                type: 'input_value', name: 'VALUE', check: 'Number', align: 'RIGHT'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            inputsInline: false,
+            tooltip: Blockly.Msg.MOTOR_ON_FOR_TOOLTIP
+        });
+        this.dependConfig = {
+            type: 'encoder', dropDown: this.getField('ACTORPORT')
+        };
+
+    }
+};
+
+Blockly.Blocks['actions_motor_stop_txt4'] = {
+    init: function() {
+        var encoderPorts = getConfigPorts('encodermotor').getOptions_();
+        var motorPorts = getConfigPorts('motor').getOptions_();
+        var portsAsDropdown;
+        if (encoderPorts[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            portsAsDropdown = new Blockly.FieldDropdown(motorPorts);
+        } else if (motorPorts[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            portsAsDropdown = new Blockly.FieldDropdown(encoderPorts);
+        } else {
+            portsAsDropdown = new Blockly.FieldDropdown(encoderPorts.concat(motorPorts));
+        }
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_STOP + ' ' + Blockly.Msg.ACTION_MOTOR + ' %1',
+            args0: [{
+                type: 'field_dropdown', name: 'ACTORPORT', options: portsAsDropdown.menuGenerator_
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTOR_STOP_TOOLTIP
+        });
+        this.dependConfig = {
+            type: 'encoder', dropDown: this.getField('ACTORPORT')
+        };
+
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_on_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('omnidrive');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        var directions = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD'], [Blockly.Msg.LEFT, 'LEFT'], [Blockly.Msg.RIGHT, 'RIGHT'], ['forward left', 'FORWARDLEFT'],
+            ['backward left', 'BACKWARDLEFT'], ['forward right', 'FORWARDRIGHT'], ['backward right', 'BACKWARDRIGHT']], 'DIRECTION');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            directions = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD']]);
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_DRIVE + ' %1 ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'DIRECTION',
+                options: directions.menuGenerator_
+            },
+                {
+                    type: 'input_value', name: 'POWER', check: 'Number'
+                }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            inputsInline: false,
+            tooltip: Blockly.Msg.MOTORDIFF_ON_TOOLTIP
+        });
+
+        /*var options = [ [ 'test', 'HEART' ], [ 'backward', 'HEART_SMALL' ], [ 'left', 'HAPPY' ], [ 'right', 'SMILE' ], [ 'forward left', 'CONFUSED' ],
+            [ 'backward left', 'ANGRY' ], [ 'forward right', 'ASLEEP' ], [ 'backward right', 'SURPRISED' ]];
+        var dropdown = new Blockly.FieldDropdownImage(options, '/dropDowns/', 24, 24, 'png');
+        this.appendDummyInput().appendField("direction").appendField(dropdown, 'DIRECTION');
+        */
+        this.dependConfig = {
+            'type': 'omnidrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_on_for_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('omnidrive');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        var directions = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD'], [Blockly.Msg.LEFT, 'LEFT'], [Blockly.Msg.RIGHT, 'RIGHT'], ['forward left', 'FORWARDLEFT'],
+            ['backward left', 'BACKWARDLEFT'], ['forward right', 'FORWARDRIGHT'], ['backward right', 'BACKWARDRIGHT']], 'DIRECTION');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            directions = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD']]);
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_DRIVE + ' %1 ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            message1: Blockly.Msg.MOTOR_DISTANCE + ' %1',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'DIRECTION',
+                    options: directions.menuGenerator_
+                }, {
+                    type: 'input_value', name: 'POWER', check: 'Number'
+                }],
+            args1: [{
+                type: 'input_value', name: 'DISTANCE', check: 'Number', align: 'RIGHT'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            inputsInline: false,
+            tooltip: Blockly.Msg.MOTORDIFF_ON_TOOLTIP
+        });
+
+        this.dependConfig = {
+            'type': 'omnidrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_stop_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('omnidrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_STOP,
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            inputsInline: true,
+            tooltip: Blockly.Msg.MOTORDIFF_STOP_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'omnidrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_turn_txt4'] = {
+    /**
+     * Turn the robot (in omnidrive or differentialdrive mode) in defined DIRECTION.
+     *
+     * @constructs actions_motorOmni_turn_txt4
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            DIRECTION     Either LEFT or RIGHT
+     * @param {Number}
+     *            POWER         Speed (in %) to turn in DIRECTION mentioned
+     * @param {Number}
+     *            DEGREES       Value (in °) to turn in DIRECTION mentioned
+     * @returns after execution of the block (turning DEGREES °)
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('omnidrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_TURN + ' %1 ' + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'DIRECTION',
+                options: [[Blockly.Msg.MOTOR_RIGHT, 'RIGHT'], [Blockly.Msg.MOTOR_LEFT, 'LEFT']]
+            }, {
+                type: 'input_value', name: 'POWER', check: 'Number'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTORDIFF_TURN_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'omnidrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_turn_for_txt4'] = {
+    /**
+     * Turn the robot (in omnidrive or differentialdrive mode) in defined DIRECTION for defined DEGREES.     *
+     * @constructs actions_motorOmni_turn_txt4
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            DIRECTION     Either LEFT or RIGHT
+     * @param {Number}
+     *            POWER         Speed (in %) to turn in DIRECTION mentioned
+     * @param {Number}
+     *            DEGREES       Value (in °) to turn in DIRECTION mentioned
+     * @returns after execution of the block (turning DEGREES °)
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('omnidrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_TURN + ' %1 ' + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            message1: Blockly.Msg.MOTOR_DEGREE + ' %1',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'DIRECTION',
+                options: [[Blockly.Msg.MOTOR_RIGHT, 'RIGHT'], [Blockly.Msg.MOTOR_LEFT, 'LEFT']]
+            }, {
+                type: 'input_value', name: 'POWER', check: 'Number'
+            }],
+            args1: [{
+                type: 'input_value', name: 'DEGREES', check: 'Number', align: 'RIGHT'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTORDIFF_TURN_FOR_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'omnidrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_servo_on_for_txt4'] = {
+    /**
+     * Turn motor on with specific power and unit.
+     *
+     * @constructs actions_servo_on_for
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            ACTORPORT     Dropdown computed from the robot's 'servo' configuration
+     * @param {Number}
+     *            VALUE         Value of degrees to rotate
+     * @returns after execution of the block
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('servo');
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.SET + ' ' + Blockly.Msg.ACTION_SERVO_ARDUINO + ' %1 ' + Blockly.Msg.TO + ' °%2',
+            args0: [{
+                type: 'field_dropdown', name: 'ACTORPORT', options: ports.menuGenerator_
+            }, {
+                type: 'input_value', name: 'VALUE', check: 'Number', align: 'RIGHT'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            inputsInline: false,
+            tooltip: Blockly.Msg.MOTOR_ON_FOR_TOOLTIP_SERVO
+        });
+        this.dependConfig = {
+            type: 'servo', dropDown: this.getField('ACTORPORT')
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_curve'] = {
+    /**
+     * Steer the robot (in differential and omni drive mode) in defined DIRECTION.
+     *
+     * @constructs actions_motorDiff_curve
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            DIRECTION     Either FORWARD or BACKWARD
+     * @param {Number}
+     *            POWER_LEFT    Speed (in %) to supply LEFT wheel to steer in DIRECTION mentioned
+     * @param {Number}
+     *            POWER_RIGHT   Speed (in %) to supply RIGHT wheel to steer in DIRECTION mentioned
+     * @returns immediately
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('differentialdrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_STEER + ' %1 ' + Blockly.Msg.MOTOR_LEFT + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            message1: Blockly.Msg.MOTOR_RIGHT + ' ' + Blockly.Msg.MOTOR_SPEED + ' %1',
+            lastDummyAlign2: 'RIGHT',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'DIRECTION',
+                options: [[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD']]
+            }, {
+                type: 'input_value', name: 'POWER_LEFT', check: 'Number'
+            }],
+            args1: [{
+                type: 'input_value', name: 'POWER_RIGHT', check: 'Number', align: 'RIGHT'
+            }],
+            args2: [{
+                type: 'field_checkbox', checked: 'TRUE', name: 'REGULATION'
+            }],
+            inputsInline: false,
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTORDIFF_ON_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'differentialdrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_motorOmniDiff_curve_for'] = {
+    /**
+     * Steer the robot (in differential and omni drive mode) in defined DIRECTION for defined DISTANCE.
+     *
+     * @constructs actions_motorDiff_curve
+     * @this.Blockly.Block
+     * @param {String|Dropdown}
+     *            DIRECTION     Either FORWARD or BACKWARD
+     * @param {Number}
+     *            POWER_LEFT    Speed (in %) to supply LEFT wheel to steer in DIRECTION mentioned
+     * @param {Number}
+     *            POWER_RIGHT   Speed (in %) to supply RIGHT wheel to steer in DIRECTION mentioned
+     * @param {Number}
+     *           DISTANCE       Value (in cm) to steer in DIRECTION mentioned
+     * @returns after execution of the block (steering DISTANCE cm)
+     * @memberof Block
+     */
+    init: function() {
+        var ports = getConfigPorts('differentialdrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.MOTOR_STEER + ' %1 ' + Blockly.Msg.MOTOR_LEFT + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
+            message1: Blockly.Msg.MOTOR_RIGHT + ' ' + Blockly.Msg.MOTOR_SPEED + ' %1',
+            message2: Blockly.Msg.MOTOR_DISTANCE + ' %1',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'DIRECTION',
+                options: [[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD']]
+            }, {
+                type: 'input_value', name: 'POWER_LEFT', check: 'Number'
+            }],
+            args1: [{
+                type: 'input_value', name: 'POWER_RIGHT', check: 'Number', align: 'RIGHT'
+            }],
+            args2: [{
+                type: 'input_value', name: 'DISTANCE', check: 'Number', align: 'RIGHT'
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.MOTORDIFF_ON_FOR_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'differentialdrive',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_display_text_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('display');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT + '%1',
+            message1: Blockly.Msg.DISPLAY_ROW + '%1',
+            args0: [{
+                type: 'input_value',
+                name: 'TEXT',
+                check: ['Number', 'Boolean', 'String']
+            }],
+            args1: [{
+                type: 'input_value',
+                name: 'ROW',
+                check: ['Number']
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.DISPLAY_TEXT_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'display',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_display_rgbLed_hidden_on_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('display');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.RGBLED_ON + ' %1 ' + Blockly.Msg.BRICKLIGHT_COLOR + '%2',
+            args0: [{
+                type: 'field_label',
+                name: 'DISPLAY',
+                text: Blockly.Msg.ACTION_DISPLAY
+            }, {
+                type: 'input_value',
+                name: 'COLOUR',
+                check: ['Colour', 'ColourLed']
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.LED_ON_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'display',
+            'dropDown': this.getField('ACTORPORT')
+        };
+    }
+};
+
+
+Blockly.Blocks['actions_display_rgbLed_hidden_off_txt4'] = {
+    init: function() {
+        var ports = getConfigPorts('display');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.RGBLED_OFF + '%1 ',
+            args0: [{
+                type: 'field_label',
+                name: 'DISPLAY',
+                text: Blockly.Msg.ACTION_DISPLAY
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.LED_ON_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'display',
+            'dropDown': this.getField('ACTORPORT')
+        };
+    }
+};
+
+Blockly.Blocks['logic_colour_compare'] = {
+    init: function() {
+        this.setInputsInline(true);
+        this.jsonInit({
+            message0: '%1 %2 %3 ' + Blockly.Msg.HUE_TOLERANCE + '%4',
+            args0: [{
+                type: 'input_value',
+                name: 'COLOUR1',
+                check: ['Colour']
+
+            },
+                {
+                    type: 'field_dropdown',
+                    name: 'OP',
+                    options: [['=', 'EQ']]
+                },
+                {
+                    type: 'input_value',
+                    name: 'COLOUR2',
+                    check: ['Colour']
+                }, {
+                    type: 'input_value',
+                    name: 'TOLERANCE',
+                    check: ['Number']
+                }],
+            output: 'Boolean',
+            colour: Blockly.CAT_LOGIC_RGB,
+            tooltip: Blockly.Msg.LOGIC_COLOUR_COMPARE_TOOLTIP
+        });
+    }
+};
+
+Blockly.Blocks['robSensors_environmental_calibrate'] = {
+    init: function() {
+        var ports = getConfigPorts('environmental');
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_CALIBRATE + ' ' + Blockly.Msg.SENSOR_ENVIRONMENTAL + '%1',
+            args0: [{
+                type: 'field_dropdown', name: 'SENSORPORT', options: ports.menuGenerator_
+            }],
+            colour: Blockly.CAT_SENSOR_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.SENSOR_ENVIRONMENTAL_CALIBRATION_TOOLTIP
+        });
+        this.dependConfig = {
+            type: 'environmental', dropDown: this.getField('SENSORPORT')
         };
     }
 };

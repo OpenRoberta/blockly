@@ -87,6 +87,13 @@ sensors.accelerometer.thymio = {
     }], slots: [['x', '0'], ['y', '1'], ['z', '2']]
 };
 
+sensors.accelerometer.txt4 = {
+    title: 'IMU', modes: [{
+        name: 'ACCELERATION', type: 'Number', unit: 'g', op: 'NUM_REV', value: 0
+    }], slots: [['x', 'X'], ['y', 'Y'], ['z', 'Z']],
+    ports: 'CONFIGURATION'
+};
+
 sensors.tap = {};
 sensors.tap.thymio = {
     title: 'TAP', modes: [{
@@ -117,6 +124,7 @@ sensors.code.bob3 = {
         name: 'VALUE', type: 'Number', value: '11'
     }]
 };
+
 sensors.code.rob3rta = sensors.code.bob3;
 
 sensors.colour = {};
@@ -168,7 +176,14 @@ sensors.colour.spike = {
 
     ], ports: 'CONFIGURATION'
 };
-
+sensors.colour.txt4 = {
+    title: 'CAMERA',
+    modes: [{
+        name: 'COLOUR', type: 'Colour', value: '#b30006'
+    }],
+    ports: 'CONFIGURATION',
+    portsHidden: true
+};
 
 sensors.compass = {};
 sensors.compass.botnroll = {
@@ -202,6 +217,12 @@ sensors.compass.sensebox = {
     }, {
         name: 'Z', type: 'Number', unit: 'DEGREE'
     }], ports: 'CONFIGURATION'
+};
+sensors.compass.txt4 = {
+    title: 'IMU', modes: [{
+        name: 'MAGNETICFLUX', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 0
+    }], slots: [['x', 'X'], ['y', 'Y'], ['z', 'Z']],
+    ports: 'CONFIGURATION'
 };
 
 sensors.colourtcs3472 = {};
@@ -299,6 +320,14 @@ sensors.encoder.joycar = {
     }], ports: 'CONFIGURATION'
 };
 
+sensors.encoder.txt4 = {
+    title: 'ENCODER', modes: [{
+        name: 'DEGREE', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 180
+    }, {
+        name: 'ROTATION', type: 'Number', unit: '', op: 'NUM_REV', value: 2
+    }], ports: 'CONFIGURATION'
+};
+
 sensors.motor = {};
 sensors.motor.spike = {
     title: 'MOTOR', modes: [{
@@ -393,6 +422,21 @@ sensors.gesture.spike = {
     }]
 };
 
+sensors.gesture.txt4 = {
+    title: 'GESTURE', modes: [{
+        name: 'COLOUR', type: 'Colour', value: '#b30006'
+    }, {
+        name: 'AMBIENTLIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
+        name: 'GESTURE', type: 'Number'
+    }, {
+        name: 'PROXIMITY', type: 'Number', unit: 'PERCENT'
+    }, {
+        name: 'RGB', type: 'Array_Number'
+    }],
+    ports: 'CONFIGURATION'
+};
+
 sensors.gyro = {};
 sensors.gyro.calliope = {
     title: 'GYRO', modes: [{
@@ -450,6 +494,13 @@ sensors.gyro.arduino = {
     }, {
         name: 'Z', type: 'Number', unit: 'DEGREE_PER_SECOND'
     }], ports: 'CONFIGURATION'
+};
+
+sensors.gyro.txt4 = {
+    title: 'IMU', modes: [{
+        name: 'GYRO', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 0
+    }], slots: [['x', 'X'], ['y', 'Y'], ['z', 'Z']],
+    ports: 'CONFIGURATION'
 };
 
 sensors.htcolour = {};
@@ -588,6 +639,11 @@ sensors.infrared.joycar = {
         name: 'OBSTACLE', type: 'Boolean'
     }]
 };
+sensors.infrared.txt4 = {
+    title: 'INFRARED', slots: [['SLOT_LEFT', 'LEFT'], ['SLOT_RIGHT', 'RIGHT']], ports: 'CONFIGURATION', modes: [{
+        name: 'LINE', type: 'Boolean'
+    }]
+};
 
 sensors.irseeker = {};
 sensors.irseeker.ev3 = {
@@ -655,6 +711,8 @@ sensors.key.mbot2 = sensors.key.calliope;
 sensors.key.microbit = sensors.key.calliope;
 sensors.key.microbitv2 = sensors.key.calliope;
 sensors.key.joycar = sensors.key.microbitv2;
+sensors.key.txt4 = sensors.key.microbitv2;
+
 
 sensors.key.ev3 = {
     title: 'KEY',
@@ -690,6 +748,13 @@ sensors.key.thymio = {
         name: 'PRESSED', type: 'Number', op: 'NUM_EQ', value: 1
     }],
     ports: [['FORWARD', 'FORWARD'], ['RIGHT', 'RIGHT'], ['BACKWARD', 'BACKWARD'], ['LEFT', 'LEFT'], ['CENTER', 'CENTER']]
+};
+
+sensors.touchkey = {};
+sensors.touchkey.txt4 = {
+    title: 'TOUCHKEY', modes: [{
+        name: 'PRESSED', type: 'Boolean', question: true
+    }], ports: [['LEFT', 'LEFT'], ['RIGHT', 'RIGHT']]
 };
 
 sensors.light = {};
@@ -742,6 +807,14 @@ sensors.light.edison = {
     }]
 };
 
+sensors.light.txt4 = {
+    title: 'LIGHT',
+    modes: [{
+        name: 'VALUE', type: 'Number', unit: 'PERCENT', value: '1000'
+    }],
+    ports: 'CONFIGURATION'
+};
+
 sensors.lightveml = {};
 sensors.lightveml.sensebox = {
     title: 'LIGHTVEML', modes: [{
@@ -769,6 +842,15 @@ sensors.motion.mbot = {
     title: 'MOTION', modes: [{
         name: 'PRESENCE', type: 'Boolean'
     }], ports: [['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']], standardPort: '3'
+};
+
+sensors.motion.txt4 = {
+    title: 'CAMERA',
+    modes: [{
+        name: 'MOTION', type: 'Boolean'
+    }],
+    ports: 'CONFIGURATION',
+    portsHidden: true
 };
 
 sensors.optical = {};
@@ -897,6 +979,25 @@ sensors.line.joycar = {
         name: 'LINE', type: 'Boolean'
     }]
 };
+sensors.cameraline = {};
+sensors.cameraline.txt4 = {
+    title: 'CAMERA',
+    modes: [{
+        name: 'NUMBERLINES', type: 'Number', op: 'NUM_REV', value: '1'
+    }],
+    ports: 'CONFIGURATION',
+    portsHidden: true
+};
+
+sensors.ball = {};
+sensors.ball.txt4 = {
+    title: 'CAMERA',
+    modes: [{
+        name: 'BALL', type: 'Array_Number'
+    }],
+    ports: 'CONFIGURATION',
+    portsHidden: true
+};
 
 sensors.odometry = {};
 sensors.odometry.robotino = {
@@ -1024,6 +1125,7 @@ sensors.timer.mbot = sensors.timer.ev3;
 sensors.timer.mbot2 = sensors.timer.ev3;
 sensors.timer.sensebox = sensors.timer.ev3;
 sensors.timer.robotino = sensors.timer.ev3;
+sensors.timer.txt4 = sensors.timer.ev3;
 
 sensors.touch = {};
 sensors.touch.ev3 = {
@@ -1125,6 +1227,8 @@ sensors.ultrasonic.vorwerk = {
 };
 sensors.ultrasonic.spike = sensors.ultrasonic.calliope;
 sensors.ultrasonic.joycar = sensors.ultrasonic.calliope;
+sensors.ultrasonic.txt4 = sensors.ultrasonic.calliope;
+
 
 sensors.wall = {};
 sensors.wall.vorwerk = {
@@ -1185,6 +1289,22 @@ sensors.environmental.sensebox = {
     }], ports: 'CONFIGURATION'
 };
 
+sensors.environmental.txt4 = {
+    title: 'ENVIRONMENTAL', modes: [{
+        name: 'TEMPERATURE', type: 'Number', unit: 'DEGREE'
+    }, {
+        name: 'HUMIDITY', type: 'Number', unit: 'PERCENT'
+    }, {
+        name: 'PRESSURE', type: 'Number', unit: 'PASCAL'
+    }, {
+        name: 'IAQ', type: 'Number'
+    }, {
+        name: 'ACCURACY', type: 'Number'
+    }, {
+        name: 'CALIBRATIONNEED', type: 'Boolean'
+    }], ports: 'CONFIGURATION'
+};
+
 sensors.out.nano33ble = sensors.out.arduino;
 sensors.key.nano33ble = sensors.key.arduino;
 sensors.timer.nano33ble = sensors.timer.arduino;
@@ -1214,6 +1334,7 @@ sensorsAll.calliope = [sensors.key.calliope, sensors.pintouch.calliope, sensors.
 sensorsAll.microbit = [sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit, sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit, sensors.light.microbit];
 sensorsAll.microbitv2 = [sensors.key.microbitv2, sensors.pintouch.microbitv2, sensors.logotouch.microbitv2, sensors.gesture.microbitv2, sensors.sound.microbitv2, sensors.compass.microbitv2, sensors.timer.microbitv2, sensors.temperature.microbitv2, sensors.pin.microbitv2, sensors.accelerometer.microbitv2, sensors.light.microbitv2];
 sensorsAll.joycar = [sensors.key.joycar, sensors.ultrasonic.joycar, sensors.infrared.joycar, sensors.line.joycar, sensors.logotouch.joycar, sensors.sound.joycar, sensors.compass.joycar, sensors.timer.joycar, sensors.encoder.joycar, sensors.temperature.joycar, sensors.accelerometer.joycar, sensors.light.joycar, sensors.pin.joycar, sensors.gesture.joycar];
+sensorsAll.txt4 = [sensors.touchkey.txt4, sensors.ultrasonic.txt4, sensors.infrared.txt4, sensors.encoder.txt4, sensors.timer.txt4, sensors.colour.txt4, sensors.cameraline.txt4, sensors.ball.txt4, sensors.motion.txt4, sensors.key.txt4, sensors.gyro.txt4, sensors.compass.txt4, sensors.accelerometer.txt4, sensors.light.txt4, sensors.gesture.txt4, sensors.environmental.txt4];
 sensorsAll.arduino = [sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino, sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino, sensors.gyro.arduino, sensors.accelerometer.arduino];
 sensorsAll.festobionic = [sensors.timer.arduino];
 sensorsAll.festobionicflower = [sensors.timer.festobionicflower, sensors.touch.festobionicflower, sensors.light.festobionicflower];

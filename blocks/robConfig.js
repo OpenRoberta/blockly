@@ -152,9 +152,11 @@ Blockly.Blocks['robConf_generic'] = {
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(name).appendField(dropDown, confBlock.fixedPorts[i][0]);
             }
         }
-        
-        if (confBlock.statement) {
+
+        if (confBlock.previousStatement) {
             this.setPreviousStatement(true);
+        }
+        if (confBlock.nextStatement) {
             this.setNextStatement(true);
         }
         this.type = 'robConf_' + confBlockName;

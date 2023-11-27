@@ -341,6 +341,35 @@ Blockly.Blocks.robConfigDefinitions['spikePorts'] = function() {
     return array;
 };
 
+Blockly.Blocks.robConfigDefinitions['txt4InputPorts'] = function() {
+    var array = [
+        ['I1', 'I1'],
+        ['I2', 'I2'],
+        ['I3', 'I3'],
+        ['I4', 'I4'],
+        ['I5', 'I5'],
+        ['I6', 'I6'],
+        ['I7', 'I7'],
+        ['I8', 'I8']
+    ];
+    return array;
+    return array;
+};
+Blockly.Blocks.robConfigDefinitions['txt4OutputPorts'] = function() {
+    var array = [
+        ['O1', 'O1'],
+        ['O2', 'O2'],
+        ['O3', 'O3'],
+        ['O4', 'O4'],
+        ['O5', 'O5'],
+        ['O6', 'O6'],
+        ['O7', 'O7'],
+        ['O8', 'O8'],
+    ];
+    return array;
+    return array;
+};
+
 confBlocks.ultrasonic = {};
 confBlocks.ultrasonic.arduino = {
     title: 'ULTRASONIC',
@@ -377,6 +406,17 @@ confBlocks.ultrasonic.joycar = {
     ],
     sensor: true
 };
+
+confBlocks.ultrasonic.txt4 = {
+    title: 'ULTRASONIC',
+    ports: [
+        ['BRICK_PORT', 'PORT']
+    ],
+    pins: Blockly.Blocks.robConfigDefinitions['txt4InputPorts'],
+    sensor: true,
+    fixedPorts: [
+        ['VCC', '9V']
+    ]}
 confBlocks.ultrasonic.sensebox = {
     title: 'ULTRASONIC',
     ports: [
@@ -420,7 +460,8 @@ confBlocks.ultrasonicc = {};
 confBlocks.ultrasonicc.calliope = {
     title: 'ULTRASONIC',
     sensor: true,
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.light = {};
@@ -483,6 +524,20 @@ confBlocks.light.raspberrypi = {
     fixedPorts: [
         ['VCC', '3V3'],
         ['GND', 'GND']
+    ]
+};
+
+confBlocks.light.txt4 = {
+    title: 'LIGHT',
+    ports: [['BRICK_PORT', 'PORT']],
+
+    pins: function(a) {
+        return Blockly.Blocks.robConfigDefinitions['txt4InputPorts'];
+    },
+    sensor: true,
+    standardPins: ['I1'],
+    fixedPorts: [
+        ['VCC', '9V']
     ]
 };
 
@@ -574,6 +629,7 @@ confBlocks.display.spike = {
     sensor: false,
     inbuilt: true
 };
+confBlocks.display.txt4 = confBlocks.display.spike;
 
 confBlocks.moisture = {};
 confBlocks.moisture.arduino = {
@@ -651,7 +707,8 @@ confBlocks.infrared.calliope = {
             [Blockly.Msg.RIGHT, 'INFRARED_R']
         ];
     },
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 confBlocks.infrared.robotino = {
     title: 'INFRARED',
@@ -666,7 +723,8 @@ confBlocks.infrared.joycar = {
     fixedPorts: [
         ['BRICK_PORT', 'PORT']
     ],
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.line = {};
@@ -676,8 +734,19 @@ confBlocks.line.joycar = {
     fixedPorts: [
         ['BRICK_PORT', 'PORT']
     ],
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
+confBlocks.infrared.txt4 = {
+    title: 'INFRARED',
+    ports: [
+        ['SLOT_LEFT', 'PORTL'],
+        ['SLOT_RIGHT', 'PORTR']
+    ],
+    standardPins: ['I1', 'I2'],
+    pins: Blockly.Blocks.robConfigDefinitions['txt4InputPorts'],
+    sensor: true
+} ;
 
 confBlocks.infrared.wedo = {
     title: 'INFRARED',
@@ -890,6 +959,14 @@ confBlocks.key.spike = {
     },
     sensor: true
 };
+confBlocks.key.txt4 = {
+    title: 'KEY',
+    ports: [
+        ['BRICK_PORT', 'PORT']
+    ],
+    pins: Blockly.Blocks.robConfigDefinitions['txt4InputPorts'],
+    sensor: true
+};
 
 confBlocks.touch = {};
 confBlocks.touch.festobionicflower = {
@@ -1090,6 +1167,42 @@ confBlocks.lcdi2c.sensebox = {
     sensor: false
 };
 
+confBlocks.omnidrive = {};
+confBlocks.omnidrive.robotino = {
+    title: 'OMNIDRIVE',
+    fixedPorts: [
+        ['M1', 'M1'],
+        ['M2', 'M2'],
+        ['M3', 'M3']
+    ],
+    sensor: false,
+    inbuilt: true
+};
+confBlocks.omnidrive.txt4 = {
+    title: 'OMNIDRIVE',
+    inputs: [
+        ['BRICK_WHEEL_DIAMETER', '6'],
+        ['BRICK_TRACK_WIDTH', '15'],
+        ['WHEEL_BASE', '10.2']
+    ],
+    ports: [
+        ['MOTOR_FRONT_LEFT', 'MOTOR_FL'],
+        ['MOTOR_FRONT_RIGHT', 'MOTOR_FR'],
+        ['MOTOR_REAR_LEFT', 'MOTOR_RL'],
+        ['MOTOR_REAR_RIGHT', 'MOTOR_RR']
+    ],
+    pins: function(a) {
+        return [
+            ['M1', 'M1'],
+            ['M2', 'M2'],
+            ['M3', 'M3'],
+            ['M4', 'M4']
+        ];
+    },
+    standardPins: ['M1', 'M2', 'M3', 'M4'],
+    sensor: false,
+    inbuilt: true
+};
 confBlocks.differentialdrive = {};
 confBlocks.differentialdrive.mbot2 = {
     title: 'DIFFERENTIALDRIVE',
@@ -1111,18 +1224,28 @@ confBlocks.differentialdrive.mbot2 = {
     sensor: false,
     inbuilt: true
 };
-confBlocks.omnidrive = {};
-confBlocks.omnidrive.robotino = {
-    title: 'OMNIDRIVE',
-    fixedPorts: [
-        ['M1', 'M1'],
-        ['M2', 'M2'],
-        ['M3', 'M3']
+confBlocks.differentialdrive.txt4 = {
+    title: 'DIFFERENTIALDRIVE',
+    inputs: [
+        ['BRICK_WHEEL_DIAMETER', '6'],
+        ['BRICK_TRACK_WIDTH', '13.5']
     ],
+    ports: [
+        ['MOTOR_LEFT', 'MOTOR_L'],
+        ['MOTOR_RIGHT', 'MOTOR_R']
+    ],
+    pins: function(a) {
+        return [
+            ['M1', 'M1'],
+            ['M2', 'M2'],
+            ['M3', 'M3'],
+            ['M4', 'M4']
+        ];
+    },
     sensor: false,
+    standardPins: ['M1', 'M2'],
     inbuilt: true
-};
-
+}
 confBlocks.differentialdrive.joycar = {
     title: 'DIFFERENTIALDRIVE',
     inputs: [
@@ -1191,7 +1314,8 @@ confBlocks.led.calliope = {
             [Blockly.Msg.RIGHT, 'LED_R']
         ];
     },
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 confBlocks.led.festobionic = {
     title: 'LED',
@@ -1240,6 +1364,16 @@ confBlocks.led.raspberrypi = {
         ['GND', 'GND']
     ]
 };
+confBlocks.led.txt4 = {
+    title: 'LED',
+    ports: [['BRICK_PORT', 'PORT']],
+    pins: Blockly.Blocks.robConfigDefinitions['txt4OutputPorts'],
+    sensor: false,
+    standardPins: ['O5'],
+    fixedPorts: [
+        ['GND', 'GND']
+    ]
+}
 
 confBlocks.buzzer = {};
 confBlocks.buzzer.arduino = {
@@ -1411,7 +1545,8 @@ confBlocks.rgbled.calliope = {
             [Blockly.Msg.BACK_RIGHT, 'RGBLED_RR']
         ];
     },
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.rgbledh = {};
@@ -1555,7 +1690,8 @@ confBlocks.servoc.calliope = {
             [Blockly.Msg.RIGHT, 'SERVO_S2']
         ];
     },
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.servo.raspberrypi = {
@@ -1587,6 +1723,18 @@ confBlocks.servo.joycar = {
     },
     sensor: false
 };
+
+confBlocks.servo.txt4 = {
+    title: 'SERVO',
+    ports: [['BRICK_PORT', 'PORT']],
+    pins: function(a) {
+        return [
+            ['S1', 'S1'],
+            ['S2', 'S2'],
+            ['S3', 'S3']];
+    },
+    sensor: false
+}
 
 confBlocks.angularservo = {};
 confBlocks.angularservo.raspberrypi = {
@@ -1721,6 +1869,21 @@ confBlocks.motor.joycar = {
     },
     sensor: false
 };
+confBlocks.motor.txt4 = {
+    title: 'MOTOR',
+    action: true,
+    ports: [
+        ['BRICK_PORT', 'PORT']
+    ],
+    pins: function(a) {
+        return [
+            ['M1', 'M1'],
+            ['M2', 'M2'],
+            ['M3', 'M3'],
+            ['M4', 'M4']
+        ];
+    }
+};
 
 confBlocks.motorc = {};
 confBlocks.motorc.calliope = {
@@ -1733,7 +1896,8 @@ confBlocks.motorc.calliope = {
             [Blockly.Msg.RIGHT, 'MOTOR_R']
         ];
     },
-    statement: true
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.encoder = {};
@@ -1766,9 +1930,26 @@ confBlocks.encoder.joycar = {
     title: 'ENCODER',
     sensor: true,
     fixedPorts: [
+        ['BRICK_PORT', 'PORT1']
+    ],
+    previousStatement: true,
+    nextStatement: true
+};
+confBlocks.encoder.txt4 = {
+    title: 'ENCODER',
+    sensor: true,
+    ports: [
         ['BRICK_PORT', 'PORT']
     ],
-    statement: true
+    pins: function(a) {
+        return [
+            ['C1', 'C1'],
+            ['C2', 'C2'],
+            ['C3', 'C3'],
+            ['C4', 'C4']
+        ];
+    },
+    previousStatement: true
 };
 
 confBlocks.digitalout = {};
@@ -2073,6 +2254,29 @@ confBlocks.environmental.sensebox = {
         ];
     },
     sensor: true
+};
+
+confBlocks.environmental.txt4 = {
+    title: 'ENVIRONMENTAL',
+    sensor: true,
+    previousStatement: true,
+    nextStatement: true
+};
+
+confBlocks.gesture = {};
+confBlocks.gesture.txt4 = {
+    title: 'GESTURE',
+    sensor: true,
+    previousStatement: true,
+    nextStatement: true
+};
+
+confBlocks.imu = {};
+confBlocks.imu.txt4 = {
+    title: 'IMU',
+    sensor: true,
+    previousStatement: true,
+    nextStatement: true
 };
 
 confBlocks.aifes = {};
