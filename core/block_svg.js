@@ -149,10 +149,10 @@ Blockly.BlockSvg.prototype.select = function() {
     this.getParent().select();
     return;
   }
-  if (Blockly.selected == this) {
-    return;
-  }
   var oldId = null;
+  if (Blockly.selected == this) {
+    oldId = this.id;
+  }
   if (Blockly.selected) {
     oldId = Blockly.selected.id;
     // Unselect any previously selected block.
