@@ -1280,7 +1280,7 @@ Blockly.Blocks['actions_display_image'] = {
             }, {
                 type: 'input_value',
                 name: 'VALUE',
-                check: 'Image'
+                check: ["Image","Array_Image"]
             }],
             colour: Blockly.CAT_ACTION_RGB,
             previousStatement: true,
