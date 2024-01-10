@@ -1688,7 +1688,7 @@
   "START_CONNECT_HEADLINE": "Verbinde deinen Roboter",
   "START_CONNECT_TEXT": "Du kannst direkt deinen Roboter verbinden und automatisch das passende NEPO-Programm öffnen.",
   "START_FIRST_HELP": "Neu hier? Hilfreiches für deinen ersten Besuch.",
-  "START_TOUR_HEADLINE": "Mache eine interaktive Tou",
+  "START_TOUR_HEADLINE": "Mache eine interaktive Tour",
   "START_WIKI_HEADLINE": "Schau in unser Wiki",
   "START_FAQ_HEADLINE": "Finde Antworten auf wichtige Fragen",
   "START_FAQ": "Hier findest Du Antworten auf Fragen rund um das Open Roberta Lab, die uns bislang gestellt wurden oder die wir uns selbst bereits gestellt haben.",
@@ -1706,5 +1706,12 @@
   "TITLE_GOAL": "Lernziel",
   "TITLE_PREVIOUS": "Vorkenntnisse",
   "OPTION_WEBUSB": "Verbinde deinen micro:bit mit dem Computer,<br><small>wähle ihn im nächsten Popup aus und klicke auf »Verbinden«</small>",
-  "OPTION_FILE_DOWNLOAD": "Laden dein Programm als Datei herunter"
+  "OPTION_FILE_DOWNLOAD": "Laden dein Programm als Datei herunter",
+  "START_RESULTS": "Ergebnisse",
+  "START_OPTIONS": "Weitere Optionen",
+  "GALLERY_NEWEST": "Neueste zuerst",
+  "GALLERY_OLDEST":"Älteste zuerst",
+  "GALLERY_PROGRAM_NAME": "Programmname alph.",
+  "GALLERY_ROBOT": "Roboter/Systeme alph.",
+  "GALLERY_ALL_ROBOTS": "Alle Roboter/Systeme"
 }

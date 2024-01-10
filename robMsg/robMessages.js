@@ -1924,5 +1924,12 @@ Blockly.Msg.START_ALL_ROBOTS='All systems and filter options';
 Blockly.Msg.TITLE_GOAL='Learning objective';
 Blockly.Msg.TITLE_PREVIOUS='Previous knowledge';
 Blockly.Msg.OPTION_WEBUSB='Connect your micro:bit device to the computer<br><small>select it in the next popup and click »Connect«</small>';
-Blockly.Msg.OPTION_FILE_DOWNLOAD='Download your program as a file'
+Blockly.Msg.OPTION_FILE_DOWNLOAD='Download your program as a file';
+Blockly.Msg.START_RESULTS='results';
+Blockly.Msg.START_OPTIONS='More options';
+Blockly.Msg.GALLERY_NEWEST='Newest first';
+Blockly.Msg.GALLERY_OLDEST='Oldest first';
+Blockly.Msg.GALLERY_PROGRAM_NAME='Program name alph.';
+Blockly.Msg.GALLERY_ROBOT='Robot/System alph.';
+Blockly.Msg.GALLERY_ALL_ROBOTS='All robots/systems';
 
