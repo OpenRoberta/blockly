@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "您已經將此程式上載到畫廊。如果要更改它, 請從庫中查找副本並對其進行修改。在從庫中刪除副本時, 也可以從庫中刪除它。";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "獲取";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "從所選感應器獲取當前讀數。";

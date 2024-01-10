@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.";  // untranslated
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "al";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Seçilen sensörden güncel okuma değerini alır.";

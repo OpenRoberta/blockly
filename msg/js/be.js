@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "Вы ўжо заладавалі гэту праграму ў галерэю. Вы можаце заладаваць гэту праграму з галерэі і змяніць яе. Вы таксама можаце выдаліць праграму з галерэі.";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "вярнуць";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Вяртае бягучы паказнік абранага датчыка.";

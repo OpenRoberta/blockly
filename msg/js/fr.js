@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "Tu as déjà uploadé ce programme dans la galerie. Si tu veux le modifier, cherche la version dans la galerie et modifie la. Tu peux aussi l'enlever de la galerie.";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "lire";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Lit la valeur du capteur sélectionné";

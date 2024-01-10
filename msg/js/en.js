@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";
 Blockly.Msg.GALLERY_SHARED_ALREADY = "You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";
 Blockly.Msg.GEARED_MOTOR = "geared motor";
 Blockly.Msg.GET = "get";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Gets the current reading from chosen sensor.";

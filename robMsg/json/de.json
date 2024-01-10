@@ -1713,5 +1713,6 @@
   "GALLERY_OLDEST":"Älteste zuerst",
   "GALLERY_PROGRAM_NAME": "Programmname alph.",
   "GALLERY_ROBOT": "Roboter/Systeme alph.",
-  "GALLERY_ALL_ROBOTS": "Alle Roboter/Systeme"
+  "GALLERY_ALL_ROBOTS": "Alle Roboter/Systeme",
+  "GALLERY_SORT_BY": "Sortieren nach"
 }

@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "Ви вже завантажили цю програму у галерею. Для того, щоб змінити її, знайдіть копію з галереї та змініть її. Ви можете також видалити програму із галереї видаливши її копію з галереї.";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "повернути";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Повертає поточне значення обраного сенсора.";

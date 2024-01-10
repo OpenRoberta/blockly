@@ -1932,4 +1932,5 @@ Blockly.Msg.GALLERY_OLDEST='Oldest first';
 Blockly.Msg.GALLERY_PROGRAM_NAME='Program name alph.';
 Blockly.Msg.GALLERY_ROBOT='Robot/System alph.';
 Blockly.Msg.GALLERY_ALL_ROBOTS='All robots/systems';
+Blockly.Msg.GALLERY_SORT_BY='Order by';
 

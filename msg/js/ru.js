@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Oldest first";  // untranslated
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Program name alph.";  // untranslated
 Blockly.Msg.GALLERY_ROBOT = "Robot/System alph.";  // untranslated
 Blockly.Msg.GALLERY_SHARED_ALREADY = "Вы уже загрузили эту программу в галлерею. Вы можете загрузить эту программу из галлереи и изменить ее.  Вы можете так же удалить программу из галлереи.";
+Blockly.Msg.GALLERY_SORT_BY = "Order by";  // untranslated
 Blockly.Msg.GEARED_MOTOR = "geared motor";  // untranslated
 Blockly.Msg.GET = "вернуть";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Возвращает текущее показание выбранного датчика.";

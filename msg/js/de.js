@@ -379,6 +379,7 @@ Blockly.Msg.GALLERY_OLDEST = "Älteste zuerst";
 Blockly.Msg.GALLERY_PROGRAM_NAME = "Programmname alph.";
 Blockly.Msg.GALLERY_ROBOT = "Roboter/Systeme alph.";
 Blockly.Msg.GALLERY_SHARED_ALREADY = "Dieses Programm hast du bereits in die Gallerie hochgeladen. Wenn du es ändern willst, ändere die Kopie der Gallerie. Du kannst das Programm auch wieder aus der Gallerie herausnehmen indem du die Kopie von der Gallerie löscht.";
+Blockly.Msg.GALLERY_SORT_BY = "Sortieren nach";
 Blockly.Msg.GEARED_MOTOR = "Getriebemotor";
 Blockly.Msg.GET = "gib";
 Blockly.Msg.GETSAMPLE_TOOLTIP = "Gibt den aktuellen Wert des ausgewählten Sensors zurück.";
