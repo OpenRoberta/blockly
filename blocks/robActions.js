@@ -1685,8 +1685,7 @@ Blockly.Blocks['robActions_assert'] = {
 
 Blockly.Blocks['robActions_eval_expr'] = {
     /**
-     * Provides a block to create expressions in the robot's programming
-     * language
+     * Provides a block to evaluate a text as expression
      *
      * @constructs robActions_eval_expr
      * @this.Blockly.Block
@@ -1726,6 +1725,28 @@ Blockly.Blocks['robActions_eval_expr'] = {
         }
         this.type_ = type;
         this.setOutput(true, type);
+    }
+};
+
+Blockly.Blocks['robActions_eval_stmt'] = {
+    /**
+     * Provides a block to evaluate a text as statements
+     *
+     * @constructs robActions_eval_expr
+     * @this.Blockly.Block
+     * @param {any}
+     *            OUT evaluated expression
+     * @returns immediately
+     * @memberOf Block
+     */
+    init: function() {
+        this.setColour('#646464');
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.ACTION_EVAL)
+            .appendField(new Blockly.FieldTextInput('s1;s2;s3;', this.validate), 'EXPRESSION');
+        this.setTooltip('Evals any expression and return the result.');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
     }
 };
 
