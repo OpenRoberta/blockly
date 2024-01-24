@@ -436,7 +436,7 @@ Blockly.Msg.MENU_FAQ = 'FAQ';
 Blockly.Msg.MENU_GENERAL = 'general help';
 Blockly.Msg.MBUILD_PORT_TOOLTIP = 'Block for the mBuild Port. The order of the compatible mbuild sensor blocks should be identical to the real system.';
 Blockly.Msg.I2CBUS_TOOLTIP = 'Represents one byte of the I2C address space.';
-Blockly.Msg.MENU_SHOW_AGAIN = 'show welcome note again';
+Blockly.Msg.MENU_SHOW_AGAIN = 'back to the start page';
 Blockly.Msg.MENU_ROBOT_STATE_INFO = 'info';
 Blockly.Msg.MENU_STATE_INFO = 'state information';
 Blockly.Msg.MENU_ABOUT = 'about the Open Roberta Lab';
@@ -468,7 +468,7 @@ Blockly.Msg.POPUP_ABOUT_TEXT = 'The Open Roberta Lab is a cloud-based integrated
 Blockly.Msg.POPUP_ABOUT_TEXT_DEV = 'The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href="http://www.roberta-home.de/" target="_blank">»Roberta – Learning with Robots«</a>';
 Blockly.Msg.POPUP_ABOUT_TEXT_GOOG = 'Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots.</a>';
 Blockly.Msg.POPUP_ABOUT_TEXT_NRW = 'As part of the project »AI Algorithms in Computer Science Education«, the Ministry for Schools and Education of the State of North Rhine-Westphalia is funding the integration of Artificial Neural Networks into the Open Roberta Lab as well as the development of suitable learning content and materials on Artificial Intelligence.';
-Blockly.Msg.POPUP_STARTUP_START = 'Choose your system!';
+Blockly.Msg.POPUP_STARTUP_START = 'back to robot/system selection';
 Blockly.Msg.POPUP_ABOUT_JOIN = 'I want to help';
 Blockly.Msg.POPUP_USERNAME = 'Username';
 Blockly.Msg.POPUP_USERNAME_LOGOFF = 'You are not logged in.';
@@ -1896,7 +1896,7 @@ Blockly.Msg.START_HEADLINE_PART_ONE = 'Program';
 Blockly.Msg.START_HEADLINE_PART_TWO = 'your';
 Blockly.Msg.START_HEADLINE_PART_THREE='Robots &';
 Blockly.Msg.START_HEADLINE_PART_FOUR = 'Boards';
-Blockly.Msg.START_TEASER ='Our open source platform »Open Roberta Lab« let you create your very own programs in no time at all using drag and drop. The graphical programming language <span class="nepo">(NEPO)</span> will support you.'
+Blockly.Msg.START_TEASER ='Our open source platform »Open Roberta Lab« let you create your very own programs in no time at all using drag and drop.'
 Blockly.Msg.START_LOGIN_HEADLINE = 'Sign in';
 Blockly.Msg.START_LOGIN_TEXT ='Log in and have access to your saved programs and settings.';
 Blockly.Msg.START_IMPORT_HEADLINE='Import your NEPO program';
@@ -1933,4 +1933,7 @@ Blockly.Msg.GALLERY_PROGRAM_NAME='Program name alph.';
 Blockly.Msg.GALLERY_ROBOT='Robot/System alph.';
 Blockly.Msg.GALLERY_ALL_ROBOTS='All robots/systems';
 Blockly.Msg.GALLERY_SORT_BY='Order by';
+Blockly.Msg.START_FORMATSEARCH='search robots/systems';
+Blockly.Msg.START_BOOKMARK_TOOLTIP='Create a bookmark directly to your favourite robot/system.';
+Blockly.Msg.START_STARTUP_TITLE='Welcome to Open Roberta Lab';
 
