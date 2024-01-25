@@ -62,7 +62,7 @@
 	"CONNECTION_RECEIVE_TOOLTIP": "Ждет заданного вами в соединении сообщения от робота.",
 	"CONNECTION_SEND_DATA": "Послать сообщение",
 	"CONNECTION_SEND_TOOLTIP": "Посылает сообщение другому роботу.",
-	"CONNECTION_SET_CHANNEL": "Установить канал на 1%",
+	"CONNECTION_SET_CHANNEL": "Установить канал на %1",
 	"CONNECTION_SET_CHANNEL_TOOLTIP": "Устанавливает канал для отсылки и отправления и принятия сообщений. Канал должен быть в диапазоне 0-255.",
 	"CONNECTION_START_TOOLTIP": "Пытается установить Bluetooth-соединение с другим роботом.",
 	"CONNECTION_TOOLTIP": "Соединение робота",

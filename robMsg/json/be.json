@@ -92,7 +92,7 @@
   "CONNECTION_RECEIVE_TOOLTIP": "Чакае паведамлення ад робата, зададзенага Вамі ў злучэнні.",
   "CONNECTION_SEND_DATA": "Даслаць паведамленне",
   "CONNECTION_SEND_TOOLTIP": "Дасылае паведамленне іншаму робату",
-  "CONNECTION_SET_CHANNEL": "Усталяваць канал на 1%",
+  "CONNECTION_SET_CHANNEL": "Усталяваць канал на %1",
   "CONNECTION_SET_CHANNEL_TOOLTIP": "Усталёўвае канал для дасылкі і адпраўлення ды прыняцця паведамленняў. Канал павінен быць у дыяпазоне 0-255.",
   "CONNECTION_START_TOOLTIP": "Імкнецца ўсталяваць Bluethoth-злучэнне з іншым робатам.",
   "CONNECTION_TOOLTIP": "Злучэнне з робатам",

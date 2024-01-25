@@ -89,7 +89,7 @@
   "CONNECTION_RECEIVE_TOOLTIP": "Väntar på ett meddelande från roboten som du deklarerat i anslutningen.",
   "CONNECTION_SEND_DATA": "skicka meddelande",
   "CONNECTION_SEND_TOOLTIP": "Skickar ett meddelande till en annan robot.",
-  "CONNECTION_SET_CHANNEL": "ställ in kanal på % 1",
+  "CONNECTION_SET_CHANNEL": "ställ in kanal på %1",
   "CONNECTION_SET_CHANNEL_TOOLTIP": "Ställer in kanalen för att skicka och ta emot meddelanden. Kan ställas in från 0 till 255.",
   "CONNECTION_START_TOOLTIP": "Försöker ansluta till en annan robot via Bluetooth.",
   "CONNECTION_TOOLTIP": "En robots koppling",
