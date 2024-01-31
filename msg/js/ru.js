@@ -1455,10 +1455,11 @@ Blockly.Msg.PROGLIST_DELETE_ALL_TOOLTIP = "Кликните здесь чтоб�
 Blockly.Msg.PROGLIST_DELETE_TOOLTIP = "Кликните здесь чтобы удалить вашк программу.";
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = "Click here to load your robot configuration in the configuration environment.";  // untranslated
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = "Click here to share your program with a friend.";  // untranslated
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href='https://www.roberta-home.de/index.php?id=138&L=1' target='_blank'>here</a>.";  // untranslated
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Do you really want to upload your program to the gallery and share it with all other users? Take a close look at the preview above. This is exactly what everyone else will see in the gallery. The two lines below the name of the program are a preview of the program documentation. By publishing your program in the gallery, other users are allowed to use, modify and share your program. You also agree to the conditions for publishing a program in the Open Roberta Gallery. If you are not sure, take another look <a href='https://www.roberta-home.de/index.php?id=138&L=1' target='_blank'>here</a>!";  // untranslated
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "Click here to upload your program to the gallery hence share it with all other users.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "This expression is syntactically incorrect.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "This expression is invalid. The type check failed.";  // untranslated
+Blockly.Msg.PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE = "You have tried to import a program that is suitable for »$«, a group of robots/systems.<br>Please first select the desired robot/system here on the start page.";  // untranslated
 Blockly.Msg.PULSEHIGH = "pulse time HIGH";  // untranslated
 Blockly.Msg.PULSELOW = "pulse time LOW";  // untranslated
 Blockly.Msg.PULSETOOLTIP = "Represents a pulse sensor.";  // untranslated

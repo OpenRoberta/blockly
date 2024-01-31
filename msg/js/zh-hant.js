@@ -1459,6 +1459,7 @@ Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "你真的想和大家分享你的節�
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "按一下此處將您的程式上傳到庫中, 從而與所有其他使用者共用它。";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "This expression is syntactically incorrect.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "This expression is invalid. The type check failed.";  // untranslated
+Blockly.Msg.PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE = "You have tried to import a program that is suitable for »$«, a group of robots/systems.<br>Please first select the desired robot/system here on the start page.";  // untranslated
 Blockly.Msg.PULSEHIGH = "pulse time HIGH";  // untranslated
 Blockly.Msg.PULSELOW = "pulse time LOW";  // untranslated
 Blockly.Msg.PULSETOOLTIP = "Represents a pulse sensor.";  // untranslated

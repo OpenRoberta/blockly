@@ -1088,7 +1088,7 @@ Blockly.Msg.ORA_GALLERY_UPLOAD_ERROR = 'Your program »$« couldn"t be uploaded 
 Blockly.Msg.ORA_LIKE_SAVE_SUCCESS = 'You like program »$« now!';
 Blockly.Msg.ORA_LIKE_SAVE_ERROR_EXISTS = 'You couldn"t like program »$«. Maybe you have already liked it.';
 Blockly.Msg.ORA_LIKE_DELETE_SUCCESS = 'You do not like program »$« anymore!';
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">here</a>.';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to upload your program to the gallery and share it with all other users? Take a close look at the preview above. This is exactly what everyone else will see in the gallery. The two lines below the name of the program are a preview of the program documentation. By publishing your program in the gallery, other users are allowed to use, modify and share your program. You also agree to the conditions for publishing a program in the Open Roberta Gallery. If you are not sure, take another look <a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">here</a>!';
 Blockly.Msg.GALLERY_SHARED_ALREADY = 'You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.';
 Blockly.Msg.MENU_CREATE_LINK = 'create program link ...';
 Blockly.Msg.POPUP_GET_LINK = 'Here is the link to your actual program. Please don"t change it, it probably won"t work anymore. It"s already copied to your clipboard!</br>$';
@@ -1936,4 +1936,4 @@ Blockly.Msg.GALLERY_SORT_BY='Order by';
 Blockly.Msg.START_FORMATSEARCH='search robots/systems';
 Blockly.Msg.START_BOOKMARK_TOOLTIP='Create a bookmark directly to your favourite robot/system.';
 Blockly.Msg.START_STARTUP_TITLE='Welcome to Open Roberta Lab';
-
+Blockly.Msg.PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE='You have tried to import a program that is suitable for »$«, a group of robots/systems.<br>Please first select the desired robot/system here on the start page.';

@@ -1716,5 +1716,6 @@
   "GALLERY_ALL_ROBOTS": "Alle Roboter/Systeme",
   "GALLERY_SORT_BY": "Sortieren nach",
   "START_FORMATSEARCH": "suche Roboter/Systeme",
-  "START_BOOKMARK_TOOLTIP": "Erstelle dir ein Lesezeichen direkt zu deinem Lieblingsroboter/-system."
+  "START_BOOKMARK_TOOLTIP": "Erstelle dir ein Lesezeichen direkt zu deinem Lieblingsroboter/-system.",
+  "PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE": "Du hast versucht, ein Programm zu importieren das für »$«, eine Gruppe von Robotern/Systemen geeignet ist.<br>Bitte wähle hier auf der Startseite zuerst den gewünschten Roboter/das gewünschte System aus."
 }

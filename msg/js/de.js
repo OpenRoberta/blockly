@@ -1459,6 +1459,7 @@ Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Möchtest du dein Programm wirklich i
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "Klicke hier um dein Programm in der Galerie hochzuladen und es mit allen anderen Benutzern zu teilen.";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "Dieser Ausdruck ist falsch aufgebaut. Syntaxfehler.";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "Dieser Ausdruck ist nicht gültig. Fehler beim Typecheck.";
+Blockly.Msg.PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE = "Du hast versucht, ein Programm zu importieren das für »$«, eine Gruppe von Robotern/Systemen geeignet ist.<br>Bitte wähle hier auf der Startseite zuerst den gewünschten Roboter/das gewünschte System aus.";
 Blockly.Msg.PULSEHIGH = "Pulszeit HIGH";
 Blockly.Msg.PULSELOW = "Pulszeit LOW";
 Blockly.Msg.PULSETOOLTIP = "Block für den Pulssensor.";
