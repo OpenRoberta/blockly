@@ -1456,6 +1456,7 @@ Blockly.Msg.PROGLIST_DELETE_TOOLTIP = "Klicka här för att radera ditt program.
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = "Klicka här för att ladda din robotkonfiguration i konfigurationsmiljön.";
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = "Klicka här för att dela ditt program med en vän.";
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Vill du verkligen dela ditt program med alla? Om du är osäker, kolla frågor och svar <a href=\"https://www.roberta-home.de/index.php?id=138&L=1\" target=\"_blank\"> här </a>.";
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "Klicka här för att ladda upp ditt program till galleriet och dela det med alla andra användare.";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "This expression is syntactically incorrect.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "This expression is invalid. The type check failed.";  // untranslated
 Blockly.Msg.PULSEHIGH = "pulse time HIGH";  // untranslated

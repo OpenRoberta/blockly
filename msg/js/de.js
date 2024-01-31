@@ -1456,6 +1456,7 @@ Blockly.Msg.PROGLIST_DELETE_TOOLTIP = "Klicke hier um dein Programm zu löschen.
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = "Klicke hier um dein Programm in die Programmierumgebung zu laden.";
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = "Klicke hier um dein Programm mit einem Freund zu teilen.";
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Möchtest du dein Programm wirklich in die Gallerie hochladen und mit allen anderen Benutzern teilen? Schaue dir die Vorschau oben genau an. Genau so werden es alle anderen in der Gallery sehen. Die zwei Zeilen unter dem Namen des Programmes sind eine Vorschau auf die Programmdokumentation. Wenn du dir nicht sicher bist, schaue <a href='https://www.roberta-home.de/index.php?id=138' target='_blank'>hier</a> nochmal genau nach!";
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "Klicke hier um dein Programm in der Galerie hochzuladen und es mit allen anderen Benutzern zu teilen.";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "Dieser Ausdruck ist falsch aufgebaut. Syntaxfehler.";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "Dieser Ausdruck ist nicht gültig. Fehler beim Typecheck.";
 Blockly.Msg.PULSEHIGH = "Pulszeit HIGH";

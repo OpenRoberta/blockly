@@ -1073,7 +1073,7 @@ Blockly.Msg.PROGLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected pro
 Blockly.Msg.PROGLIST_DELETE_TOOLTIP = 'Click here to delete your program.';
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = 'Click here to share your program with a friend.';
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = 'Click here to load your robot configuration in the configuration environment.';
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = 'Click here to upload your program to the gallery hence share it with all other users. Look closely at the preview above. This is exactly how everyone else in the gallery will see it. The two lines below the program name are a preview of the program documentation. If you\'re not sure, check <a href=\'https://www.roberta-home.de/index.php?id=138\' target=\'_blank\'>here</a> again for details!';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = 'Click here to upload your program to the gallery hence share it with all other users.';
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected programs.';
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = 'Click here to delete your robot configuration.';
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = 'Click here to load your robot configuration in the configuration environment.';

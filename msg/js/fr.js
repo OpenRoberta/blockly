@@ -1456,6 +1456,7 @@ Blockly.Msg.PROGLIST_DELETE_TOOLTIP = "Clique ici pour supprimer ton programme";
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = "Clique ici pour charger la configuration du robot";
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = "Clique ici pour partager ton programme avec des amis";
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "Es-tu sûr de vouloir partager ton programme avec tout le monde ?";
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "Clique ici pour ajouter ton programme à la galerie où ils sera visible par tout le monde";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "This expression is syntactically incorrect.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "This expression is invalid. The type check failed.";  // untranslated
 Blockly.Msg.PULSEHIGH = "pulse time HIGH";  // untranslated

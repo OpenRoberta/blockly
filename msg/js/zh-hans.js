@@ -1456,6 +1456,7 @@ Blockly.Msg.PROGLIST_DELETE_TOOLTIP = "单击此处删除您的程序。";
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = "单击此处载入您的机器人配置。";
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = "单击此处与朋友共享您的程序。";
 Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = "你真的想和大家分享你的程序吗？如果你不确定请检查问题和答案<a href=\"https://www.roberta-home.de/index.php?id=138&L=1\" target=\"_blank\">在这里</a>。";
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = "单击此处将您的程序上载到程序库中, 并与其他用户分享。";
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = "This expression is syntactically incorrect.";  // untranslated
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = "This expression is invalid. The type check failed.";  // untranslated
 Blockly.Msg.PULSEHIGH = "pulse time HIGH";  // untranslated

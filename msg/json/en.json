@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2024-01-25 15:45:56.670485",
+		"lastupdated": "2024-01-30 17:39:59.419724",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1322,6 +1322,7 @@
 	"PROGLIST_DELETE_TOOLTIP": "Click here to delete your program.",
 	"PROGLIST_SHARE_TOOLTIP": "Click here to share your program with a friend.",
 	"PROGLIST_LOAD_TOOLTIP": "Click here to load your robot configuration in the configuration environment.",
+	"PROGLIST_SHARE_WITH_GALLERY_TOOLTIP": "Click here to upload your program to the gallery hence share it with all other users.",
 	"CONFLIST_DELETE_ALL_TOOLTIP": "Click here to delete all selected programs.",
 	"CONFLIST_DELETE_TOOLTIP": "Click here to delete your robot configuration.",
 	"CONFLIST_LOAD_TOOLTIP": "Click here to load your robot configuration in the configuration environment.",
