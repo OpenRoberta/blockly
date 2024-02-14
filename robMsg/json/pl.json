@@ -62,7 +62,7 @@
   "CONNECTION_RECEIVE_TOOLTIP": "Czeka na wiadomość od robota zadeklarowanego w połączeniu.",
   "CONNECTION_SEND_DATA": "wysłane wiadomość",
   "CONNECTION_SEND_TOOLTIP": "Wyślij wiadomość do innego robota",
-  "CONNECTION_SET_CHANNEL": "ustaw kanał na %!",
+  "CONNECTION_SET_CHANNEL": "ustaw kanał na %1",
   "CONNECTION_SET_CHANNEL_TOOLTIP": "Ustawia kanał do wysyłania i odbierania wiadomości. Może być ustawiony od 0 do 255.",
   "CONNECTION_START_TOOLTIP": "Próbuje nawiązać połączenie z innym robotem za pomocą Bluetooth.",
   "CONNECTION_TOOLTIP": "połączenie z robotem %1 aktywne?",
