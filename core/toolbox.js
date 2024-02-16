@@ -252,7 +252,12 @@ Blockly.Toolbox.prototype.position = function() {
     } else {  // Left
       treeDiv.style.left = svgPosition.x + 'px';
     }
-    treeDiv.style.height = svgSize.height + 'px';
+    if (document.getElementsByClassName('blocklyToolboxDiv')[0]
+        && document.getElementsByClassName('blocklyToolboxDiv')[0].parentElement.id === "toolboxDiv") {
+      treeDiv.style.height = svgSize.height - 36 + 'px';
+    } else {
+      treeDiv.style.height = svgSize.height + 'px';
+    }
     treeDiv.style.top = svgPosition.y + 'px';
     this.width = treeDiv.offsetWidth;
     if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT) {
@@ -266,14 +271,6 @@ Blockly.Toolbox.prototype.position = function() {
     goog.dom.classlist.remove(treeDiv, 'scroll');
   } else {
     goog.dom.classlist.add(treeDiv, 'scroll');
-  };
-  // check if workspace is small (small device / simulation active)
-  var blocklyWorkspaceWidth = this.HtmlDiv.parentElement.clientWidth ||
-                       this.HtmlDiv.parentElement.parentNode.clientWidth;
-  if (blocklyWorkspaceWidth > 767 || blocklyWorkspaceWidth > 767) {
-    goog.dom.classlist.remove(treeDiv, 'small'); 
-  } else {
-    goog.dom.classlist.add(treeDiv, 'small');
   };
   this.flyout_.position();
 };
