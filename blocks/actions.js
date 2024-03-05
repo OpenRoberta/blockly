@@ -584,14 +584,14 @@ Blockly.Blocks['colour_picker_spike'] = {
             var parent = thisBlock.getParent();
             return (parent && parent.getInputsInline() && parent.tooltip) || Blockly.Msg.COLOUR_PICKER_TOOLTIP;
         });
-        this.getField('COLOUR').setColours(['#E701A7', '#571CC1', '#3590F5', '#77E7FF', '#0FCB54', '#0BA845', '#F7F700', '#FAAC01', '#FA010C', '#000000', '#FFFFFF', Blockly.CAT_COLOUR_RGB]).setColumns(1);
+        this.getField('COLOUR').setColours(['#E701A7', '#571CC1', '#3590F5', '#77E7FF', '#00FFFF', '#0BA845', '#F7F700', '#FAAC01', '#FA010C', '#000000', '#FFFFFF', Blockly.CAT_COLOUR_RGB]).setColumns(1);
         var thisBlock = this;
         var validator = function(newValue) {
             switch (newValue.toUpperCase()) {
                 case '#E701A7':
                 case '#3590F5':
                 case '#77E7FF':
-                case '#0FCB54':
+                case '#00FFFF':
                 case '#F7F700':
                 case '#FA010C':
                 case '#FFFFFF':
