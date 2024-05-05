@@ -2203,7 +2203,7 @@ Blockly.Blocks['logic_colour_compare'] = {
                     check: ['Number']
                 }],
             output: 'Boolean',
-            colour: Blockly.CAT_LOGIC_RGB,
+            colour: Blockly.CAT_COLOUR_RGB,
             tooltip: Blockly.Msg.LOGIC_COLOUR_COMPARE_TOOLTIP
         });
     }
@@ -2224,6 +2224,64 @@ Blockly.Blocks['robSensors_environmental_calibrate'] = {
         });
         this.dependConfig = {
             type: 'environmental', dropDown: this.getField('SENSORPORT')
+        };
+    }
+};
+
+Blockly.Blocks['actions_play_file_txt4'] = {
+    init: function() {
+        this.setBlocking(true);
+        var ports = getConfigPorts('buzzer');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.ACTION_PLAY + ' ' + Blockly.Msg.PLAY_FILE + ' %1',
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'FILE',
+                    options: [
+                        [Blockly.Msg.SOUND_AIRPLANE, '01_Airplane'],
+                        [Blockly.Msg.SOUND_ALARM, '02_Alarm'],
+                        [Blockly.Msg.SOUND_BELL, '03_Bell'],
+                        [Blockly.Msg.SOUND_BRAKING, '04_Braking'],
+                        [Blockly.Msg.SOUND_CARHORN_LONG, '05_Car_horn_long'],
+                        [Blockly.Msg.SOUND_CARHORN_SHORT, '06_Car_horn_short'],
+                        [Blockly.Msg.SOUND_CRACKLING_WOOD, '07_Crackling_wood'],
+                        [Blockly.Msg.SOUND_EXCAVATOR, '08_Excavator'],
+                        [Blockly.Msg.SOUND_FANTASY + ' 1', '09_Fantasy_1'],
+                        [Blockly.Msg.SOUND_FANTASY + ' 2', '10_Fantasy_2'],
+                        [Blockly.Msg.SOUND_FANTASY + ' 3', '11_Fantasy_3'],
+                        [Blockly.Msg.SOUND_FANTASY + ' 4', '12_Fantasy_4'],
+                        [Blockly.Msg.SOUND_FARM, '13_Farm'],
+                        [Blockly.Msg.SOUND_FIRE_DEPARTMENT, '14_Fire_department'],
+                        [Blockly.Msg.SOUND_FIRE, '15_Fire_noises'],
+                        [Blockly.Msg.SOUND_FORMULAONE, '16_Formula1'],
+                        [Blockly.Msg.SOUND_HELICOPTER, '17_Helicopter'],
+                        [Blockly.Msg.SOUND_HYDRAULIC, '18_Hydraulic'],
+                        [Blockly.Msg.MOTOR, '19_Motor_sound'],
+                        [Blockly.Msg.SOUND_MOTOR_STARTING, '20_Motor_starting'],
+                        [Blockly.Msg.SOUND_PROPELLER, '21_Propeller_airplane'],
+                        [Blockly.Msg.SOUND_ROLLER_COASTER, '22_Roller_coaster'],
+                        [Blockly.Msg.SOUND_HORN_SHIP, '23_Ships_horn'],
+                        [Blockly.Msg.SOUND_TRACTOR, '24_Tractor'],
+                        [Blockly.Msg.SOUND_TRUCK, '25_Truck'],
+                        [Blockly.Msg.SOUND_WINK, '26_Augenzwinkern'],
+                        [Blockly.Msg.MOTOR_DRIVE, '27_Fahrgeraeusch'],
+                        [Blockly.Msg.SOUND_TILT_HEAD, '28_Kopf_heben'],
+                        [Blockly.Msg.SOUND_RAISE_HEAD, '29_Kopf_neigen']
+                    ]
+                }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.PLAY_EXPRESSION_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'buzzer',
+            'dropDown': 'hide'
         };
     }
 };

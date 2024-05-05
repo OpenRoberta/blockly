@@ -406,6 +406,9 @@
                 </value>
             </block>
         </category>
+        <category name='TOOLBOX_SOUND' svg='true'>
+            <block type='actions_play_file_txt4' ></block>
+        </category>
     </category>
     <category name='TOOLBOX_SENSOR' svg='true'>
         <block type='robSensors_encoder_getSample'></block>
@@ -490,13 +493,6 @@
     </category>
     <category name='TOOLBOX_LOGIC' svg='true'>
         <block type='logic_compare'></block>
-        <block type='logic_colour_compare'>
-            <value name='TOLERANCE'>
-                <block type='math_number'>
-                    <field name='NUM'>50</field>
-                </block>
-            </value>
-        </block>
         <block type='logic_operation'></block>
         <block type='logic_negate'></block>
         <block type='logic_boolean'></block>
@@ -588,6 +584,13 @@
         <block type='robLists_getSublist'></block>
     </category>
     <category name='TOOLBOX_COLOUR' svg='true'>
+        <block type='logic_colour_compare'>
+            <value name='TOLERANCE'>
+                <block type='math_number'>
+                    <field name='NUM'>50</field>
+                </block>
+            </value>
+        </block>
     </category>
     <category name='TOOLBOX_VARIABLE' custom='VARIABLE' svg='true'>
     </category>
