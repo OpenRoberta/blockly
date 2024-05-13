@@ -2177,7 +2177,7 @@ Blockly.Blocks['actions_display_rgbLed_hidden_off_txt4'] = {
     }
 };
 
-Blockly.Blocks['logic_colour_compare'] = {
+Blockly.Blocks['colour_compare'] = {
     init: function() {
         this.setInputsInline(true);
         this.jsonInit({
@@ -2204,7 +2204,7 @@ Blockly.Blocks['logic_colour_compare'] = {
                 }],
             output: 'Boolean',
             colour: Blockly.CAT_COLOUR_RGB,
-            tooltip: Blockly.Msg.LOGIC_COLOUR_COMPARE_TOOLTIP
+            tooltip: Blockly.Msg.COLOUR_COMPARE_TOOLTIP
         });
     }
 };

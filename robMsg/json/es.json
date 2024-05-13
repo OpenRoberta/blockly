@@ -2062,7 +2062,7 @@
   "GALLERY_SORT_BY": "Ordenar por",
   "HUE_TOLERANCE": "tolerancia de tono",
   "LED_SET_BRIGHTNESS_TOOLTIP_PERCENT": "Establece el brillo del LED [0-100]",
-  "LOGIC_COLOUR_COMPARE_TOOLTIP": "Compara dos colores basándose en sus valores de tono, considerando un rango de tolerancia especificado [0°-360°].",
+  "COLOUR_COMPARE_TOOLTIP": "Compara dos colores basándose en sus valores de tono, considerando un rango de tolerancia especificado [0°-360°].",
   "MODE_ACCURACY": "precisión",
   "MODE_BALL": "información de la bola",
   "MODE_CALIBRATIONNEED": "calibración necesaria",

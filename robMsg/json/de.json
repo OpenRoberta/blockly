@@ -710,7 +710,7 @@
   "SENSOR_TEMPERATURE": "Temperatursensor",
   "SENSOR_TEMPERATURE_ARDUINO": "Temperatursensor TMP36",
   "TOOLBOX_IMAGE": "Bilder",
-  "LOGIC_COLOUR_COMPARE_TOOLTIP": "Dieser Block vergleicht zwei Farben auf der Grundlage ihrer Farbtonwerte unter Berücksichtigung des angegebenen Toleranzbereichs [0°-360°].",
+  "COLOUR_COMPARE_TOOLTIP": "Dieser Block vergleicht zwei Farben auf der Grundlage ihrer Farbtonwerte unter Berücksichtigung des angegebenen Toleranzbereichs [0°-360°].",
   "TEMPERATURE_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Temperatursensors im °C zurück.",
   "COMPASS_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Kompasssensors zurück.",
   "MICROPHONE_GETSAMPLE_TOOLTIP": "Gibt die aktuellen Lautstärke des Mikrofons in % zurück (0-100). Sollte bei deinem Calliope der Wert immer sehr niedrig sein, fehlt hardwareseitig die Verstärkung. Multipliziere den gemessenen Wert dann einfach mit 10.",

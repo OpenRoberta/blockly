@@ -801,7 +801,7 @@ Blockly.Msg.SENSOR_GESTURE_PROXIMITY_GETSAMPLE_TOOLTIP = 'Gets the current proxm
 Blockly.Msg.SENSOR_GESTURE_RGB_GETSAMPLE_TOOLTIP = Blockly.Msg.COLOUR_RGB_GETSAMPLE_TOOLTIP;
 
 
-Blockly.Msg.LOGIC_COLOUR_COMPARE_TOOLTIP = 'Compares two colors based on their hue values while considering a specified tolerance range [0°-360°].';
+Blockly.Msg.COLOUR_COMPARE_TOOLTIP = 'Compares two colors based on their hue values while considering a specified tolerance range [0°-360°].';
 Blockly.Msg.TEMPERATURE_GETSAMPLE_TOOLTIP = 'Gets the current reading from the temperature sensor in °C.';
 Blockly.Msg.COMPASS_GETSAMPLE_TOOLTIP = 'Gets the current reading from the compass sensor.';
 Blockly.Msg.MICROPHONE_GETSAMPLE_TOOLTIP = 'Gets the current reading from the microphone in % (mapped to 0 - 100). If the value is always low, the value has to be multiplied by 10, because the amplification is missing on the hardware.';
