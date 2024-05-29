@@ -492,6 +492,7 @@
   "MODE_SENSIVITY": "Empfindlichkeit",
   "SENSOR_IS_PRESSED": "gedrückt?",
   "SENSOR_KEY": "Taste",
+  "SENSOR_KEYC": "Fronttaster",
   "SENSOR_TOUCHKEY": "Bildschirm Taste",
   "SENSOR_KEY_TXT4": "Mini-Taster",
   "SENSOR_KEY_ANY": "irgendeine",

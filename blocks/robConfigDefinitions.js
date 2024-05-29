@@ -968,6 +968,21 @@ confBlocks.key.txt4 = {
     sensor: true
 };
 
+confBlocks.keyc = {};
+confBlocks.keyc.calliope = {
+    title: 'KEYC',
+    sensor: true,
+    ports: [['BRICK_PORT', 'PORT']],
+    pins: function(a) {
+        return [
+            [Blockly.Msg.LEFT, 'KEY_FL'],
+            [Blockly.Msg.RIGHT, 'KEY_FR']
+        ];
+    },
+    previousStatement: true,
+    nextStatement: true
+};
+
 confBlocks.touch = {};
 confBlocks.touch.festobionicflower = {
     title: 'TOUCH',
@@ -1004,6 +1019,7 @@ confBlocks.logotouch.microbitv2 = {
     inbuilt: true
 };
 confBlocks.logotouch.joycar = confBlocks.logotouch.microbitv2;
+confBlocks.logotouch.calliope = confBlocks.logotouch.microbitv2;
 
 confBlocks.drop = {};
 confBlocks.drop.arduino = {

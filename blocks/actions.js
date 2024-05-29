@@ -2285,3 +2285,57 @@ Blockly.Blocks['actions_play_file_txt4'] = {
         };
     }
 };
+
+Blockly.Blocks['actions_rgbLeds_hidden_on_calliopev3'] = {
+    init: function() {
+        var ports = getConfigPorts('rgbledh');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.RGBLED_ON + ' %1 ' + Blockly.Msg.BRICKLIGHT_COLOR + '%2',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'SLOT',
+                options: [[Blockly.Msg.LEFT, '0'], [Blockly.Msg.CENTER, '1'], [Blockly.Msg.RIGHT, '2'], [Blockly.Msg.NAO_LED_ALL, 'ALL']]
+            }, {
+                type: 'input_value', name: 'COLOUR', check: ['Colour', 'ColourLed']
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.RGB_LED_ON_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'rgbledh',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['actions_rgbLeds_hidden_off_calliopev3'] = {
+    init: function() {
+        var ports = getConfigPorts('rgbledh');
+        this.hide = {};
+        this.hide.name = 'ACTORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: Blockly.Msg.RGBLED_OFF + ' %1',
+            args0: [{
+                type: 'field_dropdown',
+                name: 'SLOT',
+                options: [[Blockly.Msg.LEFT, '0'], [Blockly.Msg.CENTER, '1'], [Blockly.Msg.RIGHT, '2'], [Blockly.Msg.NAO_LED_ALL, 'ALL']]
+            }],
+            colour: Blockly.CAT_ACTION_RGB,
+            previousStatement: true,
+            nextStatement: true,
+            tooltip: Blockly.Msg.RGB_LED_OFF_TOOLTIP
+        });
+        this.dependConfig = {
+            'type': 'rgbledh',
+            'dropDown': 'hide'
+        };
+    }
+};

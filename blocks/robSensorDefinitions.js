@@ -750,6 +750,14 @@ sensors.key.thymio = {
     ports: [['FORWARD', 'FORWARD'], ['RIGHT', 'RIGHT'], ['BACKWARD', 'BACKWARD'], ['LEFT', 'LEFT'], ['CENTER', 'CENTER']]
 };
 
+sensors.keyc = {};
+
+sensors.keyc.calliope = {
+    title: 'KEYC', modes: [{
+        name: 'PRESSED', type: 'Boolean', question: true
+    }], ports: 'CONFIGURATION'
+};
+
 sensors.touchkey = {};
 sensors.touchkey.txt4 = {
     title: 'TOUCHKEY', modes: [{
@@ -948,6 +956,7 @@ sensors.logotouch.microbitv2 = {
     portsHidden: true
 };
 sensors.logotouch.joycar = sensors.logotouch.microbitv2;
+sensors.logotouch.calliope = sensors.logotouch.microbitv2;
 
 sensors.pulse = {};
 sensors.pulse.arduino = {
