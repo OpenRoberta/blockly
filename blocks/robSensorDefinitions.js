@@ -228,7 +228,7 @@ sensors.compass.txt4 = {
 sensors.colourtcs3472 = {};
 sensors.colourtcs3472.calliope = {
     title: 'COLOURTCS3472', modes: [{
-        name: 'COLOUR', type: 'Colour'
+        name: 'COLOUR', type: 'Colour', value: '#cc33cc'
     }, {
         name: 'LIGHT', type: 'Number', unit: 'PERCENT'
     }, {
