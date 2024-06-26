@@ -1339,7 +1339,7 @@ sensorsAll.ev3 = [sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3,
 sensorsAll.xNN = [sensors.touch.xNN, sensors.ultrasonic.xNN, sensors.colour.xNN, sensors.infrared.xNN, sensors.encoder.xNN, sensors.key.xNN, sensors.gyro.xNN, sensors.timer.xNN, sensors.compass.xNN, sensors.irseeker.xNN, sensors.htcolour.xNN, sensors.sound.xNN];
 sensorsAll.nxt = [sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt, sensors.timer.nxt, sensors.htcolour.nxt];
 sensorsAll.bob3 = [sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3];
-sensorsAll.calliope = [sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope, sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope, sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope];
+sensorsAll.calliope = [sensors.key.calliope, sensors.pintouch.calliope, sensors.logotouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope, sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.rssi.calliope, sensors.gyro.calliope, sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope, sensors.keyc.calliope, sensors.colourtcs3472.calliope];
 sensorsAll.microbit = [sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit, sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit, sensors.light.microbit];
 sensorsAll.microbitv2 = [sensors.key.microbitv2, sensors.pintouch.microbitv2, sensors.logotouch.microbitv2, sensors.gesture.microbitv2, sensors.sound.microbitv2, sensors.compass.microbitv2, sensors.timer.microbitv2, sensors.temperature.microbitv2, sensors.pin.microbitv2, sensors.accelerometer.microbitv2, sensors.light.microbitv2];
 sensorsAll.joycar = [sensors.key.joycar, sensors.ultrasonic.joycar, sensors.infrared.joycar, sensors.line.joycar, sensors.logotouch.joycar, sensors.sound.joycar, sensors.compass.joycar, sensors.timer.joycar, sensors.encoder.joycar, sensors.temperature.joycar, sensors.accelerometer.joycar, sensors.light.joycar, sensors.pin.joycar, sensors.gesture.joycar];
@@ -1377,3 +1377,16 @@ Blockly.Blocks['robSensors_getSample'] = {
         Blockly.Blocks['robSensors_generic_all'].init.call(this, sensorsAll[this.workspace.device]);
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
