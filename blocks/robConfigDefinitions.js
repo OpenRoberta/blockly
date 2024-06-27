@@ -1589,7 +1589,7 @@ confBlocks.rgbledh.calliope = {
 
 confBlocks.rgbLedhp = {};
 confBlocks.rgbLedhp.calliope = {
-    title: 'RGBLEDH',
+    title: 'RGBLEDHP',
     ports: [
         ['pin', 'PIN1']
     ],

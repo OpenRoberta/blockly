@@ -1398,6 +1398,7 @@ Blockly.Msg.SOUND_YAWN = 'yawn';
 Blockly.Msg.ACTION_RELAY = 'relay SRD-05VDC-SL-C';
 Blockly.Msg.ACTION_RGBLED = 'RGB LED';
 Blockly.Msg.ACTION_RGBLEDH = Blockly.Msg.ACTION_RGBLED;
+Blockly.Msg.ACTION_RGBLEDHP = Blockly.Msg.ACTION_RGBLEDH;
 Blockly.Msg.ACTION_STEPMOTOR = 'step motor';
 Blockly.Msg.ACTION_SERVO = 'servo motor';
 Blockly.Msg.ACTION_SERVO_ARDUINO = 'servo motor SG90';
@@ -1424,6 +1425,7 @@ Blockly.Msg.PLAY_TOOLTIP = 'Represents a buzzer.';
 Blockly.Msg.RELAY_TOOLTIP = 'Represents a relay.';
 Blockly.Msg.RGBLED_TOOLTIP = 'Represents an RGB LED.';
 Blockly.Msg.RGBLEDH_TOOLTIP = 'Represents an inbuilt RGB LED.';
+Blockly.Msg.RGBLEDHP_TOOLTIP = Blockly.Msg.RGBLEDH_TOOLTIP;
 
 Blockly.Msg.LED_TOOLTIP = 'Represents an LED.';
 Blockly.Msg.MOTOR_TOOLTIP = 'Represents a motor.';
