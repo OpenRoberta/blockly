@@ -105,7 +105,7 @@
                 '            <field name="NAME">_L</field>\n' +
                 '        </block>\n' +
                 '    </instance>\n' +
-                '    <instance x="-34" y="450">\n' +
+                '    <instance x="154" y="450">\n' +
                 '        <block type="robConf_buzzer" id="}%d2_68IJd*7Oy{qrMR," intask="true" deletable="false">\n' +
                 '            <field name="NAME">_B</field>\n' +
                 '        </block>\n' +
@@ -116,8 +116,21 @@
                 '        </block>\n' +
                 '    </instance>\n' +
                 '    <instance x="-34" y="422">\n' +
-                '        <block type="robConf_rgbledh" id="lgi%C3,J!smR:eP0aal_" intask="true" deletable="false">\n' +
+                '        <block type="robConf_rgbLedhp" id="lgi%C3,J!smR:eP0aal_" intask="true" deletable="false">\n' +
+                '            <field name="NAME">_L</field>\n' +
+                '            <field name="PORT">LED_L</field>\n' +
+                '        </block>\n' +
+                '    </instance>\n' +
+                '    <instance x="-134" y="422">\n' +
+                '        <block type="robConf_rgbLedhp" id="lgi%C3,J!smR:eP0aal_" intask="true" deletable="false">\n' +
+                '            <field name="NAME">_C</field>\n' +
+                '            <field name="PIN1">LED_C</field>\n' +
+                '        </block>\n' +
+                '    </instance>\n' +
+                '    <instance x="-234" y="422">\n' +
+                '        <block type="robConf_rgbLedhp" id="lgi%C3,J!smR:eP0aal_" intask="true" deletable="false">\n' +
                 '            <field name="NAME">_R</field>\n' +
+                '            <field name="PIN1">LED_R</field>\n' +
                 '        </block>\n' +
                 '    </instance>\n' +
                 '    <instance x="-34" y="120">\n' +
@@ -487,6 +500,7 @@
         <block type='robSensors_infrared_getSample'></block>
         <block type='robSensors_keyc_getSample'></block>
         <block type='robSensors_colourtcs3472_getSample'></block>
+        <block type='robSensors_moisture_getSample'></block>
     </category>
     <category name='TOOLBOX_CONTROL' svg='true'>
         <category name='TOOLBOX_DECISION' svg='true'>
@@ -757,6 +771,7 @@
         <block type='robConf_digitalout'></block>
         <block type='robConf_analogout'></block>
         <block type='robConf_colourtcs3472'></block>
+        <block type='robConf_moisture'></block>
     </category>
     <category name='TOOLBOX_ADD_ON' svg='true'>
         <block type='robConf_callibot2' intask='true'>

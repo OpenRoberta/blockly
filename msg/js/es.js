@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "reenviar correo de verificación";
 Blockly.Msg.RESET = "reiniciar";
 Blockly.Msg.RETURN = "volver";
 Blockly.Msg.RFID_TOOLTIP = "Representa un lector RFID.";
+Blockly.Msg.RGBLEDH_TOOLTIP = "Represents an inbuilt RGB LED.";  // untranslated
 Blockly.Msg.RGBLED_OFF = "apagar LED RGB";
 Blockly.Msg.RGBLED_ON = "encender LED RGB";
 Blockly.Msg.RGBLED_TOOLTIP = "Representa un LED RGB.";

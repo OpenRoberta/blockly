@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "重新发送验证电子邮件";
 Blockly.Msg.RESET = "reset";  // untranslated
 Blockly.Msg.RETURN = "返回";
 Blockly.Msg.RFID_TOOLTIP = "表示 RFID 读取器。";
+Blockly.Msg.RGBLEDH_TOOLTIP = "Represents an inbuilt RGB LED.";  // untranslated
 Blockly.Msg.RGBLED_OFF = "turn RGB LED off";  // untranslated
 Blockly.Msg.RGBLED_ON = "turn RGB LED on";  // untranslated
 Blockly.Msg.RGBLED_TOOLTIP = "表示 RGB LED灯。";

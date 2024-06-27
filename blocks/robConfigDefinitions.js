@@ -647,6 +647,18 @@ confBlocks.moisture.arduino = {
         ['VCC', '5V']
     ]
 };
+confBlocks.moisture.calliope = {
+    title: 'MOISTURE',
+    ports: [
+        ['pin', 'PIN1']
+    ],
+    pins: function(a) {
+        return [
+            ['A1', '1']
+        ];
+    },
+    sensor: true
+};
 
 confBlocks.potentiometer = {};
 confBlocks.potentiometer.arduino = {
@@ -1571,6 +1583,23 @@ confBlocks.rgbledh.calliope = {
     ports: [
         ['pin', 'PIN1']
     ],
+    sensor: false,
+    inbuilt: true
+};
+
+confBlocks.rgbLedhp = {};
+confBlocks.rgbLedhp.calliope = {
+    title: 'RGBLEDH',
+    ports: [
+        ['pin', 'PIN1']
+    ],
+    pins: function(a) {
+        return [
+            [Blockly.Msg.LEFT, 'LED_L'],
+            [Blockly.Msg.CENTER, 'LED_C'],
+            [Blockly.Msg.RIGHT, 'LED_R']
+        ];
+    },
     sensor: false,
     inbuilt: true
 };

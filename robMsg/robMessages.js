@@ -1423,6 +1423,8 @@ Blockly.Msg.SSD1306I2C_TOOLTIP = 'Represents an I²C OLED SSD1306 display (addre
 Blockly.Msg.PLAY_TOOLTIP = 'Represents a buzzer.';
 Blockly.Msg.RELAY_TOOLTIP = 'Represents a relay.';
 Blockly.Msg.RGBLED_TOOLTIP = 'Represents an RGB LED.';
+Blockly.Msg.RGBLEDH_TOOLTIP = 'Represents an inbuilt RGB LED.';
+
 Blockly.Msg.LED_TOOLTIP = 'Represents an LED.';
 Blockly.Msg.MOTOR_TOOLTIP = 'Represents a motor.';
 Blockly.Msg.STEPMOTOR_TOOLTIP = 'Represents a step motor.';

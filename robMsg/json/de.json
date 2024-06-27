@@ -1174,6 +1174,7 @@
   "PLAY_TOOLTIP": "Block für den Summer.",
   "RELAY_TOOLTIP": "Block für die Relais.",
   "RGBLED_TOOLTIP": "Block für RGB LED.",
+  "RGBLEDH_TOOLTIP": "Block für die eingebaute RGB LED.",
   "RGB_LED_TOOLTIP": "Schaltet die RGB LED an und wechselt zur angegebenen Farbe.",
   "LED_ON_TOOLTIP": "Schaltet die LED an oder aus.",
   "MOTOR_TOOLTIP": "Repräsentiert einen Motor.",

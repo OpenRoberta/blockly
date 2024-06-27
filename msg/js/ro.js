@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "retrimite email-ul de verificare";
 Blockly.Msg.RESET = "reset";  // untranslated
 Blockly.Msg.RETURN = "returneaza";
 Blockly.Msg.RFID_TOOLTIP = "Reprezinta un cititor RFID";
+Blockly.Msg.RGBLEDH_TOOLTIP = "Represents an inbuilt RGB LED.";  // untranslated
 Blockly.Msg.RGBLED_OFF = "turn RGB LED off";  // untranslated
 Blockly.Msg.RGBLED_ON = "turn RGB LED on";  // untranslated
 Blockly.Msg.RGBLED_TOOLTIP = "Reprezinta un LED RGB";

@@ -838,6 +838,11 @@ sensors.moisture.arduino = {
         name: 'VALUE', type: 'Number', unit: 'PERCENT'
     }], ports: 'CONFIGURATION'
 };
+sensors.moisture.calliope = {
+    title: 'MOISTURE', modes: [{
+        name: 'VALUE', type: 'Number', unit: 'PERCENT'
+    }], ports: 'CONFIGURATION'
+};
 
 sensors.motion = {};
 sensors.motion.arduino = {

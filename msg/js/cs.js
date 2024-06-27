@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "pošle znovu verifikační email";
 Blockly.Msg.RESET = "reset";  // untranslated
 Blockly.Msg.RETURN = "návrat";
 Blockly.Msg.RFID_TOOLTIP = "Represents an RFID reader.";  // untranslated
+Blockly.Msg.RGBLEDH_TOOLTIP = "Represents an inbuilt RGB LED.";  // untranslated
 Blockly.Msg.RGBLED_OFF = "turn RGB LED off";  // untranslated
 Blockly.Msg.RGBLED_ON = "turn RGB LED on";  // untranslated
 Blockly.Msg.RGBLED_TOOLTIP = "Represents an RGB LED.";  // untranslated

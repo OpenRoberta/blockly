@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "Bestätigungsmail erneut senden";
 Blockly.Msg.RESET = "zurück";
 Blockly.Msg.RETURN = "gib zurück";
 Blockly.Msg.RFID_TOOLTIP = "Block für den RFID Reader.";
+Blockly.Msg.RGBLEDH_TOOLTIP = "Block für die eingebaute RGB LED.";
 Blockly.Msg.RGBLED_OFF = "Schalte RGB LED aus";
 Blockly.Msg.RGBLED_ON = "Schalte RGB LED an";
 Blockly.Msg.RGBLED_TOOLTIP = "Block für RGB LED.";

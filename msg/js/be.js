@@ -1492,6 +1492,7 @@ Blockly.Msg.RESEND_ACTIVATION = "даслаць эл. ліст для пацве
 Blockly.Msg.RESET = "reset";  // untranslated
 Blockly.Msg.RETURN = "зварот";
 Blockly.Msg.RFID_TOOLTIP = "Прадстаўляе RFID-зчытвальнік.";
+Blockly.Msg.RGBLEDH_TOOLTIP = "Represents an inbuilt RGB LED.";  // untranslated
 Blockly.Msg.RGBLED_OFF = "turn RGB LED off";  // untranslated
 Blockly.Msg.RGBLED_ON = "turn RGB LED on";  // untranslated
 Blockly.Msg.RGBLED_TOOLTIP = "Прадстаўляе RFID-светладыёд.";
