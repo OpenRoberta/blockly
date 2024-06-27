@@ -1782,5 +1782,15 @@
   "GALLERY_SORT_BY": "Sortieren nach",
   "START_FORMATSEARCH": "suche Roboter/Systeme",
   "START_BOOKMARK_TOOLTIP": "Erstelle dir ein Lesezeichen direkt zu deinem Lieblingsroboter/-system.",
-  "PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE": "Du hast versucht, ein Programm zu importieren das für »$«, eine Gruppe von Robotern/Systemen geeignet ist.<br>Bitte wähle hier auf der Startseite zuerst den gewünschten Roboter/das gewünschte System aus."
+  "PROGRAM_IMPORT_ERROR_MISSING_ROBOT_TYPE": "Du hast versucht, ein Programm zu importieren das für »$«, eine Gruppe von Robotern/Systemen geeignet ist.<br>Bitte wähle hier auf der Startseite zuerst den gewünschten Roboter/das gewünschte System aus.",
+  "BLE_NOT_SUPPORTED": "Nicht alle Browser unterstützen Webble.<br>Schau mal in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> für weitere Informationen unter: Spike Pybricks↪Unterstützte Browsers.",
+  "BLE_FEATURE_DISABLED": "Scheint, als wäre Webble nicht aktiviert.<br>Schau mal in das <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> für weitere Informationen unter: Spike Pybricks↪Webble aktivieren.",
+  "BLE_ADAPTER_DISABLED": "Wir konnten auf keinen Bluetooth Adapter zugreifen.<br>Schau mal in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> für weitere Informationen unter: Spike Pybricks↪Bluetooth aktivieren.",
+  "BLE_NO_DEVICE_SELECTED": "Scheint, als hättest du kein Gerät ausgewählt.<br>Wenn dein Hub nicht angezeigt wurde, im <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> findest du eine Anleitung wie du dein Hub einrichten kannst.",
+  "BLE_DOWNLOAD_IN_PROGRESS": "Wir sind grade damit beschäftigt, dein Programm auf den Roboter zu übertragen. Warte ein paar Sekunden und starte den Upload neu.",
+  "BLE_ERROR_PROGRAM_SIZE": "Dein Programm ist zu groß für den Spike Prime. Schau in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> für weitere Informationen.",
+  "BLE_ERROR_COMMUNICATION": "Whoops etwas ist schiefgelaufen. Versuche deinen Roboter neu zu starten und übertrage das Programm nochmal.",
+  "BLE_ERROR_DEVICE_BUSY": "Sieht so aus als wäre dein Roboter bereits mit einem Lab verbunden. Schließe das andere Lab oder starte deinen Roboter neu.",
+  "BLE_ERROR_CAPABILITIES": "Deine Hub-Version kann nicht mit dem Lab verbunden werden. Schau in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> für weitere Informationen.",
+  "BLE_ERROR_STOP": "Wir konnten das Programm leider nicht für dich stoppen. Du kannst den großen runden Knopf der Hub benutzen, um das Programm selber zu stoppen."
 }

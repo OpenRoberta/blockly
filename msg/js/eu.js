@@ -107,6 +107,16 @@ Blockly.Msg.BACK_LEFT = "back left";  // untranslated
 Blockly.Msg.BACK_RIGHT = "back right";  // untranslated
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BELOW = "below";  // untranslated
+Blockly.Msg.BLE_ADAPTER_DISABLED = "We couldn't find your Bluetooth Adapter.<br>Check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for more information under: Spike Pybricks↪Enabling Bluetooth.";  // untranslated
+Blockly.Msg.BLE_DOWNLOAD_IN_PROGRESS = "We are busy uploading your program to the Robot. Wait a couple of seconds before uploading again.";  // untranslated
+Blockly.Msg.BLE_ERROR_CAPABILITIES = "Looks like your Hub Version is not compatible with our lab. Check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for more information.";  // untranslated
+Blockly.Msg.BLE_ERROR_COMMUNICATION = "Whoops something went wrong. Try restarting your Robot and Upload the Program again.";  // untranslated
+Blockly.Msg.BLE_ERROR_DEVICE_BUSY = "Looks like your Robot is already connected to another lab. Try to restart your robot or close the other Lab.";  // untranslated
+Blockly.Msg.BLE_ERROR_PROGRAM_SIZE = "Your Program is too long for the Spike Prime. Check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for more information.";  // untranslated
+Blockly.Msg.BLE_ERROR_STOP = "We couldn't stop the Program for you. You can always use the big round button on your hub to stop the program yourself.";  // untranslated
+Blockly.Msg.BLE_FEATURE_DISABLED = "Looks like Webble is not enabled.<br>Check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for more information under: Spike Pybricks↪Enabling Webble.";  // untranslated
+Blockly.Msg.BLE_NOT_SUPPORTED = "Not all Browsers support Webble.<br>Check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for more information under: Spike Pybricks↪Supported Browsers.";  // untranslated
+Blockly.Msg.BLE_NO_DEVICE_SELECTED = "Looks like you did not select a device.<br>If your hub was not listed, check out the <a href='https://wiki.open-roberta.org/' target='_blank'>Wiki</a> for instructions on setting up your hub.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "Bloke honen exekuzioak ez du efekturik izango!";
 Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BLOCK_USED_INCORRECTLY = "Unfortunately, this block cannot be used in this way.";  // untranslated
