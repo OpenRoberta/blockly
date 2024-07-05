@@ -65,6 +65,7 @@ sensors.accelerometer.mbot2 = {
     }], slots: [['x', 'X'], ['y', 'Y'], ['z', 'Z']], ports: 'CONFIGURATION', portsHidden: true
 };
 sensors.accelerometer.spike = sensors.accelerometer.mbot2;
+sensors.accelerometer.rcj = sensors.accelerometer.mbot2;
 sensors.accelerometer.nao = {
     title: 'ACCELEROMETER', modes: [{
         name: 'VALUE', type: 'Number', unit: 'MILLIG', op: 'NUM_REV', value: 512
@@ -162,6 +163,23 @@ sensors.colour.nxt = {
 sensors.colour.spike = {
     title: 'COLOUR', modes: [{
         name: 'COLOUR', type: 'Colour', value: '#E701A7'
+    }, {
+        name: 'LIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
+        name: 'AMBIENTLIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
+        name: 'REDCHANNEL', type: 'Number', unit: 'PERCENT'
+    }, { name: 'GREENCHANNEL', type: 'Number', unit: 'PERCENT' }, {
+        name: 'BLUECHANNEL',
+        type: 'Number',
+        unit: 'PERCENT'
+    }
+
+    ], ports: 'CONFIGURATION'
+};
+sensors.colour.rcj = {
+    title: 'COLOUR', modes: [{
+        name: 'COLOUR', type: 'Colour', value: '#1e5aa8'
     }, {
         name: 'LIGHT', type: 'Number', unit: 'PERCENT', value: 50
     }, {
@@ -335,6 +353,7 @@ sensors.motor.spike = {
         name: 'ROTATION', type: 'Number', unit: '', op: 'NUM_REV', value: 2
     }], ports: 'CONFIGURATION'
 };
+sensors.motor.rcj = sensors.motor.spike;
 
 sensors.electriccurrent = {};
 sensors.electriccurrent.nao = {
@@ -456,6 +475,11 @@ sensors.gyro.mbot2 = {
         name: 'ANGLE', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 90
     }], slots: [['x', 'X'], ['y', 'Y'], ['z', 'Z']], ports: 'CONFIGURATION', portsHidden: true
 };
+sensors.gyro.rcj = {
+    title: 'GYRO', modes: [{
+        name: 'ANGLE', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 90
+    }], slots: [['z', 'Z']], ports: 'CONFIGURATION', portsHidden: true
+};
 sensors.gyro.spike = sensors.gyro.mbot2;
 sensors.gyro.ev3 = {
     title: 'GYRO', modes: [{
@@ -539,6 +563,13 @@ sensors.humidity.calliope = {
         name: 'HUMIDITY', type: 'Number', unit: 'PERCENT'
     }, {
         name: 'TEMPERATURE', type: 'Number', unit: 'DEGREE'
+    }], ports: 'CONFIGURATION'
+};
+
+sensors.inductive = {};
+sensors.inductive.rcj = {
+    title: 'INDUCTIVE', modes: [{
+        name: 'PRESENCE', type: 'Boolean'
     }], ports: 'CONFIGURATION'
 };
 
@@ -734,6 +765,7 @@ sensors.key.wedo = {
     }], ports: 'CONFIGURATION'
 };
 sensors.key.spike = sensors.key.wedo;
+sensors.key.rcj = sensors.key.wedo;
 
 sensors.key.edison = {
     title: 'KEY', modes: [{
@@ -763,6 +795,8 @@ sensors.touchkey.txt4 = {
         name: 'PRESSED', type: 'Boolean', question: true
     }], ports: [['LEFT', 'LEFT'], ['RIGHT', 'RIGHT']]
 };
+
+sensors.touchkey.rcj = sensors.touchkey.txt4;
 
 sensors.light = {};
 sensors.light.arduino = {
@@ -1155,6 +1189,7 @@ sensors.timer.mbot2 = sensors.timer.ev3;
 sensors.timer.sensebox = sensors.timer.ev3;
 sensors.timer.robotino = sensors.timer.ev3;
 sensors.timer.txt4 = sensors.timer.ev3;
+sensors.timer.rcj = sensors.timer.ev3;
 
 sensors.touch = {};
 sensors.touch.ev3 = {
@@ -1203,6 +1238,7 @@ sensors.touch.spike = {
             name: 'FORCE', type: 'Number', unit: 'PERCENT', op: 'NUM_REV'
         }], ports: 'CONFIGURATION'
 };
+sensors.touch.rcj = sensors.touch.spike;
 
 sensors.ultrasonic = {};
 sensors.ultrasonic.arduino = {
@@ -1255,6 +1291,7 @@ sensors.ultrasonic.vorwerk = {
     slots: [['LEFT', 'LEFT'], ['CENTER', 'CENTER'], ['RIGHT', 'RIGHT']]
 };
 sensors.ultrasonic.spike = sensors.ultrasonic.calliope;
+sensors.ultrasonic.rcj = sensors.ultrasonic.calliope;
 sensors.ultrasonic.joycar = sensors.ultrasonic.calliope;
 sensors.ultrasonic.txt4 = sensors.ultrasonic.calliope;
 
@@ -1377,7 +1414,7 @@ sensorsAll.rob3rta = [sensors.pintouch.rob3rta, sensors.infrared.rob3rta, sensor
 sensorsAll.thymio = [sensors.key.thymio, sensors.infrared.thymio, sensors.irhorizontal.thymio, sensors.tap.thymio, sensors.sound.thymio, sensors.timer.thymio, sensors.accelerometer.thymio, sensors.temperature.thymio];
 sensorsAll.robotino = [sensors.touch.robotino, sensors.infrared.robotino, sensors.odometry.robotino, sensors.timer.robotino, sensors.optical.robotino, sensors.detectmark.robotino, sensors.out.robotino, sensors.camera.robotino];
 sensorsAll.spike = [sensors.touch.spike, sensors.colour.spike, sensors.ultrasonic.spike, sensors.key.spike, sensors.timer.spike, sensors.gesture.spike, sensors.gyro.spike];
-
+sensorsAll.rcj = [sensors.touchkey.rcj, sensors.colour.rcj, sensors.ultrasonic.rcj, sensors.timer.rcj, sensors.gyro.rcj, sensors.touch.rcj, sensors.inductive.rcj];
 function initSensors() {
     for (var sensor in sensors) {
         if (sensors.hasOwnProperty(sensor)) {

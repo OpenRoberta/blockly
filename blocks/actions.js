@@ -610,6 +610,21 @@ Blockly.Blocks['colour_picker_spike'] = {
     }
 };
 
+Blockly.Blocks['colour_picker_rcj'] = {
+    init: function() {
+        this.jsonInit({
+            message0: '%1', args0: [{
+                type: 'field_colour', name: 'COLOUR', 'colour': '#1e5aa8'
+            }], output: 'Colour', colour: Blockly.CAT_COLOUR_RGB
+        });
+        this.setTooltip(function() {
+            var parent = thisBlock.getParent();
+            return (parent && parent.getInputsInline() && parent.tooltip) || Blockly.Msg.COLOUR_PICKER_TOOLTIP;
+        });
+        this.getField('COLOUR').setColours([ '#1e5aa8',  '#00852a', '#F7F700', '#FA010C', '#000000', '#FFFFFF','#33B8CA', Blockly.CAT_COLOUR_RGB]).setColumns(1);
+    }
+};
+
 Blockly.Blocks['actions_rgbLed_hidden_on'] = {
     init: function() {
         var ports = getConfigPorts('rgbled');
@@ -2118,6 +2133,8 @@ Blockly.Blocks['actions_display_text_txt4'] = {
         };
     }
 };
+
+Blockly.Blocks['actions_display_text_rcj'] = Blockly.Blocks['actions_display_text_txt4'];
 
 Blockly.Blocks['actions_display_rgbLed_hidden_on_txt4'] = {
     init: function() {
