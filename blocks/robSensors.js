@@ -1307,6 +1307,9 @@ Blockly.Blocks['robSensors_generic_all'] = {
                         case 'spike':
                             block = this.workspace.newBlock('colour_picker_spike');
                             break;
+                        case 'rcj':
+                            block = this.workspace.newBlock('colour_picker_rcj');
+                            break;
                         default:
                             block = this.workspace.newBlock('robColour_picker');
                     }

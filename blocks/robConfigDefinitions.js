@@ -455,6 +455,7 @@ confBlocks.ultrasonic.spike = {
     standardPins: ['D'],
     sensor: true
 };
+confBlocks.ultrasonic.rcj = confBlocks.ultrasonic.spike;
 
 confBlocks.ultrasonicc = {};
 confBlocks.ultrasonicc.calliope = {
@@ -646,6 +647,7 @@ confBlocks.display.spike = {
     inbuilt: true
 };
 confBlocks.display.txt4 = confBlocks.display.spike;
+confBlocks.display.rcj = confBlocks.display.spike;
 
 confBlocks.moisture = {};
 confBlocks.moisture.arduino = {
@@ -801,6 +803,7 @@ confBlocks.colour.spike = {
     sensor: true,
     standardPins: ['C']
 };
+confBlocks.colour.rcj = confBlocks.colour.spike;
 
 confBlocks.temperature = {};
 confBlocks.temperature.arduino = {
@@ -1001,6 +1004,7 @@ confBlocks.key.spike = {
     },
     sensor: true
 };
+confBlocks.key.rcj = confBlocks.key.spike;
 confBlocks.key.txt4 = {
     title: 'KEY',
     ports: [
@@ -1053,6 +1057,7 @@ confBlocks.touch.spike = {
     sensor: true,
     standardPins: ['F']
 };
+confBlocks.touch.rcj = confBlocks.touch.spike;
 
 confBlocks.logotouch = {};
 confBlocks.logotouch.microbitv2 = {
@@ -1340,6 +1345,7 @@ confBlocks.differentialdrive.spike = {
     standardPins: ['A', 'B'],
     inbuilt: true
 };
+confBlocks.differentialdrive.rcj = confBlocks.differentialdrive.spike;
 
 confBlocks.led = {};
 confBlocks.led.arduino = {
@@ -1513,6 +1519,7 @@ confBlocks.buzzer.spike = {
     sensor: false,
     inbuilt: true
 };
+confBlocks.buzzer.rcj = confBlocks.buzzer.spike;
 
 confBlocks.sound = {};
 confBlocks.sound.calliope = {
@@ -1696,6 +1703,7 @@ confBlocks.rgbled.wedo = {
 };
 
 confBlocks.rgbled.spike = confBlocks.rgbled.calliope;
+confBlocks.rgbled.rcj = confBlocks.rgbled.calliope;
 
 confBlocks.stepmotor = {};
 confBlocks.stepmotor.arduino = {
@@ -1857,6 +1865,7 @@ confBlocks.gyro.sensebox = {
 };
 confBlocks.gyro.mbot2 = confBlocks.gyro.calliope;
 confBlocks.gyro.spike = confBlocks.gyro.calliope;
+confBlocks.gyro.rcj = confBlocks.gyro.calliope;
 
 confBlocks.lsm9ds1 = {};
 confBlocks.lsm9ds1.nano33ble = {
@@ -1930,6 +1939,7 @@ confBlocks.motor.spike = {
     pins: Blockly.Blocks.robConfigDefinitions['spikePorts'],
     sensor: false
 };
+confBlocks.motor.rcj = confBlocks.motor.spike;
 
 confBlocks.motor.joycar = {
     title: 'MOTOR',
