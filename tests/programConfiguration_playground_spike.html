@@ -238,8 +238,8 @@
             options.toolboxPosition = position;
             workspace[suffix] = Blockly.inject(suffix, options);
             workspace[suffix].setDevice({
-                group: 'spike',
-                robot: 'spike'
+                group: 'rcj',
+                robot: 'rcj'
             });
 
         }
@@ -411,7 +411,7 @@
             </block>
         </category>
         <category name='TOOLBOX_DISPLAY' svg='true'>
-            <block type='actions_display_text'>
+            <block type='actions_display_text_rcj'>
                 <value name='TEXT'>
                     <block type='text'>
                         <field name='TEXT'>Hallo</field>
@@ -465,13 +465,14 @@
         </category>
     </category>
     <category name='TOOLBOX_SENSOR' svg='true'>
+        <block type='robSensors_inductive_getSample'></block>
         <block type='robSensors_touch_getSample'></block>
         <block type='robSensors_ultrasonic_getSample'></block>
         <block type='robSensors_colour_getSample'></block>
         <block type='robSensors_key_getSample'>
         </block>
-        <block type='robSensors_gesture_getSample'>
-        </block>
+<!--        <block type='robSensors_gesture_getSample'>-->
+<!--        </block>-->
         <block type='robSensors_gyro_getSample'>
         </block>
         <block type='sensors_gyro_reset'></block>
@@ -686,6 +687,7 @@
         <block type='robConf_colour'></block>
         <block type='robConf_ultrasonic'></block>
         <block type='robConf_touch'></block>
+        <block type='robConf_inductive'></block>
     </category>
 </toolbox_set>
 </body>

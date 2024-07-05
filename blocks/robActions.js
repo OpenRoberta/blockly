@@ -958,7 +958,7 @@ Blockly.Blocks['robActions_display_text'] = {
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT);
         }
-        if (this.workspace.device !== 'botnroll' && this.workspace.device !== 'wedo') {
+        if (this.workspace.device !== 'botnroll' && this.workspace.device !== 'wedo'&& this.workspace.device !== 'rcj') {
             this.appendValueInput('COL').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_COL);
         }
         if (this.workspace.device !== 'wedo') {
