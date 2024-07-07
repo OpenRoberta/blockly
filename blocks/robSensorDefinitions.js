@@ -177,7 +177,23 @@ sensors.colour.spike = {
 
     ], ports: 'CONFIGURATION'
 };
-sensors.colour.rcj = sensors.colour.spike;
+sensors.colour.rcj = {
+    title: 'COLOUR', modes: [{
+        name: 'COLOUR', type: 'Colour', value: '#1e5aa8'
+    }, {
+        name: 'LIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
+        name: 'AMBIENTLIGHT', type: 'Number', unit: 'PERCENT', value: 50
+    }, {
+        name: 'REDCHANNEL', type: 'Number', unit: 'PERCENT'
+    }, { name: 'GREENCHANNEL', type: 'Number', unit: 'PERCENT' }, {
+        name: 'BLUECHANNEL',
+        type: 'Number',
+        unit: 'PERCENT'
+    }
+
+    ], ports: 'CONFIGURATION'
+};
 sensors.colour.txt4 = {
     title: 'CAMERA',
     modes: [{
@@ -1370,8 +1386,7 @@ sensorsAll.rob3rta = [sensors.pintouch.rob3rta, sensors.infrared.rob3rta, sensor
 sensorsAll.thymio = [sensors.key.thymio, sensors.infrared.thymio, sensors.irhorizontal.thymio, sensors.tap.thymio, sensors.sound.thymio, sensors.timer.thymio, sensors.accelerometer.thymio, sensors.temperature.thymio];
 sensorsAll.robotino = [sensors.touch.robotino, sensors.infrared.robotino, sensors.odometry.robotino, sensors.timer.robotino, sensors.optical.robotino, sensors.detectmark.robotino, sensors.out.robotino, sensors.camera.robotino];
 sensorsAll.spike = [sensors.touch.spike, sensors.colour.spike, sensors.ultrasonic.spike, sensors.key.spike, sensors.timer.spike, sensors.gesture.spike, sensors.gyro.spike];
-sensorsAll.rcj = [sensors.touch.rcj, sensors.colour.rcj, sensors.ultrasonic.rcj, sensors.key.rcj, sensors.timer.rcj, sensors.gyro.rcj,
-];
+sensorsAll.rcj = [sensors.key.rcj, sensors.colour.rcj, sensors.ultrasonic.rcj, sensors.timer.rcj, sensors.gyro.rcj, sensors.touch.rcj];
 function initSensors() {
     for (var sensor in sensors) {
         if (sensors.hasOwnProperty(sensor)) {
