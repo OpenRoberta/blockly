@@ -2109,7 +2109,7 @@
   "SENSOR_CAMERA_BALL_GETSAMPLE_TOOLTIP": "Devuelve una lista [x, y, diámetro] que representa información sobre una pelota que coincide con el color establecido en la configuración. Si no se encuentra ninguna pelota, devuelve una lista de [-1, -1, -1].",
   "SENSOR_CAMERA_COLOUR_GETSAMPLE_TOOLTIP": "Devuelve el color promedio del área de la cámara especificada (configuración).",
   "SENSOR_CAMERA_MOTION_GETSAMPLE_TOOLTIP": "Devuelve un booleano (verdadero o falso) que indica si ha ocurrido un cambio especificado de píxeles, según lo definido por la sensibilidad en la configuración.",
-  "SENSOR_CAMERA_NUMBERLINES_GETSAMPLE_TOOLTIP": "Devuelve el número de líneas detectadas por la cámara (hasta 4).",
+  "SENSOR_CAMERA_NUMBERLINES_GETSAMPLE_TOOLTIP": "Devuelve el número de líneas detectadas por la cámara (hasta 6).",
   "SENSOR_COLORDETECTOR": "detector de color",
   "SENSOR_COUNTER": "contador",
   "SENSOR_ENVIRONMENTAL_CALIBRATION_TOOLTIP": "Calibra el sensor ambiental. Esto lleva varios minutos.",

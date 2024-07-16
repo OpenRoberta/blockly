@@ -541,6 +541,22 @@ confBlocks.light.txt4 = {
     ]
 };
 
+confBlocks.phototransistor = {};
+confBlocks.phototransistor.txt4 = {
+    title: 'PHOTOTRANSISTOR',
+    ports: [['BRICK_PORT', 'PORT']],
+
+    pins: function(a) {
+        return Blockly.Blocks.robConfigDefinitions['txt4InputPorts'];
+    },
+    sensor: true,
+    standardPins: ['I1'],
+    fixedPorts: [
+        ['VCC', '9V']
+    ]
+};
+
+
 confBlocks.lightveml = {};
 confBlocks.lightveml.sensebox = {
     title: 'LIGHTVEML',
@@ -825,6 +841,20 @@ confBlocks.temperature.sensebox = {
         ];
     },
     sensor: true
+};
+
+confBlocks.temperature.txt4 = {
+    title: 'TEMPERATURE',
+    ports: [['BRICK_PORT', 'PORT']],
+
+    pins: function(a) {
+        return Blockly.Blocks.robConfigDefinitions['txt4InputPorts'];
+    },
+    sensor: true,
+    standardPins: ['I1'],
+    fixedPorts: [
+        ['VCC', '9V']
+    ]
 };
 
 confBlocks.humidity = {};

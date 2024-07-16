@@ -823,6 +823,15 @@ sensors.light.txt4 = {
     ports: 'CONFIGURATION'
 };
 
+sensors.phototransistor = {};
+sensors.phototransistor.txt4 = {
+    title: 'PHOTOTRANSISTOR',
+    modes: [{
+        name: 'OPENING', type: 'Boolean'
+    }],
+    ports: 'CONFIGURATION'
+};
+
 sensors.lightveml = {};
 sensors.lightveml.sensebox = {
     title: 'LIGHTVEML', modes: [{
@@ -1108,6 +1117,16 @@ sensors.temperature.sensebox = {
     }], ports: 'CONFIGURATION'
 };
 sensors.temperature.thymio = sensors.temperature.bob3;
+sensors.temperature.txt4 = {
+    title: 'TEMPERATURE',
+    modes: [{
+        name: 'TEMPERATURE', type: 'Number', unit: 'DEGREE', value: 20
+    },
+        {
+            name: 'RESISTANCE', type: 'Number', unit: 'OHM', value: 100
+        }],
+    ports: 'CONFIGURATION'
+};
 
 sensors.timer = {};
 sensors.timer.botnroll = {
@@ -1348,7 +1367,7 @@ sensorsAll.calliope = [sensors.key.calliope, sensors.pintouch.calliope, sensors.
 sensorsAll.microbit = [sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit, sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit, sensors.light.microbit];
 sensorsAll.microbitv2 = [sensors.key.microbitv2, sensors.pintouch.microbitv2, sensors.logotouch.microbitv2, sensors.gesture.microbitv2, sensors.sound.microbitv2, sensors.compass.microbitv2, sensors.timer.microbitv2, sensors.temperature.microbitv2, sensors.pin.microbitv2, sensors.accelerometer.microbitv2, sensors.light.microbitv2];
 sensorsAll.joycar = [sensors.key.joycar, sensors.ultrasonic.joycar, sensors.infrared.joycar, sensors.line.joycar, sensors.logotouch.joycar, sensors.sound.joycar, sensors.compass.joycar, sensors.timer.joycar, sensors.encoder.joycar, sensors.temperature.joycar, sensors.accelerometer.joycar, sensors.light.joycar, sensors.pin.joycar, sensors.gesture.joycar];
-sensorsAll.txt4 = [sensors.touchkey.txt4, sensors.ultrasonic.txt4, sensors.infrared.txt4, sensors.encoder.txt4, sensors.timer.txt4, sensors.colour.txt4, sensors.cameraline.txt4, sensors.ball.txt4, sensors.motion.txt4, sensors.key.txt4, sensors.gyro.txt4, sensors.compass.txt4, sensors.accelerometer.txt4, sensors.light.txt4, sensors.gesture.txt4, sensors.environmental.txt4];
+sensorsAll.txt4 = [sensors.touchkey.txt4, sensors.ultrasonic.txt4, sensors.infrared.txt4, sensors.encoder.txt4, sensors.timer.txt4, sensors.colour.txt4, sensors.cameraline.txt4, sensors.ball.txt4, sensors.motion.txt4, sensors.key.txt4, sensors.gyro.txt4, sensors.compass.txt4, sensors.accelerometer.txt4, sensors.light.txt4, sensors.temperature.txt4, sensors.phototransistor.txt4, sensors.gesture.txt4, sensors.environmental.txt4];
 sensorsAll.arduino = [sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino, sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino, sensors.gyro.arduino, sensors.accelerometer.arduino];
 sensorsAll.festobionic = [sensors.timer.arduino];
 sensorsAll.festobionicflower = [sensors.timer.festobionicflower, sensors.touch.festobionicflower, sensors.light.festobionicflower];

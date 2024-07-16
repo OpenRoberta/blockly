@@ -952,14 +952,20 @@ Blockly.Blocks['robConf_i2c_port_txt4'] = {
                 name: 'NAME',
                 text: Blockly.RobConfig.findLegalName('I2CBUS'.charAt(0).toUpperCase(), this)
             }],
-            message1: Blockly.Msg.BRICK_PORT + ' %1',
+            message1: Blockly.Msg.BRICK_PORT + ' 1 %1',
             args1: [{
                 type: 'field_dropdown',
-                name: 'PORT',
-                options: [['EXT', 'EXT']]
+                name: 'PORT1',
+                options: [['EXT1', 'EXT1']]
             }],
-            message2: '%1',
-            args2: [
+            message2: Blockly.Msg.BRICK_PORT + ' 2 %1',
+            args2: [{
+                type: 'field_dropdown',
+                name: 'PORT2',
+                options: [['EXT2', 'EXT2']]
+            }],
+            message3: '%1',
+            args3: [
                 { 'type': 'input_statement', 'name': 'BUS' }
             ],
             colour: Blockly.CAT_SENSOR_RGB,
