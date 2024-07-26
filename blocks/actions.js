@@ -1872,7 +1872,6 @@ Blockly.Blocks['actions_motorOmniDiff_turn_txt4'] = {
         this.hide.name = 'ACTORPORT';
         this.hide.port = true;
         this.hide.value = ports.getValue();
-        this.setBlocking(true);
         this.jsonInit({
             message0: Blockly.Msg.MOTOR_TURN + ' %1 ' + ' ' + Blockly.Msg.MOTOR_SPEED + ' %2',
             args0: [{

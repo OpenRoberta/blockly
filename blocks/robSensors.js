@@ -645,13 +645,9 @@ Blockly.Blocks['robSensors_get_line_camera_txt4'] = {
      * block for list of information of a line found by the camera
      */
     init: function() {
-        var ports = getConfigPorts('camera');
-        this.hide = {};
-        this.hide.name = 'SENSORPORT';
-        this.hide.port = true;
-        this.hide.value = ports.getValue();
+        var ports = getConfigPorts('line');
         this.jsonInit({
-            'message0': Blockly.Msg.GET + ' %1 ' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
+            'message0': Blockly.Msg.GET + ' %1 %3' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
             'args0': [{
                 'type': 'field_dropdown',
                 'name': 'MODE',
@@ -663,6 +659,11 @@ Blockly.Blocks['robSensors_get_line_camera_txt4'] = {
                     'type': 'input_value',
                     'name': 'INDEX',
                     'check': 'Number'
+                },
+                {
+                    type: 'field_dropdown',
+                    name: 'SENSORPORT',
+                    options: ports.menuGenerator_
                 }
             ],
             'output': 'Array_Number',
@@ -670,8 +671,8 @@ Blockly.Blocks['robSensors_get_line_camera_txt4'] = {
             'tooltip': Blockly.Msg.SENSOR_LINE_INFORMATION_TOOLTIP
         });
         this.dependConfig = {
-            'type': 'camera',
-            'dropDown': 'hide'
+            'type': 'line',
+            dropDown: this.getField('SENSORPORT')
         };
     }
 
@@ -682,13 +683,9 @@ Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
      * block for list of information of a line found by the camera
      */
     init: function() {
-        var ports = getConfigPorts('camera');
-        this.hide = {};
-        this.hide.name = 'SENSORPORT';
-        this.hide.port = true;
-        this.hide.value = ports.getValue();
+        var ports = getConfigPorts('line');
         this.jsonInit({
-            'message0': Blockly.Msg.GET + ' %1 ' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
+            'message0': Blockly.Msg.GET + ' %1 %3' + Blockly.Msg.GALLERY_BY + ' ' + Blockly.Msg.MODE_LINE + ' # %2',
             'args0': [{
                 'type': 'field_dropdown',
                 'name': 'MODE',
@@ -700,6 +697,11 @@ Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
                     'type': 'input_value',
                     'name': 'INDEX',
                     'check': 'Number'
+                },
+                {
+                    type: 'field_dropdown',
+                    name: 'SENSORPORT',
+                    options: ports.menuGenerator_
                 }
             ],
             'output': 'Colour',
@@ -708,7 +710,7 @@ Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
         });
         this.dependConfig = {
             'type': 'camera',
-            'dropDown': 'hide'
+            dropDown: this.getField('SENSORPORT')
         };
     }
 

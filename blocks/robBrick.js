@@ -898,43 +898,26 @@ Blockly.Blocks['robConf_camera_txt4'] = {
                 name: 'NAME',
                 text: Blockly.RobConfig.findLegalName('CAMERA'.charAt(0).toUpperCase(), this)
             }],
-            message1: Blockly.Msg.SENSOR_COLORDETECTOR + ' ' + Blockly.Msg.AREA + ' %1',
-            args1: [
-                {
-                    type: 'field_input',
-                    name: 'COLOURSIZE',
-                    text: '30'
+            message1: Blockly.Msg.NAO_RESOLUTION + '%1',
+            args1: [{
+                type: 'field_dropdown',
+                name: 'RESOLUTION',
+                options: [['320x240', '320x240'], ['160x120', '160x120']]
             }],
-            lastDummyAlign1: 'RIGHT',
-            message2: Blockly.Msg.SENSOR_BALLDETECTOR + ' ' + Blockly.Msg.MODE_COLOUR + ' %1',
+            message2: Blockly.Msg.BRICK_PORT + '%1',
             args2: [{
-                type: 'input_value',
-                name: 'COLOUR',
-                check: ['Colour'],
-                align: 'RIGHT'
-            }],
-            message3: Blockly.Msg.SENSOR_MOTIONDETECTOR + ' ' + Blockly.Msg.MODE_SENSIVITY + ' %1',
-            args3: [{
-                type: 'field_input',
-                name: 'MOTION',
-                text: '2'
-            }],
-            lastDummyAlign3: 'RIGHT',
-            message4: Blockly.Msg.BRICK_PORT + '%1',
-            args4: [{
                 type: 'field_dropdown',
                 name: 'PORT',
                 options: [['USB1', 'USB1'], ['USB2', 'USB2']]
             }],
-            lastDummyAlign4: 'RIGHT',
+            message3: '%1',
+            args3: [
+                { 'type': 'input_statement', 'name': 'DETECTORS', 'check': 'camera' }
+            ],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.CAMERA_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
-        this.getField('COLOURSIZE').setValidator(
-            Blockly.FieldTextInput.nonnegativeIntegerValidator);
-        this.getField('MOTION').setValidator(
-            Blockly.FieldTextInput.nonnegativeIntegerValidator);
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
@@ -966,7 +949,7 @@ Blockly.Blocks['robConf_i2c_port_txt4'] = {
             }],
             message3: '%1',
             args3: [
-                { 'type': 'input_statement', 'name': 'BUS' }
+                { 'type': 'input_statement', 'name': 'BUS', 'check': 'i2c' }
             ],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.I2CBUS_TOOLTIP
@@ -997,7 +980,7 @@ Blockly.Blocks['robConf_encodermotor_txt4'] = {
             }],
             message2: '%1',
             args2: [
-                { 'type': 'input_statement', 'name': 'ENCODER' }
+                { 'type': 'input_statement', 'name': 'ENCODER', 'check': 'encoder' }
             ],
             colour: Blockly.CAT_ACTION_RGB,
             tooltip: Blockly.Msg.ENCODER_TOOLTIP_MBOT2
@@ -1008,6 +991,238 @@ Blockly.Blocks['robConf_encodermotor_txt4'] = {
         return getConfigDecl(this);
     }
 };
+
+Blockly.Blocks['robConf_line_txt4'] = {
+    init: function() {
+        this.title = 'LINE';
+        this.confBlock = 'LINE';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_LINE_TXT4 + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_LINE_TXT4.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            message3: Blockly.Msg.MODE_NUMBERLINES + ' %1',
+            args3: [{
+                type: 'field_input',
+                name: 'NUMBERLINES',
+                text: '4'
+            }],
+            message4: Blockly.Msg.WIDTHRANGE + ' %1-%2',
+            args4: [{
+                type: 'field_input',
+                name: 'MINIMUM',
+                text: '0'
+            },
+                {
+                    type: 'field_input',
+                    name: 'MAXIMUM',
+                    text: '100'
+                }],
+
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.LINEDETECTOR_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'NUMBERLINES', 'MINIMUM', 'MAXIMUM');
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_balldetector_txt4'] = {
+    init: function() {
+        this.title = 'BALLDETECTOR';
+        this.confBlock = 'BALLDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_BALLDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_BALLDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            message3: Blockly.Msg.MODE_COLOUR + ' %1',
+            args3: [{
+                type: 'input_value',
+                name: 'COLOUR',
+                check: ['Colour']
+            }],
+            message4: Blockly.Msg.HUE_TOLERANCE + ' %1 ' + Blockly.Msg.MOTOR_DEGREE,
+            args4: [{
+                type: 'field_input',
+                name: 'TOLERANCE',
+                text: '20'
+            }],
+            message5: Blockly.Msg.DIAMETER_RANGE + ' %1-%2',
+            args5: [{
+                type: 'field_input',
+                name: 'MINIMUM',
+                text: '10'
+            },
+                {
+                    type: 'field_input',
+                    name: 'MAXIMUM',
+                    text: '100'
+                }],
+
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.BALLDETECTOR_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'TOLERANCE', 'MINIMUM', 'MAXIMUM');
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_colordetector_txt4'] = {
+    init: function() {
+        this.title = 'COLORDETECTOR';
+        this.confBlock = 'COLORDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_COLORDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_COLORDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.COLORDETECTOR_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND');
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_motiondetector_txt4'] = {
+    init: function() {
+        this.title = 'MOTIONDETECTOR';
+        this.confBlock = 'MOTIONDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_MOTIONDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_MOTIONDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            message3: Blockly.Msg.TOLERANCE + ' %1px ',
+            args3: [{
+                type: 'field_input',
+                name: 'TOLERANCE',
+                text: '100'
+            }],
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.MOTIONDETECTOR_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'TOLERANCE');
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+function addNonnegativeIntegerValidator(block, ...fields) {
+    fields.forEach(field => {
+        if (typeof field === 'string') {
+            block.getField(field).setValidator(Blockly.FieldTextInput.nonnegativeIntegerValidator);
+        }
+    });
+}
 
 function validateName(name) {
     /**
