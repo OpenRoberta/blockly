@@ -302,6 +302,7 @@ Blockly.Msg.SENSOR_KEY_ESCAPE = 'escape';
 Blockly.Msg.SENSOR_KEY_ANY = 'any';
 Blockly.Msg.SENSOR_KEY_TXT4 = 'Mini-Switch'
 Blockly.Msg.SENSOR_LINE = 'bottom infrared sensor';
+Blockly.Msg.SENSOR_LINE_TXT4 = 'line detector';
 Blockly.Msg.SENSOR_LINE_JOYCAR = 'line sensor';
 Blockly.Msg.SENSOR_ANY = 'anyplace';
 Blockly.Msg.SENSOR_RESET = 'reset';
@@ -1897,6 +1898,7 @@ Blockly.Msg.MIN_PULSE_WIDTH = 'Minimum pulse width';
 Blockly.Msg.MAX_PULSE_WIDTH = 'Maximum pulse width';
 Blockly.Msg.FRAME_WIDTH = 'Frame width';
 Blockly.Msg.LIGHT_LDR = 'Light (LDR)';
+Blockly.Msg.WIDTHRANGE = 'width range';
 
 Blockly.Msg.POPUP_REPLACE = 'Replace';
 Blockly.Msg.POPUP_BACKGROUND_REPLACE = 'A program with the same name already exists. <br> Would you like to replace it?';

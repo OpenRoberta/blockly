@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2024-07-30 11:05:50.094680",
+		"lastupdated": "2024-08-02 01:33:59.987786",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -597,6 +597,7 @@
 	"SENSOR_KEY_ANY": "any",
 	"SENSOR_KEY_TXT4": "Mini-Switch",
 	"SENSOR_LINE": "bottom infrared sensor",
+	"SENSOR_LINE_TXT4": "line detector",
 	"SENSOR_LINE_JOYCAR": "line sensor",
 	"SENSOR_ANY": "anyplace",
 	"SENSOR_RESET": "reset",
@@ -2051,6 +2052,7 @@
 	"MAX_PULSE_WIDTH": "Maximum pulse width",
 	"FRAME_WIDTH": "Frame width",
 	"LIGHT_LDR": "Light (LDR)",
+	"WIDTHRANGE": "width range",
 	"POPUP_REPLACE": "Replace",
 	"POPUP_BACKGROUND_REPLACE": "A program with the same name already exists. <br> Would you like to replace it?",
 	"POPUP_BACKGROUND_REPLACE_CONFIGURATION": "A configuration with the same name already exists. <br> Would you like to replace it?",

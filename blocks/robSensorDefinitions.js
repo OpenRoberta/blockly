@@ -1004,12 +1004,11 @@ sensors.line.joycar = {
 };
 sensors.cameraline = {};
 sensors.cameraline.txt4 = {
-    title: 'CAMERA',
+    title: 'LINE',
     modes: [{
         name: 'NUMBERLINES', type: 'Number', op: 'NUM_REV', value: '1'
     }],
     ports: 'CONFIGURATION',
-    portsHidden: true
 };
 
 sensors.ball = {};

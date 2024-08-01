@@ -898,43 +898,25 @@ Blockly.Blocks['robConf_camera_txt4'] = {
                 name: 'NAME',
                 text: Blockly.RobConfig.findLegalName('CAMERA'.charAt(0).toUpperCase(), this)
             }],
-            message1: Blockly.Msg.SENSOR_COLORDETECTOR + ' ' + Blockly.Msg.AREA + ' %1',
-            args1: [
-                {
-                    type: 'field_input',
-                    name: 'COLOURSIZE',
-                    text: '30'
+            message1: Blockly.Msg.NAO_RESOLUTION + '%1',
+            args1: [{
+                type: 'field_dropdown',
+                name: 'RESOLUTION',
+                options: [['320x240', 'HIGH'], ['160x120', 'LOW']]
             }],
-            lastDummyAlign1: 'RIGHT',
-            message2: Blockly.Msg.SENSOR_BALLDETECTOR + ' ' + Blockly.Msg.MODE_COLOUR + ' %1',
+            message2: Blockly.Msg.BRICK_PORT + '%1',
             args2: [{
-                type: 'input_value',
-                name: 'COLOUR',
-                check: ['Colour'],
-                align: 'RIGHT'
-            }],
-            message3: Blockly.Msg.SENSOR_MOTIONDETECTOR + ' ' + Blockly.Msg.MODE_SENSIVITY + ' %1',
-            args3: [{
-                type: 'field_input',
-                name: 'MOTION',
-                text: '2'
-            }],
-            lastDummyAlign3: 'RIGHT',
-            message4: Blockly.Msg.BRICK_PORT + '%1',
-            args4: [{
                 type: 'field_dropdown',
                 name: 'PORT',
                 options: [['USB1', 'USB1'], ['USB2', 'USB2']]
             }],
-            lastDummyAlign4: 'RIGHT',
+            message3: '%1',
+            args3: [
+                { 'type': 'input_statement', 'name': 'BUS' }
+            ],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.CAMERA_TOOLTIP
         });
-        this.getField('NAME').setValidator(validateName);
-        this.getField('COLOURSIZE').setValidator(
-            Blockly.FieldTextInput.nonnegativeIntegerValidator);
-        this.getField('MOTION').setValidator(
-            Blockly.FieldTextInput.nonnegativeIntegerValidator);
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
@@ -1008,6 +990,68 @@ Blockly.Blocks['robConf_encodermotor_txt4'] = {
         return getConfigDecl(this);
     }
 };
+
+Blockly.Blocks['robConf_line_txt4'] = {
+    init: function() {
+        this.title = 'LINE';
+        this.confBlock = 'LINE';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_LINE_TXT4 + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.MODE_LINE.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            message3: Blockly.Msg.MODE_NUMBERLINES + ' %1',
+            args3: [{
+                type: 'field_input',
+                name: 'NUMBERLINES',
+                text: '4'
+            }],
+            message4: Blockly.Msg.WIDTHRANGE + ' %1-%2',
+            args4: [{
+                type: 'field_input',
+                name: 'MINWIDTH',
+                text: '0'
+            },
+                {
+                    type: 'field_input',
+                    name: 'MAXWIDTH',
+                    text: '100'
+                }],
+
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.LINE_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
 
 function validateName(name) {
     /**
