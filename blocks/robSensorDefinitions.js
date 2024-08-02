@@ -177,12 +177,11 @@ sensors.colour.spike = {
     ], ports: 'CONFIGURATION'
 };
 sensors.colour.txt4 = {
-    title: 'CAMERA',
+    title: 'COLORDETECTOR',
     modes: [{
         name: 'COLOUR', type: 'Colour', value: '#b30006'
     }],
     ports: 'CONFIGURATION',
-    portsHidden: true
 };
 
 sensors.compass = {};
@@ -867,12 +866,11 @@ sensors.motion.mbot = {
 };
 
 sensors.motion.txt4 = {
-    title: 'CAMERA',
+    title: 'MOTIONDETECTOR',
     modes: [{
         name: 'MOTION', type: 'Boolean'
     }],
     ports: 'CONFIGURATION',
-    portsHidden: true
 };
 
 sensors.optical = {};
@@ -1013,12 +1011,11 @@ sensors.cameraline.txt4 = {
 
 sensors.ball = {};
 sensors.ball.txt4 = {
-    title: 'CAMERA',
+    title: 'BALLDETECTOR',
     modes: [{
         name: 'BALL', type: 'Array_Number'
     }],
     ports: 'CONFIGURATION',
-    portsHidden: true
 };
 
 sensors.odometry = {};

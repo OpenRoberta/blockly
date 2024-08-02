@@ -15,6 +15,7 @@
   "BRICK_TRACK_WIDTH": "Spurbreite",
   "WHEEL_BASE": "Radstand",
   "BRICK_WHEEL_DIAMETER": "Raddurchmesser",
+  "DIAMETER_RANGE": "Durchmesserbereich",
   "WEIGHT_KG": "Gewicht kg",
   "BUTTON_DO_DELETE": "Löschen",
   "BUTTON_DO_SHARE": "Teilen",

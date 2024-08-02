@@ -180,6 +180,7 @@ Blockly.Msg.GET = 'get';
 Blockly.Msg.RETURN = 'return';
 Blockly.Msg.SET = 'set';
 Blockly.Msg.BRICK_WHEEL_DIAMETER = 'wheel diameter';
+Blockly.Msg.DIAMETER_RANGE = 'diameter range';
 Blockly.Msg.BRICK_TRACK_WIDTH = 'track width';
 Blockly.Msg.WHEEL_BASE = 'wheel base';
 Blockly.Msg.WEIGHT_KG = 'weight kg';

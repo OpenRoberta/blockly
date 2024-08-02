@@ -315,6 +315,7 @@ Blockly.Msg.DELETE_BLOCK = "删除块";
 Blockly.Msg.DELETE_USERGROUP_MEMBER_AFTER_LOGIN_WARNING = "A member you want to delete did already log in and might have create own programs. Are you sure that you want to delete the selected member(s)?";  // untranslated
 Blockly.Msg.DELETE_USERGROUP_MEMBER_WARNING = "Are you sure that you want to delete the selected member(s)?";  // untranslated
 Blockly.Msg.DELETE_X_BLOCKS = "删除 %1 块";
+Blockly.Msg.DIAMETER_RANGE = "diameter range";  // untranslated
 Blockly.Msg.DIFFERENTIALDRIVE_TOOLTIP = "Represents two motors on a common axis controlled independetly.";  // untranslated
 Blockly.Msg.DIGITAL = "数字";
 Blockly.Msg.DIGITALIN_TOOLTIP = "Represents any actuator connected to a digital pin.";  // untranslated

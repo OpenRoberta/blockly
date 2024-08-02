@@ -1000,7 +1000,7 @@ Blockly.Blocks['robConf_line_txt4'] = {
             args0: [{
                 type: 'field_input',
                 name: 'NAME',
-                text: Blockly.RobConfig.findLegalName(Blockly.Msg.MODE_LINE.charAt(0).toUpperCase(), this)
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_LINE_TXT4.charAt(0).toUpperCase(), this)
             }],
             message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
             args1: [{
@@ -1031,15 +1031,168 @@ Blockly.Blocks['robConf_line_txt4'] = {
             message4: Blockly.Msg.WIDTHRANGE + ' %1-%2',
             args4: [{
                 type: 'field_input',
-                name: 'MINWIDTH',
+                name: 'MINIMUM',
                 text: '0'
             },
                 {
                     type: 'field_input',
-                    name: 'MAXWIDTH',
+                    name: 'MAXIMUM',
                     text: '100'
                 }],
 
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.LINE_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_balldetector_txt4'] = {
+    init: function() {
+        this.title = 'BALLDETECTOR';
+        this.confBlock = 'BALLDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_BALLDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_BALLDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            message3: Blockly.Msg.MODE_COLOUR + ' %1',
+            args3: [{
+                type: 'input_value',
+                name: 'COLOUR',
+                check: ['Colour']
+            }],
+            message4: Blockly.Msg.HUE_TOLERANCE + ' %1 ' + Blockly.Msg.MOTOR_DEGREE,
+            args4: [{
+                type: 'field_input',
+                name: 'TOLERANCE',
+                text: '20'
+            }],
+            message5: Blockly.Msg.DIAMETER_RANGE + ' %1-%2',
+            args5: [{
+                type: 'field_input',
+                name: 'MINIMUM',
+                text: '10'
+            },
+                {
+                    type: 'field_input',
+                    name: 'MAXIMUM',
+                    text: '100'
+                }],
+
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.LINE_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_colordetector_txt4'] = {
+    init: function() {
+        this.title = 'COLORDETECTOR';
+        this.confBlock = 'COLORDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_COLORDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_COLORDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
+            colour: Blockly.CAT_SENSOR_RGB,
+            tooltip: Blockly.Msg.LINE_TOOLTIP
+        });
+        this.getField('NAME').setValidator(validateName);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    },
+    getConfigDecl: function() {
+        return getConfigDecl(this);
+    }
+};
+
+Blockly.Blocks['robConf_motiondetector_txt4'] = {
+    init: function() {
+        this.title = 'MOTIONDETECTOR';
+        this.confBlock = 'MOTIONDETECTOR';
+        this.jsonInit({
+            message0: Blockly.Msg.SENSOR_MOTIONDETECTOR + ' %1',
+            args0: [{
+                type: 'field_input',
+                name: 'NAME',
+                text: Blockly.RobConfig.findLegalName(Blockly.Msg.SENSOR_MOTIONDETECTOR.charAt(0).toUpperCase(), this)
+            }],
+            message1: 'X-' + Blockly.Msg.AREA + ' %1-%2',
+            args1: [{
+                type: 'field_input',
+                name: 'XSTART',
+                text: '0'
+            }, {
+                type: 'field_input',
+                name: 'XEND',
+                text: '320'
+            }],
+            message2: 'Y-' + Blockly.Msg.AREA + ' %1-%2',
+            args2: [{
+                type: 'field_input',
+                name: 'YSTART',
+                text: '100'
+            }, {
+                type: 'field_input',
+                name: 'YEND',
+                text: '120'
+            }],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });

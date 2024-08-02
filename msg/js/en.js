@@ -315,6 +315,7 @@ Blockly.Msg.DELETE_BLOCK = "Delete Block";
 Blockly.Msg.DELETE_USERGROUP_MEMBER_AFTER_LOGIN_WARNING = "A member you want to delete did already log in and might have create own programs. Are you sure that you want to delete the selected member(s)?";
 Blockly.Msg.DELETE_USERGROUP_MEMBER_WARNING = "Are you sure that you want to delete the selected member(s)?";
 Blockly.Msg.DELETE_X_BLOCKS = "Delete %1 Blocks";
+Blockly.Msg.DIAMETER_RANGE = "diameter range";
 Blockly.Msg.DIFFERENTIALDRIVE_TOOLTIP = "Represents two motors on a common axis controlled independetly.";
 Blockly.Msg.DIGITAL = "digital";
 Blockly.Msg.DIGITALIN_TOOLTIP = "Represents any actuator connected to a digital pin.";

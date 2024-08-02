@@ -315,6 +315,7 @@ Blockly.Msg.DELETE_BLOCK = "Block löschen";
 Blockly.Msg.DELETE_USERGROUP_MEMBER_AFTER_LOGIN_WARNING = "Ein Mitglieder, welches du löschen willst, hat sich beriets angemeldet und eventuell Programme erstellt. Bist du sicher, dass du die auswählten Mitglieder löschen möchtest?";
 Blockly.Msg.DELETE_USERGROUP_MEMBER_WARNING = "Bist du sicher, dass du die auswählten Mitglieder löschen möchtest?";
 Blockly.Msg.DELETE_X_BLOCKS = "%1 Blöcke löschen";
+Blockly.Msg.DIAMETER_RANGE = "Durchmesserbereich";
 Blockly.Msg.DIFFERENTIALDRIVE_TOOLTIP = "Block für zwei Motoren auf einer gemeinsamen Achse, die getrennt steuerbar sind.";
 Blockly.Msg.DIGITAL = "digitalen";
 Blockly.Msg.DIGITALIN_TOOLTIP = "Block für einen beliebigen Aktor, der mit einem digitales Signal gesteuert wird.";
