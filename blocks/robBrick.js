@@ -1043,6 +1043,7 @@ Blockly.Blocks['robConf_line_txt4'] = {
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'NUMBERLINES', 'MINIMUM', 'MAXIMUM');
         this.setPreviousStatement(true, 'camera');
         this.setNextStatement(true, 'camera');
     },
@@ -1110,6 +1111,7 @@ Blockly.Blocks['robConf_balldetector_txt4'] = {
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'TOLERANCE', 'MINIMUM', 'MAXIMUM');
         this.setPreviousStatement(true, 'camera');
         this.setNextStatement(true, 'camera');
     },
@@ -1153,6 +1155,7 @@ Blockly.Blocks['robConf_colordetector_txt4'] = {
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND');
         this.setPreviousStatement(true, 'camera');
         this.setNextStatement(true, 'camera');
     },
@@ -1202,6 +1205,7 @@ Blockly.Blocks['robConf_motiondetector_txt4'] = {
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
+        addNonnegativeIntegerValidator(this, 'XSTART', 'XEND', 'YSTART', 'YEND', 'TOLERANCE');
         this.setPreviousStatement(true, 'camera');
         this.setNextStatement(true, 'camera');
     },
@@ -1209,6 +1213,14 @@ Blockly.Blocks['robConf_motiondetector_txt4'] = {
         return getConfigDecl(this);
     }
 };
+
+function addNonnegativeIntegerValidator(block, ...fields) {
+    fields.forEach(field => {
+        if (typeof field === 'string') {
+            block.getField(field).setValidator(Blockly.FieldTextInput.nonnegativeIntegerValidator);
+        }
+    });
+}
 
 function validateName(name) {
     /**
