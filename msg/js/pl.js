@@ -2042,6 +2042,7 @@ Blockly.Msg.TITLE_GOAL = "Learning objective";  // untranslated
 Blockly.Msg.TITLE_PREVIOUS = "Previous knowledge";  // untranslated
 Blockly.Msg.TO = "to";  // untranslated
 Blockly.Msg.TODAY = "Dzisiaj";
+Blockly.Msg.TOLERANCE = "tolerance";  // untranslated
 Blockly.Msg.TOOLBOX_ACTION = "Działania";
 Blockly.Msg.TOOLBOX_ADD_ON = "Add-ons";  // untranslated
 Blockly.Msg.TOOLBOX_ANIMATION = "Animacja";

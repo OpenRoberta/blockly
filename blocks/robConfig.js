@@ -154,10 +154,18 @@ Blockly.Blocks['robConf_generic'] = {
         }
 
         if (confBlock.previousStatement) {
-            this.setPreviousStatement(true);
+            if (typeof confBlock.previousStatement === 'string') {
+                this.setPreviousStatement(true, confBlock.previousStatement);
+            } else {
+                this.setPreviousStatement(true);
+            }
         }
         if (confBlock.nextStatement) {
-            this.setNextStatement(true);
+            if (typeof confBlock.previousStatement === 'string') {
+                this.setNextStatement(true, confBlock.previousStatement);
+            } else {
+                this.setNextStatement(true);
+            }
         }
         this.type = 'robConf_' + confBlockName;
         this.confBlock = confBlock.title.toLowerCase();

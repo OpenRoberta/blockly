@@ -2042,6 +2042,7 @@ Blockly.Msg.TITLE_GOAL = "Objetivo de aprendizaje";
 Blockly.Msg.TITLE_PREVIOUS = "Conocimientos previos";
 Blockly.Msg.TO = "a";
 Blockly.Msg.TODAY = "Hoy";
+Blockly.Msg.TOLERANCE = "tolerance";  // untranslated
 Blockly.Msg.TOOLBOX_ACTION = "Acción";
 Blockly.Msg.TOOLBOX_ADD_ON = "Complementos";
 Blockly.Msg.TOOLBOX_ANIMATION = "Animación";

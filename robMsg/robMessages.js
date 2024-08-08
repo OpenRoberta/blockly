@@ -273,6 +273,7 @@ Blockly.Msg.SENSOR_INFRARED = 'infrared sensor';
 Blockly.Msg.SENSOR_INFRAREDOBSTACLE = 'obstacle detection sensor';
 Blockly.Msg.SENSOR_INFRAREDLINE = 'line detection sensor';
 Blockly.Msg.HUE_TOLERANCE = 'hue tolerance';
+Blockly.Msg.TOLERANCE = 'tolerance';
 Blockly.Msg.SENSOR_COLORDETECTOR = 'colour detector';
 Blockly.Msg.AREA = 'area';
 Blockly.Msg.SENSOR_BALLDETECTOR = 'ball detector';

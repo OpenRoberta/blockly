@@ -902,7 +902,7 @@ Blockly.Blocks['robConf_camera_txt4'] = {
             args1: [{
                 type: 'field_dropdown',
                 name: 'RESOLUTION',
-                options: [['320x240', 'HIGH'], ['160x120', 'LOW']]
+                options: [['320x240', '320x240'], ['160x120', '160x120']]
             }],
             message2: Blockly.Msg.BRICK_PORT + '%1',
             args2: [{
@@ -912,7 +912,7 @@ Blockly.Blocks['robConf_camera_txt4'] = {
             }],
             message3: '%1',
             args3: [
-                { 'type': 'input_statement', 'name': 'BUS' }
+                { 'type': 'input_statement', 'name': 'DETECTORS', 'check': 'camera' }
             ],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.CAMERA_TOOLTIP
@@ -948,7 +948,7 @@ Blockly.Blocks['robConf_i2c_port_txt4'] = {
             }],
             message3: '%1',
             args3: [
-                { 'type': 'input_statement', 'name': 'BUS' }
+                { 'type': 'input_statement', 'name': 'BUS', 'check': 'i2c' }
             ],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.I2CBUS_TOOLTIP
@@ -979,7 +979,7 @@ Blockly.Blocks['robConf_encodermotor_txt4'] = {
             }],
             message2: '%1',
             args2: [
-                { 'type': 'input_statement', 'name': 'ENCODER' }
+                { 'type': 'input_statement', 'name': 'ENCODER', 'check': 'encoder' }
             ],
             colour: Blockly.CAT_ACTION_RGB,
             tooltip: Blockly.Msg.ENCODER_TOOLTIP_MBOT2
@@ -1043,9 +1043,8 @@ Blockly.Blocks['robConf_line_txt4'] = {
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
-        this.getField('NAME').setValidator(validateName);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
@@ -1111,8 +1110,8 @@ Blockly.Blocks['robConf_balldetector_txt4'] = {
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
@@ -1154,8 +1153,8 @@ Blockly.Blocks['robConf_colordetector_txt4'] = {
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
@@ -1193,18 +1192,23 @@ Blockly.Blocks['robConf_motiondetector_txt4'] = {
                 name: 'YEND',
                 text: '120'
             }],
+            message3: Blockly.Msg.TOLERANCE + ' %1px ',
+            args3: [{
+                type: 'field_input',
+                name: 'TOLERANCE',
+                text: '100'
+            }],
             colour: Blockly.CAT_SENSOR_RGB,
             tooltip: Blockly.Msg.LINE_TOOLTIP
         });
         this.getField('NAME').setValidator(validateName);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setPreviousStatement(true, 'camera');
+        this.setNextStatement(true, 'camera');
     },
     getConfigDecl: function() {
         return getConfigDecl(this);
     }
 };
-
 
 function validateName(name) {
     /**

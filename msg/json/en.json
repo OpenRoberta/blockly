@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2024-08-02 02:09:30.410268",
+		"lastupdated": "2024-08-05 02:51:10.512461",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -570,6 +570,7 @@
 	"SENSOR_INFRAREDOBSTACLE": "obstacle detection sensor",
 	"SENSOR_INFRAREDLINE": "line detection sensor",
 	"HUE_TOLERANCE": "hue tolerance",
+	"TOLERANCE": "tolerance",
 	"SENSOR_COLORDETECTOR": "colour detector",
 	"AREA": "area",
 	"SENSOR_BALLDETECTOR": "ball detector",

@@ -2024,7 +2024,7 @@ confBlocks.encoder.txt4 = {
             ['C4', 'C4']
         ];
     },
-    previousStatement: true
+    previousStatement: 'encoder'
 };
 
 confBlocks.digitalout = {};
@@ -2334,24 +2334,24 @@ confBlocks.environmental.sensebox = {
 confBlocks.environmental.txt4 = {
     title: 'ENVIRONMENTAL',
     sensor: true,
-    previousStatement: true,
-    nextStatement: true
+    previousStatement: 'i2c',
+    nextStatement: 'i2c'
 };
 
 confBlocks.gesture = {};
 confBlocks.gesture.txt4 = {
     title: 'GESTURE',
     sensor: true,
-    previousStatement: true,
-    nextStatement: true
+    previousStatement: 'i2c',
+    nextStatement: 'i2c'
 };
 
 confBlocks.imu = {};
 confBlocks.imu.txt4 = {
     title: 'IMU',
     sensor: true,
-    previousStatement: true,
-    nextStatement: true
+    previousStatement: 'i2c',
+    nextStatement: 'i2c'
 };
 
 confBlocks.aifes = {};
