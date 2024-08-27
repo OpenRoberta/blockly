@@ -1743,6 +1743,9 @@ Blockly.Blocks['actions_motor_stop_txt4'] = {
 Blockly.Blocks['actions_motorOmniDiff_on_txt4'] = {
     init: function() {
         var ports = getConfigPorts('omnidrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
         this.hide = {};
         this.hide.name = 'ACTORPORT';
         this.hide.port = true;
@@ -1769,12 +1772,6 @@ Blockly.Blocks['actions_motorOmniDiff_on_txt4'] = {
             inputsInline: false,
             tooltip: Blockly.Msg.MOTORDIFF_ON_TOOLTIP
         });
-
-        /*var options = [ [ 'test', 'HEART' ], [ 'backward', 'HEART_SMALL' ], [ 'left', 'HAPPY' ], [ 'right', 'SMILE' ], [ 'forward left', 'CONFUSED' ],
-            [ 'backward left', 'ANGRY' ], [ 'forward right', 'ASLEEP' ], [ 'backward right', 'SURPRISED' ]];
-        var dropdown = new Blockly.FieldDropdownImage(options, '/dropDowns/', 24, 24, 'png');
-        this.appendDummyInput().appendField("direction").appendField(dropdown, 'DIRECTION');
-        */
         this.dependConfig = {
             'type': 'omnidrive',
             'dropDown': 'hide'
@@ -1785,10 +1782,14 @@ Blockly.Blocks['actions_motorOmniDiff_on_txt4'] = {
 Blockly.Blocks['actions_motorOmniDiff_on_for_txt4'] = {
     init: function() {
         var ports = getConfigPorts('omnidrive');
+        if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
+            ports = getConfigPorts('differentialdrive');
+        }
         this.hide = {};
         this.hide.name = 'ACTORPORT';
         this.hide.port = true;
         this.hide.value = ports.getValue();
+        this.setBlocking(true);
         var directions = new Blockly.FieldDropdown([[Blockly.Msg.MOTOR_FOREWARD, 'FORWARD'], [Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD'], [Blockly.Msg.LEFT, 'LEFT'], [Blockly.Msg.RIGHT, 'RIGHT'], ['forward left', 'FORWARDLEFT'],
             ['backward left', 'BACKWARDLEFT'], ['forward right', 'FORWARDRIGHT'], ['backward right', 'BACKWARDRIGHT']], 'DIRECTION');
         if (ports.getOptions_()[0][0] === (Blockly.Msg.CONFIGURATION_NO_PORT)) {
@@ -1957,7 +1958,6 @@ Blockly.Blocks['robActions_servo_on_for_txt4'] = {
      */
     init: function() {
         var ports = getConfigPorts('servo');
-        this.setBlocking(true);
         this.jsonInit({
             message0: Blockly.Msg.SET + ' ' + Blockly.Msg.ACTION_SERVO_ARDUINO + ' %1 ' + Blockly.Msg.TO + ' °%2',
             args0: [{
