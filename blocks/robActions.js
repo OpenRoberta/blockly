@@ -1695,7 +1695,7 @@ Blockly.Blocks['robActions_eval_expr'] = {
      * @memberOf Block
      */
     init: function() {
-        this.setColour('#646464');
+        this.setColour(Blockly.CAT_TEXT_RGB);
         var typeDropDown = Blockly.TYPE_DROPDOWN(this.workspace.device);
         this.type_ = 'Number';
         this.appendDummyInput()
@@ -1704,7 +1704,7 @@ Blockly.Blocks['robActions_eval_expr'] = {
             .appendField(Blockly.Msg.ACTION_EVAL_AS)
             .appendField(typeDropDown, 'TYPE');
         this.setOutput(true, 'Number');
-        this.setTooltip('Evals any expression and return the result.');
+        this.setTooltip('Evaluate any expression and return the result.');
     }, // this function can be removed if we are sure that no validation is needed
     validate: function(content) {
         return content;
@@ -1740,11 +1740,11 @@ Blockly.Blocks['robActions_eval_stmt'] = {
      * @memberOf Block
      */
     init: function() {
-        this.setColour('#646464');
+        this.setColour(Blockly.CAT_TEXT_RGB);
         this.appendDummyInput()
             .appendField(Blockly.Msg.ACTION_EVAL)
-            .appendField(new Blockly.FieldTextInput('s1;s2;s3;', this.validate), 'EXPRESSION');
-        this.setTooltip('Evals any expression and return the result.');
+            .appendField(new Blockly.FieldTextInput('s1;s2;s3;', this.validate), 'STMTEXPRESSION');
+        this.setTooltip('Evaluate any Statement expression and return the result.');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }

@@ -635,6 +635,7 @@ Blockly.Msg.CONFIGURATION_ERROR_MISSING_PIN = 'The pin used by this component do
 Blockly.Msg.CONFIGURATION_ERROR_NO_BUILTIN_RGBLED = 'This board does not have a built in RGB LED!';
 Blockly.Msg.CONFIGURATION_ERROR_DIFFDRIVE_NOT_UNIQUE = 'This configuration block may only occur once.';
 Blockly.Msg.CONFIGURATION_ERROR_TOO_MANY_SUB_SENSORS = 'Too many sensors are connected to this block.';
+Blockly.Msg.SCOPE_ERROR = 'This variable is not accessible in the current context.';
 
 Blockly.Msg.DATATABLE_PROGRAM_NAME = 'Program name';
 Blockly.Msg.DATATABLE_CREATED_BY = 'Creator';

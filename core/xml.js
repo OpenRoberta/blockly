@@ -741,7 +741,23 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             }
             break;
         case 'error':
-            block.setErrorText(Blockly.Msg[xmlChild.textContent]);
+            var errorMessage = xmlChild.textContent;
+            var fixedTypecheckErrorPart = "PROGRAM_ERROR_EXPRBLOCK_TYPECHECK";
+            var fixedParserErrorPart = "PROGRAM_ERROR_EXPRBLOCK_PARSE"
+
+            if (errorMessage.includes(fixedTypecheckErrorPart)) {
+                errorMessage = errorMessage.replace(fixedTypecheckErrorPart, '').trim();
+            }
+            if (errorMessage.includes(fixedParserErrorPart)) {
+                errorMessage = errorMessage.replace(fixedParserErrorPart, '').trim();
+            }
+
+            if (Blockly.Msg[errorMessage]) {
+                block.setErrorText(Blockly.Msg[errorMessage]);
+            } else {
+                block.setErrorText(errorMessage);
+            }
+
             var visible = xmlChild.getAttribute('pinned');
             if (visible) {
                 // Give the renderer a millisecond to render and position the block
