@@ -1808,6 +1808,9 @@
   "BLE_ERROR_PROGRAM_SIZE": "Dein Programm ist zu groß für den Spike Prime. Schau in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Open Roberta Wiki<</a> für weitere Informationen.",
   "BLE_ERROR_COMMUNICATION": "Whoops etwas ist schiefgelaufen. Versuche deinen Roboter neu zu starten und übertrage das Programm nochmal.",
   "BLE_ERROR_DEVICE_BUSY": "Sieht so aus als wäre dein Roboter bereits mit dem Open Roberta Lab verbunden (vielleicht in einem anderen Browsertab?). Schließe den anderen Browsertab oder starte deinen Roboter neu.",
-  "BLE_ERROR_CAPABILITIES": "Deine Hub-Version kann nicht mit dem Lab verbunden werden. Schau in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Open Roberta Wiki<</a>  unter: Spike Prime / Robot Inventor -> Pybricks -> Vorbereitung.'",
-  "BLE_ERROR_STOP": "Das Stoppen des Programmes hat nicht geklappt, vielleicht ist dein Roboter nicht mehr verbunden?. Du kannst kannst das Programm auf dem Roboter stoppen, indem du die mittlere Taste des Hubs drückst."
+  "BLE_ERROR_CAPABILITIES": "Deine Hub-Version kann nicht mit dem Lab verbunden werden. Schau in unser <a href='https://wiki.open-roberta.org/' target='_blank'>Open Roberta Wiki</a>  unter: Spike Prime / Robot Inventor -> Pybricks -> Vorbereitung.'",
+  "BLE_ERROR_STOP": "Das Stoppen des Programmes hat nicht geklappt, vielleicht ist dein Roboter nicht mehr verbunden?. Du kannst kannst das Programm auf dem Roboter stoppen, indem du die mittlere Taste des Hubs drückst.",
+  "ORA_COMPILERWORKFLOW_ERROR_EXTERN_FAILED": "Es sieht so aus, als ob der externe Kompilierungsservice, der für diesen Roboter verwendet wird, derzeit nicht verfügbar ist. Bitte versuche es später erneut und melde das Problem, falls es weiterhin besteht.",
+  "WEBUSB_NOT_SUPPORTED": "Dein Browser unterstützt WebUSB nicht. Um das Programm auf deinen Roboter herunterzuladen, wechsele bitte zu einem der folgenden Browser: Chrome, Edge oder Opera.",
+  "WEBUSB_DOWLOAD_PROBLEM":"Beim Herunterladen des Programms auf den Roboter ist ein Problem aufgetreten. Bitte versuche es erneut. Wenn das Problem weiterhin besteht, schaue in die <a href='https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ' target='_blank'>FAQs</a>."
 }
