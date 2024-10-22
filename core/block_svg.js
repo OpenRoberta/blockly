@@ -658,14 +658,16 @@ Blockly.BlockSvg.prototype.onMouseUp_ = function(e) {
     Blockly.asyncSvgResize(this.workspace);
   }
 // Check if this block is part of a task or event if desired
-  if (Blockly.getMainWorkspace().checkInTask && Blockly.selected) {
+  if (Blockly.selected) {
     var rootBlock = this.getRootBlock();
-    var inTask = false;
+    var inTask = (rootBlock.previousConnection || rootBlock.outputConnection) ? false : true;
     var validRoots = Blockly.getMainWorkspace().checkInTask;
-    for (var i = 0; i < validRoots.length; i++) {
-      if (rootBlock.type.indexOf(validRoots[i]) >= 0) {
-        inTask = true;
-        break;
+    if (validRoots) {
+      for (var i = 0; i < validRoots.length; i++) {
+        if (rootBlock.type.indexOf(validRoots[i]) >= 0) {
+          inTask = true;
+          break;
+        }
       }
     }
     var descendants = rootBlock.getDescendants();
@@ -1265,10 +1267,6 @@ Blockly.BlockSvg.disconnectUiStop_.group = null;
  * Change the colour of a block.
  */
 Blockly.BlockSvg.prototype.updateColour = function() {
-  if (this.disabled) {
-    // Disabled blocks don't have colour.
-    return;
-  }
   var hexColour = this.getColour();
   var rgb = goog.color.hexToRgb(hexColour);
 //  if (this.isShadow()) {
