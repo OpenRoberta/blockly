@@ -1812,5 +1812,6 @@
   "BLE_ERROR_STOP": "Das Stoppen des Programmes hat nicht geklappt, vielleicht ist dein Roboter nicht mehr verbunden?. Du kannst kannst das Programm auf dem Roboter stoppen, indem du die mittlere Taste des Hubs drückst.",
   "ORA_COMPILERWORKFLOW_ERROR_EXTERN_FAILED": "Es sieht so aus, als ob der externe Kompilierungsservice, der für diesen Roboter verwendet wird, derzeit nicht verfügbar ist. Bitte versuche es später erneut und melde das Problem, falls es weiterhin besteht.",
   "WEBUSB_NOT_SUPPORTED": "Dein Browser unterstützt WebUSB nicht. Um das Programm auf deinen Roboter herunterzuladen, wechsele bitte zu einem der folgenden Browser: Chrome, Edge oder Opera.",
-  "WEBUSB_DOWLOAD_PROBLEM":"Beim Herunterladen des Programms auf den Roboter ist ein Problem aufgetreten. Bitte versuche es erneut. Wenn das Problem weiterhin besteht, schaue in die <a href='https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ' target='_blank'>FAQs</a>."
+  "WEBUSB_DOWLOAD_PROBLEM":"Beim Herunterladen des Programms auf den Roboter ist ein Problem aufgetreten. Bitte versuche es erneut. Wenn das Problem weiterhin besteht, schaue in die <a href='https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ' target='_blank'>FAQs</a>.",
+  "SIM_VALUES_NEURON": "Ausgabeneuronen-Werte"
 }
