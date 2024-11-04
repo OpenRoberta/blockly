@@ -1815,6 +1815,11 @@
   "WEBUSB_DOWLOAD_PROBLEM":"Beim Herunterladen des Programms auf den Roboter ist ein Problem aufgetreten. Bitte versuche es erneut. Wenn das Problem weiterhin besteht, schaue in die <a href='https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ' target='_blank'>FAQs</a>.",
   "SENSOR_INDUCTIVE_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Induktionssensors zurück, ob ein metallischer Gegenstand erkannt wird (wahr/falsch).",
   "INDUCTIVE_TOOLTIP": "Repräsentiert einen Induktionssensor",
-  "SENSOR_INDUCTIVE": "Induktionssensor"
+  "SENSOR_INDUCTIVE": "Induktionssensor",
+  "TAB_TEXTLYJAVA_EDITOR": "Textly Editor",
+  "TEXTLY_EDITOR_CLOSE_CONFIRMATION": "Es gibt Fehler im Code!",
+  "POPUP_TEXTLY_CONFIRM_CONTINUE": "<br><br><i>Klicke auf »OK«, um die Fehler im Textly-Editor anzuzeigen. Klicke auf »Abbrechen«, um zu NEPOprog zurückzukehren und deine Arbeit zu verwerfen.</i>",
+  "START_TEXTLY": "NEPO Java",
+  "CONFIGURATION_ERROR_ACTUATOR_WRONG": "Der angegebene Aktuator-Port/Name ist falsch. Bitte überprüfe dies im Konfigurationstab!"
 
 }
