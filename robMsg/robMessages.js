@@ -2055,4 +2055,4 @@ Blockly.Msg.BLE_ERROR_STOP = 'Stopping the program execution does not work, your
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_EXTERN_FAILED = 'It looks like the external compilation service used for this robot is currently unavailable. Please try again later and report the problem if it persists.';
 Blockly.Msg.WEBUSB_NOT_SUPPORTED ='Your browser does not support WebUSB. To download the programme to your robot, please switch to one of the following browsers: Chrome, Edge or Opera';
 Blockly.Msg.WEBUSB_DOWLOAD_PROBLEM ='There was a problem downloading the program to the robot, please try again. If the problem persists, see the <a href=\'https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ?showLanguage=en_GB\' target=\'_blank\'>FAQ</a> for help.';
-Blockly.Msg.SIM_VALUES_NEURON = 'Output Neurons Values';
+Blockly.Msg.SIM_VALUES_NEURON = 'Neuron Values';
