@@ -101,7 +101,7 @@ Blockly.Blocks['robControls_start'] = {
         this.declare_ = (xmlElement.getAttribute('declare') != 'false');
         if (this.declare_) {
             this.appendStatementInput('ST');
-            this.getInput('ST').connection.setCheck('declaration_only');
+            this.getInput('ST').connection.setCheck('declarationGlobal');
         }
     },
     /**
@@ -117,7 +117,7 @@ Blockly.Blocks['robControls_start'] = {
             if (!this.declare_) {
                 this.appendStatementInput('ST');
                 // making sure only declarations can connect to the statement list
-                this.getInput('ST').connection.setCheck('declaration_only');
+                this.getInput('ST').connection.setCheck('declarationGlobal');
                 this.declare_ = true;
             }
             var vd = this.workspace.newBlock('robGlobalVariables_declare');
@@ -212,7 +212,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
         this.declare_ = (xmlElement.getAttribute('declare') != 'false');
         if (this.declare_) {
             this.appendStatementInput('ST');
-            this.getInput('ST').connection.setCheck('declaration_only');
+            this.getInput('ST').connection.setCheck('declarationGlobal');
         }
     },
     /**
@@ -228,7 +228,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
             if (!this.declare_) {
                 this.appendStatementInput('ST');
                 // making sure only declarations can connect to the statement list
-                this.getInput('ST').connection.setCheck('declaration_only');
+                this.getInput('ST').connection.setCheck('declarationGlobal');
                 this.declare_ = true;
             }
             var vd = this.workspace.newBlock('robGlobalVariables_declare');

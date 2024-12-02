@@ -548,7 +548,9 @@ Blockly.Connection.prototype.targetBlock = function() {
 Blockly.Connection.prototype.checkType_ = function(otherConnection) {
   if (!this.check_ || !otherConnection.check_) {
     // special case for variable declarations
-    if ((this.check_ == 'declaration_only' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 'declaration_only'))
+    if ((this.check_ == 'declarationGlobal' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 'declarationGlobal'))
+      return false;
+    if ((this.check_ == 'declarationLocal' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 'declarationLocal'))
       return false;
     // special case for botnroll startblock
     if ((this.check_ == 'botnroll' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 

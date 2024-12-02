@@ -867,7 +867,7 @@ Blockly.Blocks['robProcedures_defnoreturn'] = {
       var stackConnectionTarget = this.getInput('STACK').connection.targetConnection;
       this.removeInput('STACK');
       this.appendStatementInput('ST');
-      this.getInput('ST').connection.setCheck('declaration_only');
+      this.getInput('ST').connection.setCheck('declarationLocal');
       this.appendStatementInput('STACK').appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_DO);
       if (stackConnectionTarget) {
         this.getInput('STACK').connection.connect(stackConnectionTarget);
@@ -889,7 +889,7 @@ Blockly.Blocks['robProcedures_defnoreturn'] = {
         this.removeInput('STACK');
         this.appendStatementInput('ST');
         // making sure only declarations can connect to the statement list
-        this.getInput('ST').connection.setCheck('declaration_only');
+        this.getInput('ST').connection.setCheck('declarationLocal');
         this.appendStatementInput('STACK').appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_DO);
         if (stackConnectionTarget) {
           this.getInput('STACK').connection.connect(stackConnectionTarget);
@@ -1056,7 +1056,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
     this.removeInput('STACK');
     this.appendStatementInput('ST');
     // making sure only declarations can connect to the statement list
-    this.getInput('ST').connection.setCheck('declaration_only');
+    this.getInput('ST').connection.setCheck('declarationLocal');
     this.appendStatementInput('STACK').appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_DO);
     this.appendValueInput('RETURN').
          setAlign(Blockly.ALIGN_RIGHT).

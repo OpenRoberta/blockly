@@ -368,6 +368,8 @@ Blockly.Variables.getProcedureName = function(name) {
           return surroundParent.getFieldValue('NAME');
         } else if (surroundParent && (surroundParent.type == 'robControls_start' || surroundParent.type == 'robControls_start_ardu')) {
           return 'global';
+        } else if (!surroundParent && blocks[i].surroundParentName) {
+          return blocks[i].surroundParentName;
         }
       }
     }

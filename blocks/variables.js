@@ -270,16 +270,16 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
          appendField(this.declType_, 'TYPE').
          appendField(Blockly.RTL ? '\u2192' : '\u2190').
          setCheck('Number');
-    this.setPreviousStatement(true, 'declaration_only');
+    this.setPreviousStatement(true, 'declarationGlobal');
     //this.setTooltip(Blockly.Msg.VARIABLES_GLOBAL_DECLARE_TOOLTIP);
     this.setMutatorMinus(new Blockly.MutatorMinus(['robGlobalVariables_declare']));
-    this.setMovable(false);
+    this.setMovable(true);
     this.setDeletable(false);
     this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET;
     this.contextMenudeclarationType_ = 'variables_get';
     this.declarationType_ = 'Number';
-    this.nextStatement_ = false;
-    this.setNextStatement(false);
+    this.nextStatement_ = true;
+    this.setNextStatement(true, 'declarationGlobal');
     //this.setHelp(new Blockly.Help(Blockly.Msg.VARIABLE_GLOBAL_HELP));
   },
   /**
@@ -346,7 +346,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
   },
   setNext: function(next) {
     this.nextStatement_ = next;
-    this.setNextStatement(next, 'declaration_only');
+    this.setNextStatement(next, 'declarationGlobal');
   },
   getType: function() {
     return this.declarationType_;
@@ -365,7 +365,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
    * @this Blockly.Block
    */
   getVars: function() {
-    return [this.getFieldValue('VAR')];
+    return this.inTask ? [this.getFieldValue('VAR')] : [];
   },
   /**
    * Update the shape, if minus is pressed or if type has changed.
@@ -381,8 +381,6 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
       this.unplug(true, true);
       if (!!parent && (parent.type.indexOf('Controls_start') !== -1) && !nextBlock) {
         parent.updateShape_(num);
-      } else if (!!parent && !nextBlock) {
-        parent.setNext(false);
       }
       Blockly.Variables.deleteAll(this.getFieldValue('VAR'));
       this.dispose();
@@ -421,7 +419,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
           break;
         default:
           block = this.workspace.newBlock('robColour_picker');
-        }  
+        }
       } else if (option === 'Image') {
         switch (this.workspace.device){
         case 'microbit':
@@ -437,7 +435,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
             block = this.workspace.newBlock('image_image');
             break;
         default:
-        }         
+        }
       } else if (option === 'Connection') {
         block = this.workspace.newBlock('logic_null');
       }
@@ -477,15 +475,16 @@ Blockly.Blocks['robLocalVariables_declare'] = {
          appendField(nameField, 'VAR').
          appendField(':').
          appendField(this.declType_, 'TYPE');
-    this.setPreviousStatement(true, 'declaration_only');
+    this.setPreviousStatement(true, 'declarationLocal');
     this.setTooltip(Blockly.Msg.VARIABLES_LOCAL_DECLARE_TOOLTIP);
     this.setMutatorMinus(new Blockly.MutatorMinus(this));
-    this.setMovable(false);
+    this.setMovable(true);
     this.setDeletable(false);
     this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET;
     this.contextMenudeclarationType_ = 'variables_get';
-    this.nextStatement_ = false;
+    this.setNextStatement(true, 'declarationLocal');
     this.declarationType_ = 'Number';
+    this.connected = true;
   },
   /**
    * Initialization of the block has completed, clean up anything that may be
@@ -526,7 +525,10 @@ Blockly.Blocks['robLocalVariables_declare'] = {
    * @param {Element} XML storage element.
    * @this Blockly.Block
    */
-  setNext: Blockly.Blocks['robGlobalVariables_declare'].setNext,
+  setNext: function(next) {
+    this.nextStatement_ = next;
+    this.setNextStatement(next, 'declarationLocal');
+  },
   getType: function() {
     return this.declarationType_;
   },
@@ -544,7 +546,7 @@ Blockly.Blocks['robLocalVariables_declare'] = {
    * @this Blockly.Block
    */
   getVars: function() {
-    return [this.getFieldValue('VAR')];
+    return this.inTask ? [this.getFieldValue('VAR')] : [];
   },
   /**
    * Update the shape, if minus is pressed or if type has changed..
@@ -563,8 +565,6 @@ Blockly.Blocks['robLocalVariables_declare'] = {
       this.unplug(true, true);
       if (!!parent && (parent.type == 'robProcedures_defnoreturn' || parent.type == 'robProcedures_defreturn') && !nextBlock) {
         parent.updateShape_(num);
-      } else if (!!parent && !nextBlock) {
-        parent.setNextStatement(false);
       }
       this.dispose();
     }
@@ -578,6 +578,33 @@ Blockly.Blocks['robLocalVariables_declare'] = {
     this.declarationType_ = option;
     Blockly.Variables.updateType(this.getFieldValue('VAR'), option);
     Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), option, Blockly.mainWorkspace, 0);
+  },
+  onchange : function(evt) {
+    if (!this.workspace || evt.type != Blockly.Events.MOVE || Blockly.hasClass_(this.svgGroup_,'blocklyDragging')) {
+      // Block has been deleted or is in move
+      return;
+    }
+    var surroundParent = this.getSurroundParent();
+    if (surroundParent) {
+      if (this.connected) {
+        if (this.surroundParentName != surroundParent.getFieldValue('NAME')) {
+          Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 1, surroundParent.getFieldValue('NAME'));
+          Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, -1, this.surroundParentName);
+        }
+        this.surroundParentName = surroundParent.getFieldValue('NAME');
+      } else {
+        this.connected = true;
+        Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 1);
+        this.surroundParentName = surroundParent.getFieldValue('NAME');
+      }
+    } else {
+      if (this.connected) {
+        this.connected = false;
+        Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, -1, this.surroundParentName);
+        Blockly.Variables.deleteAll(this.getFieldValue('VAR'));
+        this.surroundParentName = surroundParent.getFieldValue('NAME');
+      }
+    }
   },
   contextMenuType_: 'variables_get',
   customContextMenu: Blockly.Blocks['variables_get'].customContextMenu
