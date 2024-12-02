@@ -273,13 +273,13 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
     this.setPreviousStatement(true, 'declaration_only');
     //this.setTooltip(Blockly.Msg.VARIABLES_GLOBAL_DECLARE_TOOLTIP);
     this.setMutatorMinus(new Blockly.MutatorMinus(['robGlobalVariables_declare']));
-    this.setMovable(false);
-    this.setDeletable(false);
+    this.setMovable(true);
+    this.setDeletable(true);
     this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET;
     this.contextMenudeclarationType_ = 'variables_get';
     this.declarationType_ = 'Number';
-    this.nextStatement_ = false;
-    this.setNextStatement(false);
+    this.nextStatement_ = true;
+    this.setNextStatement(true, 'declaration_only');
     //this.setHelp(new Blockly.Help(Blockly.Msg.VARIABLE_GLOBAL_HELP));
   },
   /**
@@ -382,7 +382,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
       if (!!parent && (parent.type.indexOf('Controls_start') !== -1) && !nextBlock) {
         parent.updateShape_(num);
       } else if (!!parent && !nextBlock) {
-        parent.setNext(false);
+        parent.setNext(true);
       }
       Blockly.Variables.deleteAll(this.getFieldValue('VAR'));
       this.dispose();
@@ -480,11 +480,12 @@ Blockly.Blocks['robLocalVariables_declare'] = {
     this.setPreviousStatement(true, 'declaration_only');
     this.setTooltip(Blockly.Msg.VARIABLES_LOCAL_DECLARE_TOOLTIP);
     this.setMutatorMinus(new Blockly.MutatorMinus(this));
-    this.setMovable(false);
-    this.setDeletable(false);
+    this.setMovable(true);
+    this.setDeletable(true);
     this.contextMenuMsg_ = Blockly.Msg.VARIABLES_SET_CREATE_GET;
     this.contextMenudeclarationType_ = 'variables_get';
-    this.nextStatement_ = false;
+    this.nextStatement_ = true;
+    this.setNextStatement(true, 'declaration_only');
     this.declarationType_ = 'Number';
   },
   /**
@@ -564,7 +565,7 @@ Blockly.Blocks['robLocalVariables_declare'] = {
       if (!!parent && (parent.type == 'robProcedures_defnoreturn' || parent.type == 'robProcedures_defreturn') && !nextBlock) {
         parent.updateShape_(num);
       } else if (!!parent && !nextBlock) {
-        parent.setNextStatement(false);
+        parent.setNextStatement(true, 'declaration_only');
       }
       this.dispose();
     }
