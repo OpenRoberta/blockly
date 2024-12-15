@@ -896,6 +896,7 @@ Blockly.Blocks['robProcedures_defnoreturn'] = {
         }
       }
       var vd = this.workspace.newBlock('robLocalVariables_declare');
+      vd.surroundParentName = this.getFieldValue('NAME');
       vd.initSvg();
       vd.render();
       var connection;
@@ -1015,6 +1016,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
         this.declare_ = true;
       }
       var vd = this.workspace.newBlock('robLocalVariables_declare');
+      vd.surroundParentName = this.getFieldValue('NAME');
       vd.initSvg();
       vd.render();
       var connection;

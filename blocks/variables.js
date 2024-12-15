@@ -104,7 +104,7 @@ Blockly.Blocks['variables_get'] = {
    * nested in its declaration procedure - for local variables only
    * @this Blockly.Block
    */
-  onchange: function() {
+  onchange: function(opt_move) {
     if (!this.workspace || !Blockly.getMainWorkspace().variableDeclaration) {
       // Block has been deleted.
       return;
@@ -136,7 +136,7 @@ Blockly.Blocks['variables_get'] = {
         block = block.getSurroundParent();
       } while (block);
       if (legal) {
-        if (this.draggedBefore) {
+        if (this.draggedBefore || opt_move) {
           this.setErrorText(null);
         }
       } else {
@@ -586,24 +586,21 @@ Blockly.Blocks['robLocalVariables_declare'] = {
     }
     var surroundParent = this.getSurroundParent();
     if (surroundParent) {
-      if (this.connected) {
-        if (this.surroundParentName != surroundParent.getFieldValue('NAME')) {
-          Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 1, surroundParent.getFieldValue('NAME'));
-          Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, -1, this.surroundParentName);
-        }
-        this.surroundParentName = surroundParent.getFieldValue('NAME');
-      } else {
-        this.connected = true;
-        Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 1);
-        this.surroundParentName = surroundParent.getFieldValue('NAME');
-      }
-    } else {
-      if (this.connected) {
-        this.connected = false;
+      if (this.surroundParentName != surroundParent.getFieldValue('NAME')) {
+        Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 1, surroundParent.getFieldValue('NAME'));
         Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, -1, this.surroundParentName);
-        Blockly.Variables.deleteAll(this.getFieldValue('VAR'));
-        this.surroundParentName = surroundParent.getFieldValue('NAME');
+        var allBlocks = Blockly.mainWorkspace.getAllBlocks();
+        for (var i = 0; i < allBlocks.length; i++) {
+          var func = allBlocks[i].setType;
+          if (func) {
+            allBlocks[i].onchange(true);
+          }
+        }
       }
+      this.surroundParentName = surroundParent.getFieldValue('NAME');
+      this.connected = true;
+    } else if (this.connected) {
+      this.connected = false;
     }
   },
   contextMenuType_: 'variables_get',
