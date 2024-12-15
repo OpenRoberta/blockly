@@ -321,9 +321,10 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
    * @this Blockly.Block
    */
   mutationToDom: function() {
-    if (this.nextStatement_ === undefined || this.declarationType_ === undefined) {
+    if (this.declarationType_ === undefined) {
       return false;
     }
+    this.nextStatement_ = this.nextStatement_ ? this.nextStatement_ : false;
     var container = document.createElement('mutation');
     container.setAttribute('next', this.nextStatement_);
     container.setAttribute('declaration_type', this.declarationType_);
