@@ -1134,7 +1134,7 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
    * @param {!Array.<string>} paramTypes Types of the params
    * @this Blockly.Block
    */
-  setProcedureParameters: function(paramNames, paramTypes) {
+  setProcedureParameters: function(paramNames, paramTypes, opt_update) {
     if (paramTypes.length != paramNames.length) {
       throw 'Error: paramNames and paramIds must be the same length.';
     }
@@ -1155,6 +1155,9 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
         // Disconnect all argument blocks and remove all inputs.
         this.removeInput('ARG' + x);
       }
+      if (opt_update) {
+        this.removeInput('ARG' + x);
+      }
     }
     // Rebuild the block's arguments.
     this.arguments_ = [].concat(paramNames);
@@ -1168,9 +1171,10 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
       input.init();
       // Reconnect any child blocks.
       if (childConnections.length > 0) {
+        var target = null;
         for (var i = 0; i < childConnections.length; i++) {
           if (childConnections[i].name == this.arguments_[x]) {
-            var target = childConnections[i];
+            target = childConnections[i];
             childConnections.splice(i, 1);
             break;
           }
@@ -1192,7 +1196,7 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
       var targetNotUsed = childConnections[i];
       if (targetNotUsed && targetNotUsed.conn) {
         targetNotUsed.conn.sourceBlock_.moveBy(50, 15);
-        targetNotUsed.conn.sourceBlock_.setDisabled(true);
+        targetNotUsed.conn.sourceBlock_.setInTask(false);
       }
     }
     // Restore rendering and show the changes.
@@ -1210,21 +1214,22 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
    * @this Blockly.Block
    */
   updateProcedureParameters: function(varName, varType, action) {
-    if (action == 1) {
-      var paramNames = this.arguments_.slice(0);
-      var paramTypes = this.argumentsTypes_.slice(0);
-      paramNames.push(varName);
-      paramTypes.push(varType);
-      this.setProcedureParameters(paramNames, paramTypes);
-    } else if (action == -1) {
-      var paramNames = this.arguments_.slice(0);
-      var paramTypes = this.argumentsTypes_.slice(0);
-      var index = this.arguments_.indexOf(varName);
-      if (index >= 0) {
-        paramNames.splice(index, 1);
-        paramTypes.splice(index, 1);
-        this.setProcedureParameters(paramNames, paramTypes);
+    if (action == 1 || action == -1 || action == 11) {
+      var def = Blockly.Procedures.getDefinition(this.getFieldValue('NAME'), this.workspace);
+      var declarations = def.getDescendants();
+      var args = [];
+      var argsType = [];
+      if (declarations) {
+        for (var t = 0; t < declarations.length; t++) {
+          if (declarations[t].getProcedureDef)
+            continue;
+          if (declarations[t].getVarDecl && declarations[t].type === "robLocalVariables_declare") {
+            args.push(declarations[t].getVarDecl()[0]);
+            argsType.push(declarations[t].getType());
+          }
+        }
       }
+      this.setProcedureParameters(args, argsType, true);
     } else if (action == 0) {
       var index = this.arguments_.indexOf(varName);
       if (index >= 0) {
@@ -1272,21 +1277,6 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
       }
     }
     this.setProcedureParameters(this.arguments_, this.argumentsTypes_);
-  },
-  /**
-   * Notification that a variable is renaming. If the name matches one of this
-   * block's variables, rename it.
-   * @param {string} oldName Previous name of variable.
-   * @param {string} newName Renamed variable.
-   * @this Blockly.Block
-   */
-  renameVar: function(oldName, newName) {
-    for (var x = 0; x < this.arguments_.length; x++) {
-      if (Blockly.Names.equals(oldName, this.arguments_[x])) {
-        this.arguments_[x] = newName;
-        this.getInput('ARG' + x).fieldRow[0].setText(newName);
-      }
-    }
   },
   /**
    * Add menu option to find the definition block for this call.
@@ -1374,7 +1364,7 @@ Blockly.Blocks['robProcedures_callreturn'] = {
    * @param {!Array.<string>} paramTypes Types of the params
    * @this Blockly.Block
    */
-  setProcedureParameters: function(paramNames, paramTypes) {
+  setProcedureParameters: function(paramNames, paramTypes, opt_update) {
     if (paramTypes.length != paramNames.length) {
       throw 'Error: paramNames and paramIds must be the same length.';
     }
@@ -1395,6 +1385,9 @@ Blockly.Blocks['robProcedures_callreturn'] = {
         // Disconnect all argument blocks and remove all inputs.
         this.removeInput('ARG' + x);
       }
+      if (opt_update) {
+        this.removeInput('ARG' + x);
+      }
     }
     // Rebuild the block's arguments.
     this.arguments_ = [].concat(paramNames);
@@ -1408,9 +1401,10 @@ Blockly.Blocks['robProcedures_callreturn'] = {
       input.init();
       // Reconnect any child blocks.
       if (childConnections.length > 0) {
+        var target = null;
         for (var i = 0; i < childConnections.length; i++) {
           if (childConnections[i].name == this.arguments_[x]) {
-            var target = childConnections[i];
+            target = childConnections[i];
             childConnections.splice(i, 1);
             break;
           }
@@ -1430,7 +1424,7 @@ Blockly.Blocks['robProcedures_callreturn'] = {
       var targetNotUsed = childConnections[i];
       if (targetNotUsed && targetNotUsed.conn) {
         targetNotUsed.conn.sourceBlock_.moveBy(50, 15);
-        targetNotUsed.conn.sourceBlock_.setDisabled(true);
+        targetNotUsed.conn.sourceBlock_.setInTask(false);
       }
     }
     // Restore rendering and show the changes.
@@ -1448,21 +1442,22 @@ Blockly.Blocks['robProcedures_callreturn'] = {
    * @this Blockly.Block
    */
   updateProcedureParameters: function(varName, varType, action) {
-    if (action == 1) {
-      var paramNames = this.arguments_.slice(0);
-      var paramTypes = this.argumentsTypes_.slice(0);
-      paramNames.push(varName);
-      paramTypes.push(varType);
-      this.setProcedureParameters(paramNames, paramTypes);
-    } else if (action == -1) {
-      var paramNames = this.arguments_.slice(0);
-      var paramTypes = this.argumentsTypes_.slice(0);
-      var index = this.arguments_.indexOf(varName);
-      if (index >= 0) {
-        paramNames.splice(index, 1);
-        paramTypes.splice(index, 1);
-        this.setProcedureParameters(paramNames, paramTypes);
+    if (action == 1 || action == -1 || action == 11) {
+      var def = Blockly.Procedures.getDefinition(this.getFieldValue('NAME'), this.workspace);
+      var declarations = def.getDescendants();
+      var args = [];
+      var argsType = [];
+      if (declarations) {
+        for (var t = 0; t < declarations.length; t++) {
+          if (declarations[t].getProcedureDef)
+            continue;
+          if (declarations[t].getVarDecl && declarations[t].type === "robLocalVariables_declare") {
+            args.push(declarations[t].getVarDecl()[0]);
+            argsType.push(declarations[t].getType());
+          }
+        }
       }
+      this.setProcedureParameters(args, argsType, true);
     } else if (action == 0) {
       var index = this.arguments_.indexOf(varName);
       if (index >= 0) {
@@ -1517,21 +1512,6 @@ Blockly.Blocks['robProcedures_callreturn'] = {
     this.setProcedureParameters(this.arguments_, this.argumentsTypes_);
     this.outputType_ = xmlElement.getAttribute('output_type');
     this.setOutput(true, this.outputType_);
-  },
-  /**
-   * Notification that a variable is renaming. If the name matches one of this
-   * block's variables, rename it.
-   * @param {string} oldName Previous name of variable.
-   * @param {string} newName Renamed variable.
-   * @this Blockly.Block
-   */
-  renameVar: function(oldName, newName) {
-    for (var x = 0; x < this.arguments_.length; x++) {
-      if (Blockly.Names.equals(oldName, this.arguments_[x])) {
-        this.arguments_[x] = newName;
-        this.getInput('ARG' + x).fieldRow[0].setText(newName);
-      }
-    }
   },
   /**
    * Add menu option to find the definition block for this call.

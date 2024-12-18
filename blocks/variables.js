@@ -581,7 +581,7 @@ Blockly.Blocks['robLocalVariables_declare'] = {
     Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), option, Blockly.mainWorkspace, 0);
   },
   onchange : function(evt) {
-    if (!this.workspace || evt.type != Blockly.Events.MOVE || Blockly.hasClass_(this.svgGroup_,'blocklyDragging')) {
+    if (!this.workspace || evt.type != Blockly.Events.MOVE) {
       // Block has been deleted or is in move
       return;
     }
@@ -597,6 +597,8 @@ Blockly.Blocks['robLocalVariables_declare'] = {
             allBlocks[i].onchange(true);
           }
         }
+      } else if (!this.connected) {
+        Blockly.Procedures.updateCallers(this.getFieldValue('VAR'), this.declarationType_, this.workspace, 11);
       }
       this.surroundParentName = surroundParent.getFieldValue('NAME');
       this.connected = true;
