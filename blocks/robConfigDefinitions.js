@@ -1598,11 +1598,11 @@ confBlocks.dcmotor = {}
 confBlocks.dcmotor.calliope = {
     title: 'DCMOTOR',
     ports: [
-        ['pin', 'I2CPLUG']
+        ['pin', 'PIN1']
     ],
     pins: function(a) {
         return [
-            ['A0', '4']
+            ['A0', 'A0']
         ];
     },
     inputs: [
