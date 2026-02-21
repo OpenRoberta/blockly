@@ -1020,6 +1020,8 @@ sensors.quadrgb.mbot2 = {
         name: 'AMBIENTLIGHT', type: 'Number', unit: 'PERCENT', value: 50
     }, {
         name: 'RGB', type: 'Array_Number'
+    }, {
+        name: 'LINE', type: 'Boolean'
     }], slots: [['L1', 'L1'], ['L2', 'L2'], ['R1', 'R1'], ['R2', 'R2']], ports: 'CONFIGURATION'
 };
 
@@ -1027,8 +1029,11 @@ sensors.line = {};
 sensors.line.mbot2 = {
     title: 'QUADRGB', modes: [{
         name: 'LINE', type: 'Number'
+    }, {
+        name: 'LINE_STATE', type: 'Number'
     }], ports: 'CONFIGURATION'
 };
+
 sensors.line.joycar = {
     title: 'LINE', ports: 'CONFIGURATION', modes: [{
         name: 'LINE', type: 'Boolean'
