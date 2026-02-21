@@ -254,6 +254,7 @@
   "MODE_LIGHT": "Licht",
   "MODE_UVLIGHT": "UV Licht",
   "MODE_LINE": "Linie",
+  "MODE_LINE_STATE": "Linienverfolgerstatus",
   "MODE_PRESENCE": "Anwesenheit",
   "MODE_RATE": "Drehrate",
   "MODE_ROTATION": "Umdrehungen",

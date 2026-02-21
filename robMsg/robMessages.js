@@ -339,6 +339,7 @@ Blockly.Msg.MODE_COLOUR = 'colour';
 Blockly.Msg.MODE_LIGHT = 'light';
 Blockly.Msg.MODE_UVLIGHT = 'UV light';
 Blockly.Msg.MODE_LINE = 'line';
+Blockly.Msg.MODE_LINE_STATE = 'line following state';
 Blockly.Msg.MODE_RGB = 'RGB';
 Blockly.Msg.MODE_REDCHANNEL = Blockly.Msg.BRICKLIGHT_RED;
 Blockly.Msg.MODE_GREENCHANNEL = Blockly.Msg.BRICKLIGHT_GREEN;
