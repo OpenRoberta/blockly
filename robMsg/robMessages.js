@@ -491,8 +491,9 @@ Blockly.Msg.MENU_TUTORIAL = 'tutorials';
 Blockly.Msg.MENU_TUTORIAL_TOOLTIP = 'tutorials';
 Blockly.Msg.TAB_PROGRAM = 'Program';
 Blockly.Msg.TAB_CONFIGURATION = 'Robot configuration';
-Blockly.Msg.POPUP_ABOUT_TEXT = 'The Open Roberta Lab is a cloud-based integrated programming environment that enables children and adolescents to program easily different robot/microcontroller systems. This platform is completely open source so taking part is desirable! Both the software and the open source developer tools are available via Fraunhofer servers.';
-Blockly.Msg.POPUP_ABOUT_TEXT_DEV = 'The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href="http://www.roberta-home.de/" target="_blank">»Roberta – Learning with Robots«</a>';
+Blockly.Msg.POPUP_ABOUT_TEXT = 'Open Roberta Lab is a cloud-based graphical programming environment that enables children and young people to program robots and microcontrollers without technical barriers. The platform is open source: Its source code is publicly available, and contributions and suggestions from the community are welcome.';
+/// about dialog text - Explains who operates and develops the Open Roberta Lab and how source code changes are released.
+Blockly.Msg.POPUP_ABOUT_TEXT_EDUCATION = 'Roberta Education gGmbH operates the Open Roberta Lab on servers in Germany and continuously develops the platform. Changes to the source code are reviewed and tested before they are released.';
 Blockly.Msg.POPUP_ABOUT_TEXT_GOOG = 'Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots.</a>';
 Blockly.Msg.POPUP_ABOUT_TEXT_NRW = 'As part of the project »AI Algorithms in Computer Science Education«, the Ministry for Schools and Education of the State of North Rhine-Westphalia is funding the integration of Artificial Neural Networks into the Open Roberta Lab as well as the development of suitable learning content and materials on Artificial Intelligence.';
 Blockly.Msg.POPUP_STARTUP_START = 'back to robot/system selection';

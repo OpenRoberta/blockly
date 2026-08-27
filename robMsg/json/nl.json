@@ -360,6 +360,8 @@
 	"PLAY_VOLUME": "volume",
 	"PLAY_WHOLE": "hele noot",
 	"POPUP_ABOUT_JOIN": "Ik wil hulp",
+	"POPUP_ABOUT_TEXT": "Open Roberta Lab is een cloudgebaseerde grafische programmeeromgeving waarmee kinderen en jongeren zonder technische barrières robots en microcontrollers kunnen programmeren. Het platform is open source: de broncode is openbaar beschikbaar en bijdragen en suggesties vanuit de gemeenschap zijn welkom.",
+	"POPUP_ABOUT_TEXT_EDUCATION": "Roberta Education gGmbH beheert Open Roberta Lab op servers in Duitsland en ontwikkelt het platform voortdurend verder. Wijzigingen in de broncode worden beoordeeld en getest voordat ze worden uitgebracht.",
 	"SENSOR_ACCELEROMETER_VALUE_GETSAMPLE_TOOLTIP": "Verkrijg de hellingshoek of rotaties in graden.",
 	"SENSOR_BATTERY_GETSAMPLE_TOOLTIP": "Verkrijg huidig voltage van de batterij",
 	"SENSOR_COLOUR_GETSAMPLE_TOOLTIP": "Verkrijg huidige waarde van de kleursensor",

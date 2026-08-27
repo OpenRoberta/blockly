@@ -218,6 +218,8 @@
 	"PLAY_TONE_TOOLTIP": "Soita ääni.",
 	"PLAY_VOLUME": "äänenvoimakkuus",
 	"POPUP_ABOUT_JOIN": "Haluan auttaa",
+	"POPUP_ABOUT_TEXT": "Open Roberta Lab on pilvipohjainen graafinen ohjelmointiympäristö, jossa lapset ja nuoret voivat ohjelmoida robotteja ja mikrokontrollereita ilman teknisiä esteitä. Alusta on avointa lähdekoodia: sen lähdekoodi on julkisesti saatavilla, ja yhteisön osallistuminen ja ehdotukset ovat tervetulleita.",
+	"POPUP_ABOUT_TEXT_EDUCATION": "Roberta Education gGmbH ylläpitää Open Roberta Labia Saksassa sijaitsevilla palvelimilla ja kehittää alustaa jatkuvasti. Lähdekoodin muutokset tarkistetaan ja testataan ennen niiden julkaisemista.",
 	"POPUP_ATTENTION": "Huomio",
 	"POPUP_CANCEL": "Peru",
 	"POPUP_CONFIRM_DELETE_CONFIGURATION": "Haluatko varmasti poistaa asetukset?",
