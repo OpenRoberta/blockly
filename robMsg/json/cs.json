@@ -529,6 +529,7 @@
 	"ORA_TOOLBOX_TRANSFORM_ERROR": "Chyba při transformaci?",
 	"ORA_USER_ACTIVATION_INVALID_URL": "Odkaz již není platný. Prosím požádejte znovu o zaslání ověřovacího emailu.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Omlouváme se, ale nemůžete vám poslat email, prosím kontaktujte »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Váš účet byl vytvořen, ale aktivační e-mail se nepodařilo odeslat. V části Přihlášení → Změnit můžete upravit e-mailovou adresu nebo znovu odeslat aktivační odkaz.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "Poslali jsme vám email, zkontrolujte si prosím schránku!",
 	"ORA_USER_ACTIVATION_SUCCESS": "Váš účet byl úspěšně ověřen! Přihlašte se prosím!",
 	"ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "Vámi zvolené jméno účtu nebo vaše uživatelské jméno je příliš dlouhé. Nemělo by být delší než 25 znaků. Váš účet nemohl být vytvořen.",

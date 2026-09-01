@@ -384,5 +384,6 @@
 	"WAIT_OR": "eller vent på",
 	"WAIT_TOOLTIP": "Venter på at en betingelse bliver opfyldt.",
 	"WAIT_UNTIL": "vent indtil",
-	"YES": "ja"
+	"YES": "ja",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Din konto blev oprettet, men aktiveringsmailen kunne ikke sendes. Under Login → Rediger kan du opdatere din e-mailadresse eller sende aktiveringslinket igen."
 }

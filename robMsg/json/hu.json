@@ -563,6 +563,7 @@
 	"ORA_TOOLBOX_SAVE_ERROR": "An error has occurred while saving the toolbox.",
 	"ORA_USER_ACTIVATION_INVALID_URL": "The link is not valid anymore. Please ask for resending your verification mail again",
 	"ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Sorry, we cannot send a mail to you, please contact »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "A fiókod létrejött, de az aktiváló e-mailt nem sikerült elküldeni. A Bejelentkezés → Módosítás alatt frissítheted az e-mail-címedet vagy újraküldheted az aktiváló hivatkozást.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "We send a mail to you, please check your mailbox!",
 	"ORA_USER_ACTIVATION_SUCCESS": "Your account is successfully verified! Please login!",
 	"ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "Your account name or your user name is to long. Please make sure that they are not longer then 25 digits. Your account couldn\"t be created.",

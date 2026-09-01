@@ -408,5 +408,6 @@
 	"X": "x",
 	"YAW": "geeuw",
 	"YES": "Ja",
-	"YOUNGER_THEN_14": "Ik ben jonger dan 16 jaar!"
+	"YOUNGER_THEN_14": "Ik ben jonger dan 16 jaar!",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Je account is aangemaakt, maar de activatie-e-mail kon niet worden verzonden. Onder Login → Wijzigen kun je je e-mailadres aanpassen of de activatielink opnieuw verzenden."
 }

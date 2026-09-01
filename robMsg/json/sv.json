@@ -619,6 +619,7 @@
   "ORA_TOOLBOX_TRANSFORM_ERROR": "Överföringsfel?",
   "ORA_USER_ACTIVATION_INVALID_URL": "Länken är inte giltig längre. Be om att skicka ditt verifieringsmeddelande igen",
   "ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Tyvärr, vi kan inte skicka ett mail till dig, var vänlig kontakta »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Ditt konto har skapats, men aktiveringsmejlet kunde inte skickas. Under Logga in → Ändra kan du uppdatera din e-postadress eller skicka aktiveringslänken igen.",
   "ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "Vi skickar ett mail till dig, kolla din brevlåda!",
   "ORA_USER_ACTIVATION_SUCCESS": "Ditt konto har verifierats! Vänligen logga in!",
   "ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "Ditt kontonamn eller ditt användarnamn är för långt. Se till att det inte är längre än 25 tecken. Ditt konto kunde inte skapas.",

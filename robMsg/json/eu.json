@@ -725,5 +725,6 @@
 	"Y": "y",
 	"YES": "bai",
 	"YOUNGER_THEN_14": "16 urte baino gutxiago ditut!",
-	"Z": "z"
+	"Z": "z",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Zure kontua sortu da, baina aktibazio-mezua ezin izan da bidali. Saioa hasi → Aldatu atalean helbide elektronikoa eguneratu edo aktibazio-esteka berriro bidal dezakezu."
 }

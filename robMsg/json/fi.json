@@ -314,5 +314,6 @@
 	"WAIT_TIME_TOOLTIP": "Odota aika (ms)",
 	"WAIT_TOOLTIP": "Odota kunnes ehto on tosi.",
 	"WAIT_UNTIL": "odota kunnes",
-	"YES": "kyllä"
+	"YES": "kyllä",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Tilisi luotiin, mutta aktivointisähköpostia ei voitu lähettää. Kohdassa Kirjautuminen → Muuta voit päivittää sähköpostiosoitteesi tai lähettää aktivointilinkin uudelleen."
 }

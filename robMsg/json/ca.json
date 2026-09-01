@@ -665,5 +665,6 @@
 	"WRITE_TO_PIN_TOOLTIP": "Manda el valor al pin elegido",
 	"X": "x",
 	"Y": "y",
-	"YES": "sí"
+	"YES": "sí",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "El teu compte s'ha creat, però no s'ha pogut enviar el correu d'activació. A Inici de sessió → Canvia pots actualitzar l'adreça electrònica o tornar a enviar l'enllaç d'activació."
 }

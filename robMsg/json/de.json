@@ -1038,6 +1038,7 @@
   "OLDER_THEN_14": "Ich bin 16 oder älter!",
   "ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "Wir haben dir eine Mail geschickt. Bitte schaue in deinem Postfach nach!",
   "ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Entschuldigung, wir konnten dir keine Mail zuschicken, bitte melde dich hier: »support-o-r@iais.fraunhofer.de«.",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Dein Konto wurde erstellt, aber die Aktivierungs-E-Mail konnte nicht gesendet werden. Unter Login → Ändern kannst du deine E-Mail-Adresse aktualisieren oder den Aktivierungslink erneut senden.",
   "ORA_USER_ACTIVATION_SUCCESS": "Dein Benutzerkonto wurde erfolgreich verifiziert. Bitte logge dich ein!",
   "ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE": "Du kannst Programme nur teilen oder in die Gallerie hochladen, wenn dein Benutzerkonto verifiziert wurde.<br><a href='https://www.roberta-home.de/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
   "ORA_USER_DEACTIVATION_SUCCESS": "Dein Benutzerkonto ist nicht mehr verifiziert. Bitte schaue in deinem Postfach nach!",

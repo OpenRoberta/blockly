@@ -819,5 +819,6 @@
   "Y": "y",
   "YES": "oui",
   "YOUNGER_THEN_14": "J'ai moins de 16 ans !",
-  "Z": "z"
+  "Z": "z",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Votre compte a été créé, mais l’e-mail d’activation n’a pas pu être envoyé. Sous Connexion → Modifier, vous pouvez mettre à jour votre adresse e-mail ou renvoyer le lien d’activation."
 }

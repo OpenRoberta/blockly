@@ -385,5 +385,6 @@
 	"WAIT_OR": "o esperar a",
 	"WAIT_TOOLTIP": "espera hasta que la condición sea verdadera",
 	"WAIT_UNTIL": "esperar hasta",
-	"YES": "sí"
+	"YES": "sí",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "A túa conta foi creada, pero non se puido enviar o correo de activación. En Inicio de sesión → Cambiar podes actualizar o teu correo electrónico ou volver enviar a ligazón de activación."
 }

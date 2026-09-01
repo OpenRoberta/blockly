@@ -644,6 +644,7 @@
 	"ORA_TOOLBOX_TRANSFORM_ERROR": "Eroare de transformare?",
 	"ORA_USER_ACTIVATION_INVALID_URL": "Link-ul nu mai este valid. Vă rugăm să cereți retrimiterea e-mail-ului de verificare.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Scuze, nu putem să vă trimitem e-mail. Contactați »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Contul tău a fost creat, dar e-mailul de activare nu a putut fi trimis. În Autentificare → Modificare poți actualiza adresa de e-mail sau retrimite linkul de activare.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "Am trimis un e-mail către dvs., verificați căsuța de e-mail!",
 	"ORA_USER_ACTIVATION_SUCCESS": "Contul a fost verificat! Vă puteți conecta!",
 	"ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "Numele contului sau numele dvs. de utilizator este prea lung. Vă rugăm să vă asigurați că acestea nu au mai mult de 25 de caractere. Contul dvs. nu a putut fi creat.",

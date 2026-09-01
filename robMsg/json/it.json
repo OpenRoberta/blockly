@@ -625,6 +625,7 @@
 	"ORA_TOOLBOX_TRANSFORM_ERROR": "errore di trasformazione?",
 	"ORA_USER_ACTIVATION_INVALID_URL": "il link non è più valido. Chiedi per il rinvio di una nuova mail di verifica",
 	"ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "spiacenti, non è possibile inviarti una mail, contatta »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Il tuo account è stato creato, ma non è stato possibile inviare l’e-mail di attivazione. In Login → Modifica puoi aggiornare il tuo indirizzo e-mail o inviare nuovamente il link di attivazione.",
 	"ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "ti abbiamo inviato una mail, controlla la tua casella di posta!",
 	"ORA_USER_ACTIVATION_SUCCESS": "il tuo account è stato verificato con successo! Accedi!",
 	"ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "il tuo nome utente è troppo lungo. Non superare le 25 cifre. Il tuo account non può essere creato.",

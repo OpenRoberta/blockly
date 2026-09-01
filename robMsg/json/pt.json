@@ -451,5 +451,6 @@
 	"WAIT_TIME_TOOLTIP": "Espera um determinado tempo em milisegundos.",
 	"WAIT_TOOLTIP": "Espera que a condição seja verdadeira.",
 	"WAIT_UNTIL": "espera até",
-	"YES": "sim"
+	"YES": "sim",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "A sua conta foi criada, mas não foi possível enviar o e-mail de ativação. Em Login → Alterar, pode atualizar o seu endereço de e-mail ou reenviar o link de ativação."
 }

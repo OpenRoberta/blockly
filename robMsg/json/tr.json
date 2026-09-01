@@ -448,5 +448,6 @@
 	"WAIT_TIME_TOOLTIP": "Şu kadar milisaniye bekle",
 	"WAIT_TOOLTIP": "Ifade dogru olana kadar bekle",
 	"WAIT_UNTIL": "Kadar bekle",
-	"YES": "Evet"
+	"YES": "Evet",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Hesabınız oluşturuldu, ancak etkinleştirme e-postası gönderilemedi. Giriş → Değiştir bölümünden e-posta adresinizi güncelleyebilir veya etkinleştirme bağlantısını yeniden gönderebilirsiniz."
 }

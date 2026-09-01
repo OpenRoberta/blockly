@@ -644,6 +644,7 @@
 	"ORA_TOOLBOX_TRANSFORM_ERROR": "轉換錯誤？",
 	"ORA_USER_ACTIVATION_INVALID_URL": "連結不再有效。請再次發送您的驗證郵件",
 	"ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "對不起, 我們不能發郵件給您, 請聯繫»support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "您的帳戶已建立，但無法傳送啟用電子郵件。您可以在「登入 → 變更」中更新電子郵件地址或重新傳送啟用連結。",
 	"ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "我們發郵件給您, 請查收您的郵箱!",
 	"ORA_USER_ACTIVATION_SUCCESS": "您的帳戶已成功驗證!請登錄!",
 	"ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "您的帳戶名或使用者名很長。請確保它們不再是25位數位。無法創建您的帳戶。",

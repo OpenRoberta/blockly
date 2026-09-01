@@ -529,6 +529,7 @@
   "ORA_TOOLBOX_TRANSFORM_ERROR": "Błąd transformacji?",
   "ORA_USER_ACTIVATION_INVALID_URL": "Ten adres URL nie jest już aktualny. Wybierz ponownie opcję weryfikacji adresu e-mail.",
   "ORA_USER_ACTIVATION_SENT_MAIL_FAIL": "Nie jesteśmy w stanie wysłać do Ciebie e-mail. Skontaktuj się z administratorem serwisu pod adresem »support-o-r@iais.fraunhofer.de«",
+	"ORA_USER_CREATE_SUCCESS_ACTIVATION_MAIL_FAIL": "Twoje konto zostało utworzone, ale nie udało się wysłać wiadomości aktywacyjnej. W Login → Zmień możesz zaktualizować adres e-mail lub ponownie wysłać link aktywacyjny.",
   "ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS": "Wysłaliśmy do Ciebie e-mail, sprawdź swoją skrzynkę.",
   "ORA_USER_ACTIVATION_SUCCESS": "Twoje konto zostało zweryfikowane. Prosimy, zaloguj się.",
   "ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH": "Nazwa Twojego konta lub nazwa Twojego użytkownika jest zbyt długa. Upewnij się, że nie zawiera więcej, jak 25 znaków. Twoje konto nie mogło zostać utworzone.",
