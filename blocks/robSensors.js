@@ -51,7 +51,20 @@ Blockly.Blocks['robSensors_gyro_reset'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // this.setInputsInline(true);
         var sensorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
+
+        if (this.workspace.device === 'spike') {
+            sensorPort = getConfigPorts('gyro');
+            this.dependConfig = {
+                type: 'gyro',
+                dropDown: sensorPort
+            };
+        }
+
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_GYRO).appendField(sensorPort, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+
+        if (this.workspace.device === 'spike') {
+            hidePortIfOnlyInbuilt(this);
+        }
 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
