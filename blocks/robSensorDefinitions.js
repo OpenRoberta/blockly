@@ -345,6 +345,16 @@ sensors.encoder.txt4 = {
     }], ports: 'CONFIGURATION'
 };
 
+sensors.encoder.spike = {
+    title: 'ENCODER',
+    modes: [
+        { name: 'DEGREE', type: 'Number', unit: 'DEGREE', op: 'NUM_REV', value: 180 },
+        { name: 'ROTATION', type: 'Number', unit: '', op: 'NUM_REV', value: 2 },
+        { name: 'DISTANCE', type: 'Number', unit: 'CM' }
+    ],
+    ports: 'CONFIGURATION'
+};
+
 sensors.motor = {};
 sensors.motor.spike = {
     title: 'MOTOR', modes: [{
@@ -1413,7 +1423,7 @@ sensorsAll.nano33ble = [sensors.out.nano33ble, sensors.key.nano33ble, sensors.ti
 sensorsAll.rob3rta = [sensors.pintouch.rob3rta, sensors.infrared.rob3rta, sensors.temperature.rob3rta, sensors.timer.rob3rta];
 sensorsAll.thymio = [sensors.key.thymio, sensors.infrared.thymio, sensors.irhorizontal.thymio, sensors.tap.thymio, sensors.sound.thymio, sensors.timer.thymio, sensors.accelerometer.thymio, sensors.temperature.thymio];
 sensorsAll.robotino = [sensors.touch.robotino, sensors.infrared.robotino, sensors.odometry.robotino, sensors.timer.robotino, sensors.optical.robotino, sensors.detectmark.robotino, sensors.out.robotino, sensors.camera.robotino];
-sensorsAll.spike = [sensors.touch.spike, sensors.colour.spike, sensors.ultrasonic.spike, sensors.key.spike, sensors.timer.spike, sensors.gesture.spike, sensors.gyro.spike];
+sensorsAll.spike = [sensors.touch.spike, sensors.colour.spike, sensors.ultrasonic.spike, sensors.key.spike, sensors.timer.spike, sensors.gesture.spike, sensors.gyro.spike, sensors.encoder.spike];
 sensorsAll.rcj = [sensors.touchkey.rcj, sensors.colour.rcj, sensors.ultrasonic.rcj, sensors.timer.rcj, sensors.gyro.rcj, sensors.touch.rcj, sensors.inductive.rcj];
 function initSensors() {
     for (var sensor in sensors) {

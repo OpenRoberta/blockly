@@ -36,6 +36,12 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
                 'type': 'encoder',
                 'dropDown': motorport
             };
+        } else if (this.workspace.device === 'spike') {
+            motorport = getConfigPorts('motor');
+            this.dependConfig = {
+                'type': 'motor',
+                'dropDown': motorport
+            };
         } else if (this.workspace.device === 'nxt') {
             motorport = new Blockly.FieldDropdown([['A', 'A'], ['B', 'B'], ['C', 'C']]);
         }
@@ -799,7 +805,7 @@ Blockly.Blocks['robSensors_generic'] = {
             }
             ports = getConfigPorts(sensorTitle.toLowerCase());
             this.dependConfig = {
-                'type': sensorTitle.toLowerCase(),
+                'type': sensorTitle === 'ENCODER' && this.workspace.device === 'spike' ? 'motor' : sensorTitle.toLowerCase(),
                 'dropDown': ports
             };
         } else {
@@ -1022,7 +1028,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                                     var configs = func.call(blocks[x]);
                                     for (var y = 0; y < configs.length; y++) {
                                         var config = configs[y];
-                                        if (config.type.toUpperCase() === sensorTitle) {
+                                        if (config.type.toUpperCase() === sensorTitle || (sensorTitle === 'ENCODER' && config.type.toUpperCase() === 'MOTOR')) {
                                             portsList.push([config.name, config.name]);
                                         }
                                     }
@@ -1230,7 +1236,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                                 var configs = func.call(blocks[x]);
                                 for (var y = 0; y < configs.length; y++) {
                                     var config = configs[y];
-                                    if (config.type.toUpperCase() === sensorTitle) {
+                                    if (config.type.toUpperCase() === sensorTitle || (sensorTitle === 'ENCODER' && config.type.toUpperCase() === 'MOTOR')) {
                                         portsList.push([config.name, config.name]);
                                     }
                                 }
@@ -1245,7 +1251,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                     this.dropDownPorts = new Blockly.FieldDropdown(this.ports[index]);
                     this.dependConfig = function() {
                         return {
-                            'type': sensorTitle.toLowerCase(),
+                            'type': sensorTitle === 'ENCODER' && this.workspace.device === 'spike' ? 'motor' : sensorTitle.toLowerCase(),
                             'dropDown': this.dropDownPorts
                         };
                     };
@@ -1354,7 +1360,7 @@ function getConfigPorts(actorName) {
                 var configs = func.call(blocks[x]);
                 for (var i = 0; i < configs.length; i++) {
                     var config = configs[i];
-                    if (config.type === actorName) {
+                    if (config.type === actorName || (actorName === 'encoder' && config.type === 'motor')) {
                         ports.push([config.name, config.name]);
                     }
                 }
