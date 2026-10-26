@@ -64,7 +64,7 @@ Blockly.Blocks['robConf_generic'] = {
         if (confBlock.inbuilt) {
             nameField.setVisible(false);
         }
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[type + confBlock.title + '_' + this.workspace.device.toUpperCase()]
+        var titleInput = this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[type + confBlock.title + '_' + this.workspace.device.toUpperCase()]
             || Blockly.Msg[type + confBlock.title] || type + confBlock.title, 'SENSORTITLE').appendField(nameField, 'NAME');
 
         if (confBlock.bricks) {
@@ -141,7 +141,13 @@ Blockly.Blocks['robConf_generic'] = {
                 if (confBlock.standardPins) {
                     pins.setValue(confBlock.standardPins[i]);
                 }
-                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
+                if (confBlock.hiddenPins) {
+                    // keep the field (and its value in the XML), but do not show a port selector
+                    pins.setVisible(false);
+                    titleInput.appendField(pins, portList[i][1]);
+                } else {
+                    this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
+                }
             }
         }
 

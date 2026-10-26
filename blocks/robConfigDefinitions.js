@@ -1007,8 +1007,9 @@ confBlocks.key.raspberrypi = {
 confBlocks.key.spike = {
     title: 'KEY',
     ports: [
-        [' ', 'PIN1']
+        ['pin', 'PIN1']
     ],
+    hiddenPins: true,
     pins: function() {
         return [
             ['LEFT', 'LEFT'],
@@ -1714,7 +1715,7 @@ confBlocks.rgbled.wedo = {
     ]
 };
 
-confBlocks.rgbled.spike = confBlocks.rgbled.calliope;
+confBlocks.rgbled.spike = confBlocks.rgbled.mbot2;
 confBlocks.rgbled.rcj = confBlocks.rgbledh.calliope;
 
 confBlocks.stepmotor = {};
