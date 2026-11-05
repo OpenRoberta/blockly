@@ -491,6 +491,7 @@ Blockly.Msg.MENU_TUTORIAL = 'tutorials';
 Blockly.Msg.MENU_TUTORIAL_TOOLTIP = 'tutorials';
 Blockly.Msg.TAB_PROGRAM = 'Program';
 Blockly.Msg.TAB_CONFIGURATION = 'Robot configuration';
+Blockly.Msg.CONFIGURATION_MODIFIED = '(modified)';
 Blockly.Msg.POPUP_ABOUT_TEXT = 'The Open Roberta Lab is a cloud-based integrated programming environment that enables children and adolescents to program easily different robot/microcontroller systems. This platform is completely open source so taking part is desirable! Both the software and the open source developer tools are available via Fraunhofer servers.';
 Blockly.Msg.POPUP_ABOUT_TEXT_DEV = 'The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href="http://www.roberta-home.de/" target="_blank">»Roberta – Learning with Robots«</a>';
 Blockly.Msg.POPUP_ABOUT_TEXT_GOOG = 'Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots.</a>';
@@ -1345,13 +1346,17 @@ Blockly.Msg.SENSOR_ACCELEROMETER_Z_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the acc
 Blockly.Msg.SENSOR_ODOMETRY_GETSAMPLE_TOOLTIP = 'Returns the current position on a specific axis in cm or the orientation. Odometry values are reset every program start.';
 Blockly.Msg.SENSOR_ODOMETRY_RESET_TOOLTIP = 'Resets the current position on a specific axis or the orientation.';
 Blockly.Msg.SENSOR_OPTICAL_GETSAMPLE_TOOLTIP = 'Returns the current reading for a optical sensors specific output cable.';
-
 Blockly.Msg.SENSOR_GESTURE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is upright.';
 Blockly.Msg.SENSOR_GESTURE_DOWN_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is down.';
 Blockly.Msg.SENSOR_GESTURE_FACE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is face up.';
 Blockly.Msg.SENSOR_GESTURE_FACE_DOWN_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is face down.';
 Blockly.Msg.SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP = 'Returns »true« if it is shaken.';
 Blockly.Msg.SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP = 'Returns »true« if it is free falling.';
+Blockly.Msg.SENSOR_GESTURE_FRONT_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is on the front side.';
+Blockly.Msg.SENSOR_GESTURE_BACK_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is on the back side.';
+Blockly.Msg.SENSOR_GESTURE_LEFT_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is tilted to the left.';
+Blockly.Msg.SENSOR_GESTURE_RIGHT_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is tilted to the right.';
+Blockly.Msg.SENSOR_GESTURE_TAPPED_GETSAMPLE_TOOLTIP = 'Returns »true« if it is tapped.';
 Blockly.Msg.RIGHT = 'right';
 Blockly.Msg.LEFT = 'left';
 Blockly.Msg.BOTTOM_RIGHT = 'bottom right';

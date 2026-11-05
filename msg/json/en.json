@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2026-10-20 11:12:04.428525",
+		"lastupdated": "2026-11-05 14:36:20.012865",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -780,6 +780,7 @@
 	"MENU_TUTORIAL_TOOLTIP": "tutorials",
 	"TAB_PROGRAM": "Program",
 	"TAB_CONFIGURATION": "Robot configuration",
+	"CONFIGURATION_MODIFIED": "(modified)",
 	"POPUP_ABOUT_TEXT": "The Open Roberta Lab is a cloud-based integrated programming environment that enables children and adolescents to program easily different robot/microcontroller systems. This platform is completely open source so taking part is desirable! Both the software and the open source developer tools are available via Fraunhofer servers.",
 	"POPUP_ABOUT_TEXT_DEV": "The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href='http://www.roberta-home.de/' target='_blank'>»Roberta – Learning with Robots«</a>",
 	"POPUP_ABOUT_TEXT_GOOG": "Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots.</a>",
@@ -1542,6 +1543,11 @@
 	"SENSOR_GESTURE_FACE_DOWN_GETSAMPLE_TOOLTIP": "Returns »true« if the posture is face down.",
 	"SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP": "Returns »true« if it is shaken.",
 	"SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP": "Returns »true« if it is free falling.",
+	"SENSOR_GESTURE_FRONT_GETSAMPLE_TOOLTIP": "Returns »true« if the posture is on the front side.",
+	"SENSOR_GESTURE_BACK_GETSAMPLE_TOOLTIP": "Returns »true« if the posture is on the back side.",
+	"SENSOR_GESTURE_LEFT_GETSAMPLE_TOOLTIP": "Returns »true« if the posture is tilted to the left.",
+	"SENSOR_GESTURE_RIGHT_GETSAMPLE_TOOLTIP": "Returns »true« if the posture is tilted to the right.",
+	"SENSOR_GESTURE_TAPPED_GETSAMPLE_TOOLTIP": "Returns »true« if it is tapped.",
 	"RIGHT": "right",
 	"LEFT": "left",
 	"BOTTOM_RIGHT": "bottom right",
