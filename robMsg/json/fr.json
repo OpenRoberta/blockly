@@ -702,7 +702,7 @@
   "SENSOR_UNIT_PERCENT": "%",
   "SENSOR_UNIT_VOLT": "V",
   "SENSOR_VALUE": "valeur",
-  "SERVER_NOT_AVAILABLE": "Open Roberta Lab est actuellement indisponible. </br> Vérifie ta connexion internet et actualise la page. Si le problème persiste, merci de bien vouloir nous le signaler par mail :</br>support-o-r@iais.fraunhofer.de",
+  "SERVER_NOT_AVAILABLE": "Open Roberta Lab est actuellement indisponible. </br> Vérifie ta connexion internet et actualise la page. Si le problème persiste, merci de bien vouloir nous le signaler par mail :</br>support@roberta.education",
   "SERVO_MOTOR": "servomoteur",
   "SERVO_TOOLTIP": "Représente un servomoteur.",
   "SET": "régler",

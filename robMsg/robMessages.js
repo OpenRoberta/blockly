@@ -676,7 +676,7 @@ Blockly.Msg.SIM_VALUES_SENSOR = 'Sensor Values'
 Blockly.Msg.SIM_VALUES_SYSTEM = 'System Values'
 Blockly.Msg.SIM_VALUES_TIMER = 'Timer Values'
 Blockly.Msg.SIM_VALUES_VARIABLE = 'Variable Values'
-Blockly.Msg.SERVER_NOT_AVAILABLE = 'The Open Roberta Lab is currently not available. </br>Your internet connection was interrupted. If you currently have an EV3 connected via the USB cable solve this with a click on the programming environment.<br>If this problem persists please check your internet connection and try to reload this website. If you have this problem again, please don"t hesitate to contact us via mail:</br>support-o-r@iais.fraunhofer.de';
+Blockly.Msg.SERVER_NOT_AVAILABLE = 'The Open Roberta Lab is currently not available. </br>Your internet connection was interrupted. If you currently have an EV3 connected via the USB cable solve this with a click on the programming environment.<br>If this problem persists please check your internet connection and try to reload this website. If you have this problem again, please don"t hesitate to contact us via mail:</br>support@roberta.education';
 Blockly.Msg.MENU_MESSAGE_DOWNLOAD = 'Your program has been successfully downloaded.';
 Blockly.Msg.POPUP_PROGRAM_TERMINATED_UNEXPECTED = 'The execution of the program on the robot has terminated unexpectedly!';
 Blockly.Msg.TOUR1_DESCRIPTION00 = 'next';
@@ -738,7 +738,7 @@ Blockly.Msg.ORA_TOKEN_SET_ERROR_WRONG_ROBOTTYPE = 'You are trying to connect a r
 Blockly.Msg.ORA_USER_ERROR_EMAIL_USED = 'There is already an account with this email address registered. Please enter another email address!';
 Blockly.Msg.ORA_USER_ERROR_EMAIL_INVALID = 'There is a problem with your email address. Please try to write the email address lower case. If this doesn"t help please contact our support';
 Blockly.Msg.ORA_USER_PASSWORD_RECOVERY_EXPIRED_URL = 'The link is not valid anymore. Please ask for resetting your password again, if you still cannot remember it!';
-Blockly.Msg.ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »support-o-r@iais.fraunhofer.de«';
+Blockly.Msg.ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »support@roberta.education«';
 Blockly.Msg.ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
 Blockly.Msg.ORA_USER_UPDATE_SUCCESS = 'Your changes have been successfully saved!';
 Blockly.Msg.LIGHT_TOOLTIP = 'Represents a light sensor.';
@@ -1157,7 +1157,7 @@ Blockly.Msg.POPUP_AGE = 'Age';
 Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 16!';
 Blockly.Msg.OLDER_THEN_14 = 'I am 16 or older than 16!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
-Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »support-o-r@iais.fraunhofer.de«';
+Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »support@roberta.education«';
 Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Your account is successfully verified! Please login!';
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = 'Your are not allowed to share. Please activate your account! <br><a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">Further information ...</a>';
 Blockly.Msg.ORA_USER_DEACTIVATION_SUCCESS = 'Your account is currently not verified, please check your mailbox!';
@@ -2055,5 +2055,5 @@ Blockly.Msg.BLE_ERROR_CAPABILITIES = 'Looks like the firmware version of your ro
 Blockly.Msg.BLE_ERROR_STOP = 'Stopping the program execution does not work, your robot is maybe disconnected?<br>You can always use the Center Button on the hub to stop the program yourself.';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_EXTERN_FAILED = 'It looks like the external compilation service used for this robot is currently unavailable. Please try again later and report the problem if it persists.';
 Blockly.Msg.WEBUSB_NOT_SUPPORTED ='Your browser does not support WebUSB. To download the programme to your robot, please switch to one of the following browsers: Chrome, Edge or Opera';
-Blockly.Msg.WEBUSB_DOWLOAD_PROBLEM ='There was a problem downloading the program to the robot, please try again. If the problem persists, see the <a href=\'https://jira.iais.fraunhofer.de/wiki/display/ORInfo/FAQ?showLanguage=en_GB\' target=\'_blank\'>FAQ</a> for help.';
+Blockly.Msg.WEBUSB_DOWLOAD_PROBLEM ='There was a problem downloading the program to the robot, please try again. If the problem persists, see the <a href="https://roberta-education.atlassian.net/wiki/spaces/RWNE/pages/78426347" target="_blank">FAQ</a> for help.';
 Blockly.Msg.SIM_VALUES_NEURON = 'Neuron Values';
